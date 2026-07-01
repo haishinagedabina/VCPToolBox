@@ -1,0 +1,51 @@
+[FlashDeepSearch] 2026-06-27T20:16:00.649Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:16:00.649Z: 研究主题: "通用背景设定 科幻奇幻 世界构建 案例 三体 沙丘 哈利波特 冰与火之歌 核心预设 推导逻辑 方法论", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T20:16:00.649Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:16:00.658Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:16:15.096Z: DeepSearchModel 原始响应: [KeyWord1:] 世界构建核心预设 (Core Premises in Worldbuilding)  
+[KeyWord2:] Narrative AI Prompt Engineering for Worldbuilding  
+[KeyWord3:] 三体宇宙设定逻辑推演 (Three-Body Problem Universe Logic Deduction)  
+[KeyWord4:] 沙丘生态政治与权力结构 (Dune Ecopolitics and Power Structure)  
+[KeyWord5:] Harry Potter Magic System Rules and Constraints  
+[KeyWord6:] 冰与火之歌权力拓扑分析 (ASOIAF Power Topology Analysis)  
+[KeyWord7:] 虚构世界一致性检验模型 (Fictional World Consistency Model)  
+[KeyWord8:] Sci-Fi Fantasy Cognitive Mapping Methodology  
+[KeyWord9:] Metanarrative Construction in Speculative Fiction  
+[KeyWord10:] 跨作品设定比较框架 (Cross-Work Setting Comparison Framework)  
+[KeyWord11:] 文化原型与神话解构 (Cultural Archetype and Myth Deconstruction)  
+[KeyWord12:] Dialectical Worldbuilding: Hegelian/Marxist Perspectives  
+[KeyWord13:] 反事实历史推导与架空世界 (Counterfactual History and Alternate Worlds)  
+[KeyWord14:] Ethical Critique of Fictional Determinism  
+[KeyWord15:] Agent请求字段设计方法论 (Agent Request Field Design Methodology)
+[FlashDeepSearch] 2026-06-27T20:16:15.096Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T20:16:15.097Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:16:15.097Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.098Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.099Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.100Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.101Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.105Z: 警告: 关键词 "世界构建核心预设 (Core Premises in Worldbuilding)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.106Z: 警告: 关键词 "Narrative AI Prompt Engineering for Worldbuilding" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.107Z: 警告: 关键词 "三体宇宙设定逻辑推演 (Three-Body Problem Universe Logic Deduction)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.108Z: 警告: 关键词 "沙丘生态政治与权力结构 (Dune Ecopolitics and Power Structure)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.108Z: 警告: 关键词 "Harry Potter Magic System Rules and Constraints" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.109Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.109Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.109Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.110Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.111Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.113Z: 警告: 关键词 "冰与火之歌权力拓扑分析 (ASOIAF Power Topology Analysis)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.114Z: 警告: 关键词 "虚构世界一致性检验模型 (Fictional World Consistency Model)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.114Z: 警告: 关键词 "Metanarrative Construction in Speculative Fiction" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.115Z: 警告: 关键词 "Sci-Fi Fantasy Cognitive Mapping Methodology" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.115Z: 警告: 关键词 "跨作品设定比较框架 (Cross-Work Setting Comparison Framework)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.116Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.116Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.116Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.117Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.117Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:16:15.119Z: 警告: 关键词 "Agent请求字段设计方法论 (Agent Request Field Design Methodology)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.119Z: 警告: 关键词 "文化原型与神话解构 (Cultural Archetype and Myth Deconstruction)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.119Z: 警告: 关键词 "Ethical Critique of Fictional Determinism" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.120Z: 警告: 关键词 "反事实历史推导与架空世界 (Counterfactual History and Alternate Worlds)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:16:15.120Z: 警告: 关键词 "Dialectical Worldbuilding: Hegelian/Marxist Perspectives" 的搜索失败: Request failed with status code 503

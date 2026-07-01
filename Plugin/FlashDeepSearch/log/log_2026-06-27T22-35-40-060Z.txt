@@ -1,0 +1,35 @@
+[FlashDeepSearch] 2026-06-27T22:35:40.063Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:35:40.063Z: 研究主题: "What are the main evaluation dimensions for prompts? Including classification systems for prompt quality, accuracy and factuality verification, robustness to minor variations, safety and ethical compliance assessment, efficiency metrics like token usage and latency, soft quality attributes such as clarity, specificity, reproducibility, and transferability, tradeoffs between dimensions, and methodologies for designing evaluation indicator systems.", 搜索广度: 14
+[FlashDeepSearch] 2026-06-27T22:35:40.063Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:35:40.072Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:35:52.286Z: DeepSearchModel 原始响应: [KeyWord1:提示词质量评估维度] [KeyWord2:Prompt factuality verification benchmark] [KeyWord3:提示鲁棒性对抗测试] [KeyWord4:LLM safety and ethical alignment taxonomy] [KeyWord5:令牌效率与延迟优化] [KeyWord6:Prompt clarity specificity reproducibility metrics] [KeyWord7:评估指标权衡分析] [KeyWord8:Prompt evaluation framework design methodology] [KeyWord9:跨文化提示偏见审计] [KeyWord10:Prompt lifecycle assessment responsible AI] [KeyWord11:提示优化心理学] [KeyWord12:Prompt engineering cost-effectiveness tradeoff] [KeyWord13:提示评估标准化争议] [KeyWord14:Prompt performance evaluation interdisciplinary synthesis]
+[FlashDeepSearch] 2026-06-27T22:35:52.286Z: 成功提取到 14 个关键词。
+[FlashDeepSearch] 2026-06-27T22:35:52.286Z: 步骤 2: 并发执行 14 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:35:52.287Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.288Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.288Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.289Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.289Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.294Z: 警告: 关键词 "提示词质量评估维度" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.296Z: 警告: 关键词 "Prompt factuality verification benchmark" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.296Z: 警告: 关键词 "LLM safety and ethical alignment taxonomy" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.297Z: 警告: 关键词 "令牌效率与延迟优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.298Z: 警告: 关键词 "提示鲁棒性对抗测试" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.298Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.299Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.299Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.300Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.301Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.303Z: 警告: 关键词 "Prompt clarity specificity reproducibility metrics" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.303Z: 警告: 关键词 "跨文化提示偏见审计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.304Z: 警告: 关键词 "Prompt evaluation framework design methodology" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.304Z: 警告: 关键词 "Prompt lifecycle assessment responsible AI" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.305Z: 警告: 关键词 "评估指标权衡分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.305Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.305Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.306Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.306Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:35:52.307Z: 警告: 关键词 "Prompt engineering cost-effectiveness tradeoff" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.308Z: 警告: 关键词 "Prompt performance evaluation interdisciplinary synthesis" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.309Z: 警告: 关键词 "提示评估标准化争议" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:35:52.309Z: 警告: 关键词 "提示优化心理学" 的搜索失败: Request failed with status code 503

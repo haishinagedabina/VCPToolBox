@@ -1,0 +1,51 @@
+[FlashDeepSearch] 2026-06-27T20:05:56.869Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:05:56.869Z: 研究主题: "AI visual development pipeline for film games concept art 2025 2026: from sketch to keyframe using Midjourney Stable Diffusion ComfyUI ControlNet IP-Adapter moodboard style consistency LoRA workflows and case studies", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T20:05:56.869Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:05:56.878Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:06:10.442Z: DeepSearchModel 原始响应: [KeyWord1: ControlNet sketch to keyframe pipeline case study 2025 2026]
+[KeyWord2: IP-Adapter 风格一致性 多图生成 技术分析]
+[KeyWord3: LoRA concept art style training workflow best practice]
+[KeyWord4: AI 视觉开发 伦理 原创性 争议 电影级应用]
+[KeyWord5: Midjourney Stable Diffusion 协同 管线 电影预演 工作流]
+[KeyWord6: 情绪板 驱动 生成 AI 概念设计 方法 与 工具]
+[KeyWord7: diffusion models controllable keyframe generation ComfyUI node]
+[KeyWord8: AI 概念艺术 对 设计师 就业 冲击 产业 影响 2026]
+[KeyWord9: 风格迁移 一致性 LoRA ControlNet 联合 优化 策略]
+[KeyWord10: 传统手绘概念艺术 vs AI生成 审美 比较 研究]
+[KeyWord11: AI 生成 视觉 资产 版权 归属 法律 案例 2025]
+[KeyWord12: ComfyUI workflow automation concept art efficiency evaluation]
+[KeyWord13: 2026 AI 视觉开发 GPU 消耗 成本 效益 分析]
+[KeyWord14: 从 草图 到 关键帧 端到端 生成 框架 综述]
+[KeyWord15: AAA 游戏 概念设计 AI 辅助 管线 full case study]
+[FlashDeepSearch] 2026-06-27T20:06:10.443Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T20:06:10.443Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:06:10.444Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.445Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.445Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.446Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.446Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.451Z: 警告: 关键词 "LoRA concept art style training workflow best practice" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.452Z: 警告: 关键词 "Midjourney Stable Diffusion 协同 管线 电影预演 工作流" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.452Z: 警告: 关键词 "IP-Adapter 风格一致性 多图生成 技术分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.452Z: 警告: 关键词 "AI 视觉开发 伦理 原创性 争议 电影级应用" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.453Z: 警告: 关键词 "ControlNet sketch to keyframe pipeline case study 2025 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.453Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.454Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.454Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.455Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.455Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.458Z: 警告: 关键词 "diffusion models controllable keyframe generation ComfyUI node" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.458Z: 警告: 关键词 "AI 概念艺术 对 设计师 就业 冲击 产业 影响 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.459Z: 警告: 关键词 "传统手绘概念艺术 vs AI生成 审美 比较 研究" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.459Z: 警告: 关键词 "风格迁移 一致性 LoRA ControlNet 联合 优化 策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.459Z: 警告: 关键词 "情绪板 驱动 生成 AI 概念设计 方法 与 工具" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.460Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.460Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.460Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.460Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.461Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:06:10.462Z: 警告: 关键词 "从 草图 到 关键帧 端到端 生成 框架 综述" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.463Z: 警告: 关键词 "AAA 游戏 概念设计 AI 辅助 管线 full case study" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.463Z: 警告: 关键词 "ComfyUI workflow automation concept art efficiency evaluation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.463Z: 警告: 关键词 "AI 生成 视觉 资产 版权 归属 法律 案例 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:06:10.464Z: 警告: 关键词 "2026 AI 视觉开发 GPU 消耗 成本 效益 分析" 的搜索失败: Request failed with status code 503

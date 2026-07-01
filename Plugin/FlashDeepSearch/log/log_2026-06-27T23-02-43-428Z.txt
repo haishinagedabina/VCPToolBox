@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T23:02:43.430Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T23:02:43.431Z: 研究主题: "Agent 记忆系统存储方案对比：向量数据库（Pinecone, Milvus, Weaviate, Chroma, Qdrant）、传统数据库+向量扩展（pgvector, RedisSearch）、内存存储、混合方案的架构、索引、数据模型和持久化策略，以及工程选型建议 2025 2026", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T23:02:43.431Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T23:02:43.439Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T23:02:52.543Z: DeepSearchModel 原始响应: [KeyWord1: 向量数据库性能基准对比 (Vector database benchmark comparison)] [KeyWord2: Agent记忆存储架构 (Agent memory storage architecture)] [KeyWord3: HNSW与IVF索引策略权衡 (HNSW vs IVF index trade-offs)] [KeyWord4: 混合持久化策略 (Hybrid persistence strategies)] [KeyWord5: 开源向量库经济模型 (Open-source vector DB economic models)] [KeyWord6: 智能体记忆的遗忘权 (Right to be forgotten in agent memory)] [KeyWord7: pgvector与PostgreSQL深度集成 (pgvector PostgreSQL deep integration)] [KeyWord8: 内存向量缓存性能边界 (In-memory vector cache performance limits)] [KeyWord9: 向量数据库演进史 (Evolution history of vector databases)] [KeyWord10: 过度工程化批判反思 (Over-engineering critique in vector storage)] [KeyWord11: 伦理的长期记忆持久化 (Ethical long-term memory persistence)] [KeyWord12: RedisSearch向量搜索适配性 (RedisSearch vector search suitability)] [KeyWord13: 工程选型多目标决策模型 (Multi-objective decision models for tool selection)] [KeyWord14: Chroma与Qdrant轻量对比 (Chroma vs Qdrant lightweight comparison)] [KeyWord15: 向量与知识图谱协同存储 (Vector and knowledge graph synergetic storage)]
+[FlashDeepSearch] 2026-06-27T23:02:52.545Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T23:02:52.546Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T23:02:52.547Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.549Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.549Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.550Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.550Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.554Z: 警告: 关键词 "向量数据库性能基准对比 (Vector database benchmark comparison)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.554Z: 警告: 关键词 "Agent记忆存储架构 (Agent memory storage architecture)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.555Z: 警告: 关键词 "HNSW与IVF索引策略权衡 (HNSW vs IVF index trade-offs)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.556Z: 警告: 关键词 "开源向量库经济模型 (Open-source vector DB economic models)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.557Z: 警告: 关键词 "混合持久化策略 (Hybrid persistence strategies)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.557Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.557Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.558Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.558Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.559Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.562Z: 警告: 关键词 "智能体记忆的遗忘权 (Right to be forgotten in agent memory)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.563Z: 警告: 关键词 "pgvector与PostgreSQL深度集成 (pgvector PostgreSQL deep integration)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.563Z: 警告: 关键词 "内存向量缓存性能边界 (In-memory vector cache performance limits)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.564Z: 警告: 关键词 "向量数据库演进史 (Evolution history of vector databases)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.564Z: 警告: 关键词 "过度工程化批判反思 (Over-engineering critique in vector storage)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.564Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.565Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.565Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.565Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.565Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:02:52.567Z: 警告: 关键词 "Chroma与Qdrant轻量对比 (Chroma vs Qdrant lightweight comparison)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.567Z: 警告: 关键词 "RedisSearch向量搜索适配性 (RedisSearch vector search suitability)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.568Z: 警告: 关键词 "向量与知识图谱协同存储 (Vector and knowledge graph synergetic storage)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.568Z: 警告: 关键词 "伦理的长期记忆持久化 (Ethical long-term memory persistence)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:02:52.570Z: 警告: 关键词 "工程选型多目标决策模型 (Multi-objective decision models for tool selection)" 的搜索失败: Request failed with status code 503

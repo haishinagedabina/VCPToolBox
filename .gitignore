@@ -237,3 +237,36 @@ Plugin/.backup/
 
 # ==== 开发SDK ====
 Plugin/VCPQQBotServer/bot-node-sdk-main
+
+# ===== VCPChat 运行时产物 =====
+# 异步委托结果缓存
+VCPAsyncResults/
+# 文件操作 / 文档生成落盘
+file/
+Plugin/FileOperator/file/
+Plugin/FileOperator/run-*.md
+# ComfyUI 生成图片
+image/comfyuigen/
+# Agent 积分数据
+Plugin/AgentAssistant/agent_scores.json
+# 任务中心运行时
+Plugin/VCPTaskAssistant/task-center-data.json
+# WeWrite 输出与本地配置
+Plugin/WeWriteCore/wewrite/output/
+Plugin/WeWriteCore/wewrite/config.yaml
+Plugin/WeWriteCore/wewrite/references/exemplars/
+# SkillBridge 运行时
+Plugin/SkillBridge/SKILL/wewrite/
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 旧架构残留（stash 遗留，main 分支不跟踪）
+Plugin/AgentAssistant/config.json
+Plugin/VCPBridgeServer/bridge-config.json
+Plugin/WeWriteCore/
+Plugin/WeWritePublish/
+Plugin/StockScreener/
+Plugin/PaperTrader/
+sarprompt.json
+docs/短线操盘智能体团队.md

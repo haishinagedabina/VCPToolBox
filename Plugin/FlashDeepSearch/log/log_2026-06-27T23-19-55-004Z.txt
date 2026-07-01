@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T23:19:55.006Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T23:19:55.006Z: 研究主题: "Agent AI memory storage frameworks comparison: MemGPT, Letta, Mem0, LangChain Memory, Zep, OpenAI memory. Their core architecture, data models, and supported storage backends.", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T23:19:55.006Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T23:19:55.015Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T23:19:58.450Z: DeepSearchModel 原始响应: [KeyWord1:] Agent记忆系统架构对比 [KeyWord2:] MemGPT 核心机制 [KeyWord3:] Letta 持久化记忆设计 [KeyWord4:] Mem0 记忆检索数据模型 [KeyWord5:] LangChain Memory 后端适配 [KeyWord6:] Zep 长期记忆存储方案 [KeyWord7:] OpenAI 记忆功能实现 [KeyWord8:] 自主智能体记忆存储批判性审视 [KeyWord9:] Cognitive architecture for conversational AI [KeyWord10:] Memory-as-a-service economic implications [KeyWord11:] 智能体持久记忆的隐私伦理困境 [KeyWord12:] Context window vs. external memory trade-offs [KeyWord13:] Vector database backend comparison for agent memory [KeyWord14:] 记忆框架的认知科学哲学基础 [KeyWord15:] Long-term agent memory scalability and forgetting mechanisms
+[FlashDeepSearch] 2026-06-27T23:19:58.451Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T23:19:58.451Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T23:19:58.451Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.452Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.453Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.454Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.454Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.458Z: 警告: 关键词 "Agent记忆系统架构对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.460Z: 警告: 关键词 "MemGPT 核心机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.460Z: 警告: 关键词 "Letta 持久化记忆设计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.461Z: 警告: 关键词 "Mem0 记忆检索数据模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.461Z: 警告: 关键词 "LangChain Memory 后端适配" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.461Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.462Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.462Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.463Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.463Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.465Z: 警告: 关键词 "OpenAI 记忆功能实现" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.466Z: 警告: 关键词 "自主智能体记忆存储批判性审视" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.467Z: 警告: 关键词 "Memory-as-a-service economic implications" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.467Z: 警告: 关键词 "Cognitive architecture for conversational AI" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.468Z: 警告: 关键词 "Zep 长期记忆存储方案" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.468Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.468Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.468Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.469Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.469Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:19:58.471Z: 警告: 关键词 "Long-term agent memory scalability and forgetting mechanisms" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.471Z: 警告: 关键词 "智能体持久记忆的隐私伦理困境" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.472Z: 警告: 关键词 "Context window vs. external memory trade-offs" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.473Z: 警告: 关键词 "记忆框架的认知科学哲学基础" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:19:58.473Z: 警告: 关键词 "Vector database backend comparison for agent memory" 的搜索失败: Request failed with status code 503

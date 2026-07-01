@@ -1,0 +1,93 @@
+[FlashDeepSearch] 2026-06-27T21:06:09.881Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:06:09.881Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:06:09.881Z: 研究主题: "AI Prompt Engineering 中的记忆维护技术：包括会话内记忆管理（滑动窗口、摘要压缩、记忆蒸馏），跨会话记忆（用户画像、主动写入、RAG写入侧、记忆触发），以及记忆衰减和遗忘机制的最佳实践和Prompt设计", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T21:06:09.881Z: 研究主题: "LangChain ConversationBufferMemory, ConversationSummaryMemory, VectorStoreRetrieverMemory 的具体用法、参数配置、Prompt模板，以及 Mem0、MemGPT 框架的核心记忆维护机制，包括记忆蒸馏、分级摘要、时间衰减权重、重要性评分的具体实现和效果对比", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T21:06:09.881Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:06:09.881Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:06:09.890Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:06:09.890Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:06:16.734Z: DeepSearchModel 原始响应: [KeyWord1:] 滑动窗口记忆管理
+[KeyWord2:] 摘要压缩与上下文蒸馏
+[KeyWord3:] 记忆蒸馏与灾难性遗忘
+[KeyWord4:] 用户画像持久化与跨会话记忆
+[KeyWord5:] RAG写入侧与记忆增强
+[KeyWord6:] Memory Triggering in Prompt Design
+[KeyWord7:] 记忆衰减曲线建模
+[KeyWord8:] Forgetting Mechanisms Best Practices
+[KeyWord9:] Cognitive Architecture for Long-Term Memory in LLMs
+[KeyWord10:] In-Context Memory vs. Parametric Memory
+[KeyWord11:] 用户隐私与记忆伦理边界
+[KeyWord12:] 持续对话中的偏见放大与遗忘韧性
+[KeyWord13:] 从图灵测试到情境感知：对话历史的文化演进
+[KeyWord14:] 神经科学启发下的记忆巩固与回放机制
+[KeyWord15:] Cost-Benefit Trade-offs in Persistent Memory Systems
+[FlashDeepSearch] 2026-06-27T21:06:16.734Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T21:06:16.734Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:06:16.735Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.735Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.736Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.737Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.737Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.743Z: 警告: 关键词 "滑动窗口记忆管理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.743Z: 警告: 关键词 "记忆蒸馏与灾难性遗忘" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.744Z: 警告: 关键词 "摘要压缩与上下文蒸馏" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.745Z: 警告: 关键词 "用户画像持久化与跨会话记忆" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.746Z: 警告: 关键词 "RAG写入侧与记忆增强" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.746Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.747Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.747Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.748Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.748Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.751Z: 警告: 关键词 "Memory Triggering in Prompt Design" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.752Z: 警告: 关键词 "Forgetting Mechanisms Best Practices" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.752Z: 警告: 关键词 "In-Context Memory vs. Parametric Memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.753Z: 警告: 关键词 "记忆衰减曲线建模" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.754Z: 警告: 关键词 "Cognitive Architecture for Long-Term Memory in LLMs" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.754Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.755Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.755Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.755Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.755Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.757Z: 警告: 关键词 "用户隐私与记忆伦理边界" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.758Z: 警告: 关键词 "神经科学启发下的记忆巩固与回放机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.758Z: 警告: 关键词 "持续对话中的偏见放大与遗忘韧性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.759Z: 警告: 关键词 "Cost-Benefit Trade-offs in Persistent Memory Systems" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.759Z: 警告: 关键词 "从图灵测试到情境感知：对话历史的文化演进" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.884Z: DeepSearchModel 原始响应: [KeyWord1: LangChain ConversationBufferMemory 参数配置与滑动窗口机制]
+[KeyWord2: ConversationSummaryMemory prompt template customization]
+[KeyWord3: VectorStoreRetrieverMemory 混合检索与元数据过滤实践]
+[KeyWord4: Mem0 memory distillation pipeline implementation]
+[KeyWord5: MemGPT 分级摘要 事件记忆与工作记忆架构]
+[KeyWord6: temporal decay weight formula in episodic memory]
+[KeyWord7: 对话记忆重要性评分算法对比 LSTM vs. Transformer]
+[KeyWord8: LLM long-term memory maintenance hallucination mitigation]
+[KeyWord9: 对话AI记忆伦理 遗忘权与数据最小化]
+[KeyWord10: cognitive science spacing effect in conversational recall]
+[KeyWord11: 记忆蒸馏在推荐系统与对话系统中的迁移学习]
+[KeyWord12: critique of dense retrieval in memory-augmented agents]
+[FlashDeepSearch] 2026-06-27T21:06:16.884Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T21:06:16.885Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:06:16.885Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.886Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.886Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.887Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.887Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.892Z: 警告: 关键词 "LangChain ConversationBufferMemory 参数配置与滑动窗口机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.892Z: 警告: 关键词 "Mem0 memory distillation pipeline implementation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.893Z: 警告: 关键词 "VectorStoreRetrieverMemory 混合检索与元数据过滤实践" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.894Z: 警告: 关键词 "ConversationSummaryMemory prompt template customization" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.894Z: 警告: 关键词 "MemGPT 分级摘要 事件记忆与工作记忆架构" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.895Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.895Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.895Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.896Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.897Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.899Z: 警告: 关键词 "LLM long-term memory maintenance hallucination mitigation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.900Z: 警告: 关键词 "cognitive science spacing effect in conversational recall" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.900Z: 警告: 关键词 "temporal decay weight formula in episodic memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.901Z: 警告: 关键词 "对话AI记忆伦理 遗忘权与数据最小化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.901Z: 警告: 关键词 "对话记忆重要性评分算法对比 LSTM vs. Transformer" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.901Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.902Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:06:16.903Z: 警告: 关键词 "critique of dense retrieval in memory-augmented agents" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:06:16.903Z: 警告: 关键词 "记忆蒸馏在推荐系统与对话系统中的迁移学习" 的搜索失败: Request failed with status code 503

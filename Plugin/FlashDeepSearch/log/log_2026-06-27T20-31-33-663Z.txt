@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-27T20:31:33.665Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:31:33.665Z: 研究主题: "Runway Gen AI video Sora OpenAI Pika AI video comparison review cost quality control 2025 2026", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T20:31:33.665Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:31:33.674Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:31:41.868Z: DeepSearchModel 原始响应: [KeyWord1:AI video generation tools comparative analysis 2025] [KeyWord2:Runway Gen-3 vs OpenAI Sora technical benchmark] [KeyWord3:生成式AI视频成本与ROI评估模型] [KeyWord4:AI视频质量控制与自动化评估框架] [KeyWord5:深度伪造风险与AI视频伦理法规进展] [KeyWord6:creative economy disruption by generative media 2026] [KeyWord7:2026年AI视频生成市场趋势与竞争格局] [KeyWord8:从电影史看AI视觉叙事的技术嬗变] [KeyWord9:Pika 2.0 feature review and user experience critique] [KeyWord10:Sora物理世界模拟局限与学术界争议] [KeyWord11:生成式AI内容版权归属与创作者身份重构] [KeyWord12:multimodal transformer architecture for long video synthesis]
+[FlashDeepSearch] 2026-06-27T20:31:41.868Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T20:31:41.868Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:31:41.868Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.869Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.870Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.870Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.871Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.875Z: 警告: 关键词 "AI video generation tools comparative analysis 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.876Z: 警告: 关键词 "Runway Gen-3 vs OpenAI Sora technical benchmark" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.877Z: 警告: 关键词 "深度伪造风险与AI视频伦理法规进展" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.878Z: 警告: 关键词 "生成式AI视频成本与ROI评估模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.879Z: 警告: 关键词 "AI视频质量控制与自动化评估框架" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.879Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.880Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.880Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.881Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.881Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.884Z: 警告: 关键词 "从电影史看AI视觉叙事的技术嬗变" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.884Z: 警告: 关键词 "creative economy disruption by generative media 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.885Z: 警告: 关键词 "Sora物理世界模拟局限与学术界争议" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.885Z: 警告: 关键词 "Pika 2.0 feature review and user experience critique" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.886Z: 警告: 关键词 "2026年AI视频生成市场趋势与竞争格局" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.886Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.886Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:41.889Z: 警告: 关键词 "multimodal transformer architecture for long video synthesis" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:41.889Z: 警告: 关键词 "生成式AI内容版权归属与创作者身份重构" 的搜索失败: Request failed with status code 503

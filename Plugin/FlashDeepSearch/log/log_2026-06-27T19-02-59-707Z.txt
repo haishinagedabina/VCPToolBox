@@ -1,0 +1,35 @@
+[FlashDeepSearch] 2026-06-27T19:02:59.709Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T19:02:59.709Z: 研究主题: "AI辅助科幻创作的整体版图、子领域、分类维度、核心技术和工具平台，包含AI写科幻小说、科幻世界观构建、AI生成科幻设定、科幻创作软件等方向", 搜索广度: 14
+[FlashDeepSearch] 2026-06-27T19:02:59.710Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T19:02:59.719Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T19:03:12.153Z: DeepSearchModel 原始响应: [KeyWord1:] AI-assisted science fiction worldbuilding platforms [KeyWord2:] Generative AI for speculative fiction writing [KeyWord3:] 计算叙事学与故事生成模型 [KeyWord4:] 科幻小说创作的AI共作者伦理 [KeyWord5:] AI-generated sci-fi and the crisis of authorship [KeyWord6:] 科幻世界观一致性约束推理 [KeyWord7:] AI写科幻：从情节到世界观的全流程系统 [KeyWord8:] Neural storytelling and science fiction literature [KeyWord9:] AI辅助科幻创作软件的用户认知模型 [KeyWord10:] 反对AI科幻：创意劳动异化与文学价值 [KeyWord11:] 生成式AI与科幻设定数据库构建 [KeyWord12:] 后人类主义与AI协同创作的文化批评 [KeyWord13:] AI生成科幻小说的出版市场与版权问题 [KeyWord14:] Creative computing for science fiction ideation
+[FlashDeepSearch] 2026-06-27T19:03:12.153Z: 成功提取到 14 个关键词。
+[FlashDeepSearch] 2026-06-27T19:03:12.153Z: 步骤 2: 并发执行 14 个搜索任务...
+[FlashDeepSearch] 2026-06-27T19:03:12.154Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.155Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.155Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.156Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.156Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.162Z: 警告: 关键词 "计算叙事学与故事生成模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.162Z: 警告: 关键词 "AI-assisted science fiction worldbuilding platforms" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.164Z: 警告: 关键词 "科幻小说创作的AI共作者伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.164Z: 警告: 关键词 "AI-generated sci-fi and the crisis of authorship" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.165Z: 警告: 关键词 "Generative AI for speculative fiction writing" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.165Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.166Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.166Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.167Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.167Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.170Z: 警告: 关键词 "科幻世界观一致性约束推理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.170Z: 警告: 关键词 "Neural storytelling and science fiction literature" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.171Z: 警告: 关键词 "反对AI科幻：创意劳动异化与文学价值" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.171Z: 警告: 关键词 "AI写科幻：从情节到世界观的全流程系统" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.171Z: 警告: 关键词 "AI辅助科幻创作软件的用户认知模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.171Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.172Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.172Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.172Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:03:12.174Z: 警告: 关键词 "Creative computing for science fiction ideation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.174Z: 警告: 关键词 "AI生成科幻小说的出版市场与版权问题" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.175Z: 警告: 关键词 "生成式AI与科幻设定数据库构建" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:03:12.175Z: 警告: 关键词 "后人类主义与AI协同创作的文化批评" 的搜索失败: Request failed with status code 503

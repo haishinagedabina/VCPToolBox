@@ -1,0 +1,33 @@
+[FlashDeepSearch] 2026-06-27T20:02:36.547Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:02:36.547Z: 研究主题: "Prompt工程的整体版图：包括Prompt Engineering的定义、核心子领域（如零样本提示、少样本提示、思维链CoT、结构化提示、自动提示优化、提示注入与安全等）、主流分类维度（按技术路线、按应用场景、按自动化程度）、以及当前主要技术流派和工具生态", 搜索广度: 13
+[FlashDeepSearch] 2026-06-27T20:02:36.547Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:02:36.556Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:02:42.552Z: DeepSearchModel 原始响应: [KeyWord1: 提示工程定义与分类] [KeyWord2: Prompt Engineering techniques] [KeyWord3: 零样本提示技术] [KeyWord4: Chain-of-Thought prompting] [KeyWord5: Automatic Prompt Optimization] [KeyWord6: Prompt injection attacks defenses] [KeyWord7: Structured prompt templates] [KeyWord8: Few-shot learning prompts] [KeyWord9: LangChain LlamaIndex Prompt Tools] [KeyWord10: 提示工程语言哲学] [KeyWord11: Prompt bias fairness ethics] [KeyWord12: Limitations of prompt engineering] [KeyWord13: Prompt engineering in healthcare law interdisciplinary]
+[FlashDeepSearch] 2026-06-27T20:02:42.553Z: 成功提取到 13 个关键词。
+[FlashDeepSearch] 2026-06-27T20:02:42.553Z: 步骤 2: 并发执行 13 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:02:42.553Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.554Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.555Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.555Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.556Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.561Z: 警告: 关键词 "提示工程定义与分类" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.562Z: 警告: 关键词 "Prompt Engineering techniques" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.562Z: 警告: 关键词 "零样本提示技术" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.563Z: 警告: 关键词 "Chain-of-Thought prompting" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.564Z: 警告: 关键词 "Automatic Prompt Optimization" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.564Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.565Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.565Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.566Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.567Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.569Z: 警告: 关键词 "LangChain LlamaIndex Prompt Tools" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.569Z: 警告: 关键词 "Few-shot learning prompts" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.570Z: 警告: 关键词 "Prompt injection attacks defenses" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.570Z: 警告: 关键词 "Structured prompt templates" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.571Z: 警告: 关键词 "提示工程语言哲学" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.572Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.572Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.572Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:42.573Z: 警告: 关键词 "Limitations of prompt engineering" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.574Z: 警告: 关键词 "Prompt bias fairness ethics" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:42.575Z: 警告: 关键词 "Prompt engineering in healthcare law interdisciplinary" 的搜索失败: Request failed with status code 503

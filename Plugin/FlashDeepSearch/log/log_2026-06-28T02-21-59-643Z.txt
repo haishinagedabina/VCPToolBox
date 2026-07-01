@@ -1,0 +1,42 @@
+[FlashDeepSearch] 2026-06-28T02:21:59.646Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T02:21:59.646Z: 研究主题: "语义缓存 Semantic Cache 技术架构：Embedding模型选型、向量数据库FAISS Milvus Qdrant对比、相似度阈值调优、缓存键设计（embedding向量做key vs 结构化key vs 原始文本key）、多轮对话缓存键设计、失效策略 TTL freshness score、多层缓存架构 语义缓存 Prompt Cache KV Cache 流水线协同", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T02:21:59.646Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T02:21:59.655Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T02:22:02.991Z: DeepSearchModel 原始响应: [KeyWord1:语义缓存 Embedding 模型选型]
+[KeyWord2:FAISS Milvus Qdrant 向量数据库 基准测试]
+[KeyWord3:相似度阈值 调优 语义缓存 命中率]
+[KeyWord4:缓存键设计 embedding 向量 结构化 文本 对比]
+[KeyWord5:多轮对话 缓存键 上下文 动态指纹]
+[KeyWord6:缓存失效 TTL 热度评分 新鲜度 策略]
+[KeyWord7:多层缓存 语义缓存 Prompt Cache KV Cache 流水线]
+[KeyWord8:语义缓存 查询改写 语义漂移 负面影响]
+[KeyWord9:semantic cache architecture LLM serving optimization]
+[KeyWord10:历史视角 计算机缓存 语义缓存 演进]
+[KeyWord11:伦理批判 缓存偏见 信息茧房 AI公平性]
+[KeyWord12:哲学反思 语言表征 意义凝固 缓存中的时间性]
+[FlashDeepSearch] 2026-06-28T02:22:02.991Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T02:22:02.991Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T02:22:02.991Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:02.992Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:02.993Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:02.993Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:02.994Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:03.003Z: 警告: 关键词 "语义缓存 Embedding 模型选型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.004Z: 警告: 关键词 "缓存键设计 embedding 向量 结构化 文本 对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.004Z: 警告: 关键词 "多轮对话 缓存键 上下文 动态指纹" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.006Z: 警告: 关键词 "FAISS Milvus Qdrant 向量数据库 基准测试" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.006Z: 警告: 关键词 "相似度阈值 调优 语义缓存 命中率" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.006Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:03.007Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:03.007Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:03.008Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:03.009Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:03.011Z: 警告: 关键词 "语义缓存 查询改写 语义漂移 负面影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.011Z: 警告: 关键词 "semantic cache architecture LLM serving optimization" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.012Z: 警告: 关键词 "历史视角 计算机缓存 语义缓存 演进" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.012Z: 警告: 关键词 "缓存失效 TTL 热度评分 新鲜度 策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.013Z: 警告: 关键词 "多层缓存 语义缓存 Prompt Cache KV Cache 流水线" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.013Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:03.013Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:22:03.015Z: 警告: 关键词 "哲学反思 语言表征 意义凝固 缓存中的时间性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:22:03.015Z: 警告: 关键词 "伦理批判 缓存偏见 信息茧房 AI公平性" 的搜索失败: Request failed with status code 503

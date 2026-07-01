@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T21:26:10.097Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:26:10.098Z: 研究主题: "结构化 Prompt 的底层原理：自回归生成机制下 LLM 为什么能遵从格式约束，token 预测与 attention 模式如何解释格式顺从，结构化输出（JSON/XML/Markdown）的技术原理与 prompt engineering 最佳实践", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T21:26:10.098Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:26:10.106Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:26:20.069Z: DeepSearchModel 原始响应: [KeyWord1:] 自回归生成 (Autoregressive Generation) [KeyWord2:] Token Prediction Constraints [KeyWord3:] Attention Pattern Imposition [KeyWord4:] Prompt Engineering 格式约束 [KeyWord5:] 结构化输出解码 (Constrained Decoding) [KeyWord6:] 语法遵循与语义涌现 [KeyWord7:] JSON Schema Injection 技术 [KeyWord8:] 格式顺从的涌现行为 (Emergent Format Compliance) [KeyWord9:] 认知语言学视角下的指令跟随 [KeyWord10:] 符号接地与格式意义 [KeyWord11:] 提示注入与格式劫持 (Prompt Injection) [KeyWord12:] 自动化工作流中的结构化生成 [KeyWord13:] Markdown 文化史 (Cultural History of Markdown) [KeyWord14:] 大模型输出鲁棒性 (Output Robustness) [KeyWord15:] 交叉学科：认知科学与提示工程
+[FlashDeepSearch] 2026-06-27T21:26:20.069Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T21:26:20.070Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:26:20.070Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.071Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.072Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.073Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.073Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.077Z: 警告: 关键词 "自回归生成 (Autoregressive Generation)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.078Z: 警告: 关键词 "Token Prediction Constraints" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.078Z: 警告: 关键词 "Attention Pattern Imposition" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.079Z: 警告: 关键词 "结构化输出解码 (Constrained Decoding)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.080Z: 警告: 关键词 "Prompt Engineering 格式约束" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.080Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.080Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.081Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.082Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.082Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.085Z: 警告: 关键词 "语法遵循与语义涌现" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.086Z: 警告: 关键词 "JSON Schema Injection 技术" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.086Z: 警告: 关键词 "格式顺从的涌现行为 (Emergent Format Compliance)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.087Z: 警告: 关键词 "认知语言学视角下的指令跟随" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.087Z: 警告: 关键词 "符号接地与格式意义" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.087Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.088Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.088Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.088Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.089Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:26:20.090Z: 警告: 关键词 "交叉学科：认知科学与提示工程" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.091Z: 警告: 关键词 "大模型输出鲁棒性 (Output Robustness)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.091Z: 警告: 关键词 "提示注入与格式劫持 (Prompt Injection)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.092Z: 警告: 关键词 "自动化工作流中的结构化生成" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:26:20.093Z: 警告: 关键词 "Markdown 文化史 (Cultural History of Markdown)" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-28T01:42:32.423Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:42:32.423Z: 研究主题: "Prompt Cache 前缀触发机制 分层存储 缓存管理 vLLM Automatic Prefix Caching APC 实现细节 KV Cache 分层存储 GPU 显存 CPU 内存 SSD offloading 缓存淘汰策略 生命周期管理 前缀复用 局部失效 增量复用", 搜索广度: 15
+[FlashDeepSearch] 2026-06-28T01:42:32.423Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:42:32.433Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:42:47.657Z: DeepSearchModel 原始响应: [KeyWord1:] vLLM Automatic Prefix Caching 实现细节 [KeyWord2:] KV Cache 分层存储 GPU CPU SSD offloading [KeyWord3:] prompt prefix reuse incremental recomputation [KeyWord4:] cache eviction policy lifecycle management LLM [KeyWord5:] 前缀缓存局部失效与一致性维护 [KeyWord6:] 大语言模型推理缓存 经济性分析 [KeyWord7:] resource waste in prompt caching energy efficiency [KeyWord8:] 操作系统页面缓存 启发 前缀缓存设计 [KeyWord9:] prefix caching fairness multi-tenant serving [KeyWord10:] prefix caching limitations cold start overhead [KeyWord11:] GPU显存优化 大模型服务 可持续计算 [KeyWord12:] 历史视角：从Web缓存到LLM前缀缓存 [KeyWord13:] KV cache 缓存淘汰 LRU vs LFU 性能对比 [KeyWord14:] prefix tree structure token reuse scenario [KeyWord15:] SSD offloading 对延迟影响 量化分析
+[FlashDeepSearch] 2026-06-28T01:42:47.657Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-28T01:42:47.657Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:42:47.657Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.658Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.659Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.659Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.660Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.665Z: 警告: 关键词 "vLLM Automatic Prefix Caching 实现细节" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.666Z: 警告: 关键词 "KV Cache 分层存储 GPU CPU SSD offloading" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.667Z: 警告: 关键词 "cache eviction policy lifecycle management LLM" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.667Z: 警告: 关键词 "前缀缓存局部失效与一致性维护" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.668Z: 警告: 关键词 "prompt prefix reuse incremental recomputation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.668Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.669Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.670Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.671Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.671Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.674Z: 警告: 关键词 "prefix caching fairness multi-tenant serving" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.674Z: 警告: 关键词 "操作系统页面缓存 启发 前缀缓存设计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.675Z: 警告: 关键词 "prefix caching limitations cold start overhead" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.675Z: 警告: 关键词 "大语言模型推理缓存 经济性分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.676Z: 警告: 关键词 "resource waste in prompt caching energy efficiency" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.676Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.676Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.677Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.677Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.677Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:42:47.679Z: 警告: 关键词 "GPU显存优化 大模型服务 可持续计算" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.679Z: 警告: 关键词 "历史视角：从Web缓存到LLM前缀缓存" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.680Z: 警告: 关键词 "KV cache 缓存淘汰 LRU vs LFU 性能对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.680Z: 警告: 关键词 "prefix tree structure token reuse scenario" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:42:47.681Z: 警告: 关键词 "SSD offloading 对延迟影响 量化分析" 的搜索失败: Request failed with status code 503

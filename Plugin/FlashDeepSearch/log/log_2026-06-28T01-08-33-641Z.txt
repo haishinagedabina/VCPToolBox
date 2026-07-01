@@ -1,0 +1,36 @@
+[FlashDeepSearch] 2026-06-28T01:08:33.645Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:08:33.645Z: 研究主题: "Prompt Cache LLM inference optimization principle, comparison of SGLang RadixAttention vs vLLM automatic prefix caching, performance benchmark", 搜索广度: 15
+[FlashDeepSearch] 2026-06-28T01:08:33.646Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:08:33.655Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:08:39.464Z: DeepSearchModel 原始响应: [KeyWord1:Prompt caching LLM inference] [KeyWord2:RadixAttention SGLang] [KeyWord3:vLLM automatic prefix caching] [KeyWord4:KV cache optimization] [KeyWord5:大模型推理加速 前缀缓存原理] [KeyWord6:LLM serving system performance benchmark] [KeyWord7:SGLang vs vLLM throughput latency] [KeyWord8:Transformer attention prefix sharing] [KeyWord9:缓存感知调度 推理引擎] [KeyWord10:vLLM PagedAttention 前缀缓存对比] [KeyWord11:Radix tree 前缀匹配 缓存复用] [KeyWord12:长文本推理 缓存命中率 评测] [KeyWord13:批判视角 LLM缓存失效开销] [KeyWord14:多轮对话 系统提示缓存 经济效益] [KeyWord15:Prefix caching 标准化 开源评测框架]
+[FlashDeepSearch] 2026-06-28T01:08:39.464Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-28T01:08:39.464Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:08:39.465Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.465Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.466Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.466Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.467Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.473Z: 警告: 关键词 "Prompt caching LLM inference" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.475Z: 警告: 关键词 "RadixAttention SGLang" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.476Z: 警告: 关键词 "KV cache optimization" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.476Z: 警告: 关键词 "vLLM automatic prefix caching" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.477Z: 警告: 关键词 "大模型推理加速 前缀缓存原理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.477Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.478Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.478Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.479Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.479Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.481Z: 警告: 关键词 "Transformer attention prefix sharing" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.481Z: 警告: 关键词 "缓存感知调度 推理引擎" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.482Z: 警告: 关键词 "vLLM PagedAttention 前缀缓存对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.484Z: 警告: 关键词 "LLM serving system performance benchmark" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.485Z: 警告: 关键词 "SGLang vs vLLM throughput latency" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.485Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.485Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.486Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.486Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.486Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:08:39.488Z: 警告: 关键词 "多轮对话 系统提示缓存 经济效益" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.488Z: 警告: 关键词 "Radix tree 前缀匹配 缓存复用" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.489Z: 警告: 关键词 "Prefix caching 标准化 开源评测框架" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:08:39.490Z: 警告: 关键词 "批判视角 LLM缓存失效开销" 的搜索失败: Request failed with status code 503

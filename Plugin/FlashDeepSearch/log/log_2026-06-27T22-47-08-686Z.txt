@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T22:47:08.689Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:47:08.689Z: 研究主题: "Agent 记忆系统的维护机制与多 Agent 记忆同步方案，包括记忆衰减与遗忘曲线建模、反射式自我摘要 Reflextion/Summarization、记忆压缩 distillation、多 Agent 共享记忆池 CRDT OT 冲突解决、MemGPT Letta LangChain LlamaIndex Cognee Mem0 Zep 等框架的记忆维护与同步设计对比", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T22:47:08.689Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:47:08.698Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:47:25.511Z: DeepSearchModel 原始响应: [KeyWord1:] Agent Memory Maintenance 智能体记忆维护 [KeyWord2:] Forgetting Curve Modeling 遗忘曲线建模 [KeyWord3:] Reflective Summarization 反射式自我摘要 [KeyWord4:] Memory Distillation and Compression 记忆蒸馏与压缩 [KeyWord5:] Multi-Agent Shared Memory Pool 多智能体共享记忆池 [KeyWord6:] CRDT and OT Conflict Resolution CRDT与OT冲突解决 [KeyWord7:] MemGPT Letta Memory Design 对比 MemGPT与Letta记忆设计 [KeyWord8:] LangChain Memory Types 分析 LangChain记忆类型 [KeyWord9:] LlamaIndex MemoryStore Backend LlamaIndex记忆存储后端 [KeyWord10:] Cognee Mem0 Zep Memory Sync Frameworks Cognee Mem0 Zep记忆同步框架 [KeyWord11:] Cost-Efficiency of Agent Memory Sync 智能体记忆同步成本效益 [KeyWord12:] Ethics of Machine Forgetting 机器遗忘伦理 [KeyWord13:] Memory-induced Bias and Hallucination 记忆诱导偏见与幻觉 [KeyWord14:] Evolution of Agent Memory Architectures 智能体记忆架构演进 [KeyWord15:] Multi-agent Memory Consistency Models 多智能体记忆一致性模型
+[FlashDeepSearch] 2026-06-27T22:47:25.512Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T22:47:25.512Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:47:25.512Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.513Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.514Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.514Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.515Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.520Z: 警告: 关键词 "Forgetting Curve Modeling 遗忘曲线建模" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.520Z: 警告: 关键词 "Memory Distillation and Compression 记忆蒸馏与压缩" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.521Z: 警告: 关键词 "Multi-Agent Shared Memory Pool 多智能体共享记忆池" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.522Z: 警告: 关键词 "Reflective Summarization 反射式自我摘要" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.600Z: 警告: 关键词 "Agent Memory Maintenance 智能体记忆维护" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.600Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.601Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.602Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.603Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.604Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.607Z: 警告: 关键词 "LangChain Memory Types 分析 LangChain记忆类型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.608Z: 警告: 关键词 "CRDT and OT Conflict Resolution CRDT与OT冲突解决" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.609Z: 警告: 关键词 "Cognee Mem0 Zep Memory Sync Frameworks Cognee Mem0 Zep记忆同步框架" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.610Z: 警告: 关键词 "MemGPT Letta Memory Design 对比 MemGPT与Letta记忆设计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.611Z: 警告: 关键词 "LlamaIndex MemoryStore Backend LlamaIndex记忆存储后端" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.611Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.611Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.611Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.612Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.612Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:25.615Z: 警告: 关键词 "Cost-Efficiency of Agent Memory Sync 智能体记忆同步成本效益" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.615Z: 警告: 关键词 "Evolution of Agent Memory Architectures 智能体记忆架构演进" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.616Z: 警告: 关键词 "Multi-agent Memory Consistency Models 多智能体记忆一致性模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.617Z: 警告: 关键词 "Memory-induced Bias and Hallucination 记忆诱导偏见与幻觉" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:25.618Z: 警告: 关键词 "Ethics of Machine Forgetting 机器遗忘伦理" 的搜索失败: Request failed with status code 503

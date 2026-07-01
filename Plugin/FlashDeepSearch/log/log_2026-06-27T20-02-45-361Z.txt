@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-27T20:02:45.364Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:02:45.364Z: 研究主题: "Prompt Engineering版图与分类：少样本、思维链、结构化提示、自动优化、提示安全等子领域，技术流派与工具生态", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T20:02:45.364Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:02:45.373Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:02:57.139Z: DeepSearchModel 原始响应: [KeyWord1:] Prompt Engineering Taxonomy 提示工程分类法 [KeyWord2:] Few-shot Prompting 少样本提示 [KeyWord3:] Chain-of-Thought Prompting 思维链 [KeyWord4:] Structured Prompting 结构化提示 [KeyWord5:] Automatic Prompt Optimization 自动提示优化 [KeyWord6:] Prompt Injection Security 提示注入安全 [KeyWord7:] Prompt Engineering Tools Ecosystem 提示工程工具生态 [KeyWord8:] Cultural Bias in Prompts 提示中的文化偏见 [KeyWord9:] Prompt Engineering Ethics 提示工程伦理 [KeyWord10:] Critique of Prompt Engineering 提示工程批判 [KeyWord11:] Prompt Engineering Job Market 提示工程师就业市场 [KeyWord12:] History of Prompt Engineering 提示工程发展史
+[FlashDeepSearch] 2026-06-27T20:02:57.139Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T20:02:57.140Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:02:57.140Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.141Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.141Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.142Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.142Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.149Z: 警告: 关键词 "Few-shot Prompting 少样本提示" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.150Z: 警告: 关键词 "Structured Prompting 结构化提示" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.150Z: 警告: 关键词 "Prompt Engineering Taxonomy 提示工程分类法" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.150Z: 警告: 关键词 "Automatic Prompt Optimization 自动提示优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.150Z: 警告: 关键词 "Chain-of-Thought Prompting 思维链" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.151Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.151Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.152Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.152Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.153Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.156Z: 警告: 关键词 "Prompt Injection Security 提示注入安全" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.156Z: 警告: 关键词 "Cultural Bias in Prompts 提示中的文化偏见" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.157Z: 警告: 关键词 "Prompt Engineering Ethics 提示工程伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.159Z: 警告: 关键词 "Prompt Engineering Tools Ecosystem 提示工程工具生态" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.159Z: 警告: 关键词 "Critique of Prompt Engineering 提示工程批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.159Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.160Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:02:57.162Z: 警告: 关键词 "Prompt Engineering Job Market 提示工程师就业市场" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:02:57.162Z: 警告: 关键词 "History of Prompt Engineering 提示工程发展史" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T22:53:44.956Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:53:44.957Z: 研究主题: "Agent 长期记忆存储方案架构，短期记忆与长期记忆的交互机制，向量数据库如Pinecone, Weaviate, Milvus, Qdrant, pgvector在Agent记忆场景下的对比，短期记忆向长期记忆的衰减与合并算法工程实践。", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T22:53:44.957Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:53:44.965Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:53:55.534Z: DeepSearchModel 原始响应: [KeyWord1:] Agent长期记忆存储架构与交互协议 [KeyWord2:] Short-Term to Long-Term Memory Consolidation Algorithms [KeyWord3:] 向量数据库Pinecone Weaviate Milvus Qdrant pgvector 基准测试对比 [KeyWord4:] Memory Decay and Forgetting Curves in Agent Systems [KeyWord5:] 认知架构中的情景记忆与语义记忆映射 [KeyWord6:] Retrieval-Augmented Generation with Persistent Context [KeyWord7:] 分布式记忆一致性与向量索引分片 [KeyWord8:] 记忆衰减的数学建模与工程实践 [KeyWord9:] Agent Memory Ethics and the Right to Be Forgotten [KeyWord10:] 短期记忆的上下文窗口管理与溢出策略 [KeyWord11:] Hippocampal Memory Replay for Continual Learning [KeyWord12:] 记忆图谱构建与多跳推理检索 [KeyWord13:] 长期记忆持久化技术栈与混合存储 [KeyWord14:] Cross-Session Coherence via Hierarchical Summarization [KeyWord15:] 向量相似度搜索的近似最近邻加速方案
+[FlashDeepSearch] 2026-06-27T22:53:55.535Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T22:53:55.535Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:53:55.535Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.536Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.537Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.537Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.538Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.541Z: 警告: 关键词 "Agent长期记忆存储架构与交互协议" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.542Z: 警告: 关键词 "Short-Term to Long-Term Memory Consolidation Algorithms" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.543Z: 警告: 关键词 "向量数据库Pinecone Weaviate Milvus Qdrant pgvector 基准测试对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.544Z: 警告: 关键词 "认知架构中的情景记忆与语义记忆映射" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.544Z: 警告: 关键词 "Memory Decay and Forgetting Curves in Agent Systems" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.544Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.545Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.545Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.546Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.547Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.549Z: 警告: 关键词 "分布式记忆一致性与向量索引分片" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.550Z: 警告: 关键词 "记忆衰减的数学建模与工程实践" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.550Z: 警告: 关键词 "短期记忆的上下文窗口管理与溢出策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.551Z: 警告: 关键词 "Retrieval-Augmented Generation with Persistent Context" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.551Z: 警告: 关键词 "Agent Memory Ethics and the Right to Be Forgotten" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.551Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.551Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.552Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.552Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.552Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:53:55.554Z: 警告: 关键词 "Hippocampal Memory Replay for Continual Learning" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.554Z: 警告: 关键词 "Cross-Session Coherence via Hierarchical Summarization" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.555Z: 警告: 关键词 "向量相似度搜索的近似最近邻加速方案" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.555Z: 警告: 关键词 "长期记忆持久化技术栈与混合存储" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:53:55.555Z: 警告: 关键词 "记忆图谱构建与多跳推理检索" 的搜索失败: Request failed with status code 503

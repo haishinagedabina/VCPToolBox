@@ -1,0 +1,51 @@
+[FlashDeepSearch] 2026-06-27T19:30:31.977Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T19:30:31.978Z: 研究主题: "科幻创作角色 世界观 情节 三角协同设计工作流和方法论 AI 辅助交叉一致性校验 构建有机整体 从角色推导世界观 从规则推导情节 端到端案例", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T19:30:31.978Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T19:30:31.986Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T19:30:39.712Z: DeepSearchModel 原始响应: [KeyWord1: 科幻角色世界观情节协同设计工作流]
+[KeyWord2: AI-assisted narrative consistency verification]
+[KeyWord3: character-driven worldbuilding methodology]
+[KeyWord4: 从规则推导情节的生成叙事]
+[KeyWord5: 端到端科幻创作案例]
+[KeyWord6: 跨媒体叙事一致性校验工具]
+[KeyWord7: ontological coherence in fictional worlds]
+[KeyWord8: 协同创作中的AI伦理与创意主体性]
+[KeyWord9: narrative knowledge graph for story design]
+[KeyWord10: 反公式化创作与AI系统局限性批判]
+[KeyWord11: 角色原型与世界观推导的认知心理学]
+[KeyWord12: procedurally generated plot from rule-based systems]
+[KeyWord13: 影视工业化中的三角协同设计模式]
+[KeyWord14: 粉丝共创与IP宇宙一致性维护]
+[KeyWord15: 科幻世界构建的跨文化哲学基础]
+[FlashDeepSearch] 2026-06-27T19:30:39.713Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T19:30:39.713Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T19:30:39.714Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.715Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.716Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.716Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.717Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.723Z: 警告: 关键词 "科幻角色世界观情节协同设计工作流" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.723Z: 警告: 关键词 "AI-assisted narrative consistency verification" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.725Z: 警告: 关键词 "从规则推导情节的生成叙事" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.726Z: 警告: 关键词 "端到端科幻创作案例" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.727Z: 警告: 关键词 "character-driven worldbuilding methodology" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.727Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.727Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.728Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.729Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.729Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.732Z: 警告: 关键词 "跨媒体叙事一致性校验工具" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.732Z: 警告: 关键词 "narrative knowledge graph for story design" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.733Z: 警告: 关键词 "ontological coherence in fictional worlds" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.733Z: 警告: 关键词 "反公式化创作与AI系统局限性批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.733Z: 警告: 关键词 "协同创作中的AI伦理与创意主体性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.733Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.734Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.734Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.734Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.735Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:39.737Z: 警告: 关键词 "粉丝共创与IP宇宙一致性维护" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.738Z: 警告: 关键词 "角色原型与世界观推导的认知心理学" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.738Z: 警告: 关键词 "科幻世界构建的跨文化哲学基础" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.739Z: 警告: 关键词 "影视工业化中的三角协同设计模式" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:39.739Z: 警告: 关键词 "procedurally generated plot from rule-based systems" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,51 @@
+[FlashDeepSearch] 2026-06-28T04:18:42.886Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T04:18:42.886Z: 研究主题: "Prefill Decode Disaggregation in Large Language Model inference, architecture, KV Cache migration, and performance comparison. Splitwise, DistServe, Mooncake.", 搜索广度: 15
+[FlashDeepSearch] 2026-06-28T04:18:42.886Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T04:18:42.896Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T04:18:56.276Z: DeepSearchModel 原始响应: [KeyWord1:] 预填充-解码分离架构
+[KeyWord2:] Prefill-decode disaggregation
+[KeyWord3:] Splitwise distributed inference
+[KeyWord4:] DistServe scheduling
+[KeyWord5:] Mooncake KV cache migration
+[KeyWord6:] 大语言模型推理性能对比
+[KeyWord7:] KV Cache placement optimization
+[KeyWord8:] 分布式推理的通信瓶颈
+[KeyWord9:] 成本效率与资源利用率
+[KeyWord10:] 能效比与碳排放评估
+[KeyWord11:] 异构计算协同调度
+[KeyWord12:] 分离式系统的延迟与吞吐量权衡
+[KeyWord13:] 推理服务的经济学模型
+[KeyWord14:] 分离式架构的历史演变
+[KeyWord15:] 大模型推理的伦理与公平性
+[FlashDeepSearch] 2026-06-28T04:18:56.277Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-28T04:18:56.277Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-28T04:18:56.277Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.278Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.279Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.279Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.280Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.285Z: 警告: 关键词 "Prefill-decode disaggregation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.285Z: 警告: 关键词 "Splitwise distributed inference" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.286Z: 警告: 关键词 "DistServe scheduling" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.286Z: 警告: 关键词 "预填充-解码分离架构" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.287Z: 警告: 关键词 "Mooncake KV cache migration" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.287Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.288Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.288Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.289Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.290Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.292Z: 警告: 关键词 "成本效率与资源利用率" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.293Z: 警告: 关键词 "KV Cache placement optimization" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.294Z: 警告: 关键词 "能效比与碳排放评估" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.296Z: 警告: 关键词 "分布式推理的通信瓶颈" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.298Z: 警告: 关键词 "大语言模型推理性能对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.299Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.299Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.299Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.300Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.300Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:18:56.302Z: 警告: 关键词 "推理服务的经济学模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.303Z: 警告: 关键词 "异构计算协同调度" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.304Z: 警告: 关键词 "大模型推理的伦理与公平性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.304Z: 警告: 关键词 "分离式架构的历史演变" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:18:56.305Z: 警告: 关键词 "分离式系统的延迟与吞吐量权衡" 的搜索失败: Request failed with status code 503

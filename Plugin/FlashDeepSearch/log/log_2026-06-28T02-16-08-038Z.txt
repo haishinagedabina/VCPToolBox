@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-28T02:16:08.040Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T02:16:08.041Z: 研究主题: "LLM guard cache performance benchmark, latency reduction cost savings with content moderation cache, shared prompt guard cache performance metrics, experiments on moderation cache hit ratio", 搜索广度: 15
+[FlashDeepSearch] 2026-06-28T02:16:08.041Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T02:16:08.051Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T02:16:20.998Z: DeepSearchModel 原始响应: [KeyWord1:]LLM guard cache hit ratio experiments [KeyWord2:]内容审核缓存延迟降低 [KeyWord3:]shared prompt guard performance metrics [KeyWord4:]大模型安全防护缓存命中率优化 [KeyWord5:]moderation cache cost savings [KeyWord6:]缓存共享提示安全检测延迟优化 [KeyWord7:]semantic cache for content moderation [KeyWord8:]安全与效率权衡缓存伦理 [KeyWord9:]critical analysis of moderation cache false negatives [KeyWord10:]跨文化内容过滤缓存偏见 [KeyWord11:]history of content filtering cache systems [KeyWord12:]缓存命中率基准测试经济分析 [KeyWord13:]privacy implications of shared guard cache [KeyWord14:]LLM审核缓存安全漏洞风险 [KeyWord15:]performance benchmark of safety guard caching
+[FlashDeepSearch] 2026-06-28T02:16:20.998Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-28T02:16:20.999Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-28T02:16:20.999Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.000Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.001Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.001Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.002Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.007Z: 警告: 关键词 "LLM guard cache hit ratio experiments" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.007Z: 警告: 关键词 "shared prompt guard performance metrics" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.008Z: 警告: 关键词 "moderation cache cost savings" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.009Z: 警告: 关键词 "大模型安全防护缓存命中率优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.010Z: 警告: 关键词 "内容审核缓存延迟降低" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.011Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.011Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.012Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.013Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.013Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.016Z: 警告: 关键词 "安全与效率权衡缓存伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.016Z: 警告: 关键词 "缓存共享提示安全检测延迟优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.016Z: 警告: 关键词 "跨文化内容过滤缓存偏见" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.017Z: 警告: 关键词 "critical analysis of moderation cache false negatives" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.017Z: 警告: 关键词 "semantic cache for content moderation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.017Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.018Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.018Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.018Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.018Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:16:21.020Z: 警告: 关键词 "缓存命中率基准测试经济分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.021Z: 警告: 关键词 "LLM审核缓存安全漏洞风险" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.021Z: 警告: 关键词 "performance benchmark of safety guard caching" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.022Z: 警告: 关键词 "privacy implications of shared guard cache" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:16:21.023Z: 警告: 关键词 "history of content filtering cache systems" 的搜索失败: Request failed with status code 503

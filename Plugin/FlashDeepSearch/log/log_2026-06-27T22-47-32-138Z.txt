@@ -1,0 +1,35 @@
+[FlashDeepSearch] 2026-06-27T22:47:32.140Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:47:32.140Z: 研究主题: "LLM Agent memory maintenance forgetting curve reflection summarization compression multi-agent shared memory CRDT conflict resolution MemGPT Letta LangChain", 搜索广度: 10
+[FlashDeepSearch] 2026-06-27T22:47:32.140Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:47:32.149Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:47:35.623Z: DeepSearchModel 原始响应: [KeyWord1:大语言模型智能体记忆衰减曲线维护]
+[KeyWord2:LLM agent episodic memory compression with forgetting curve]
+[KeyWord3:反思摘要机制与知识固化]
+[KeyWord4:MemGPT分层记忆管理调度]
+[KeyWord5:多智能体共享记忆的CRDT冲突消解]
+[KeyWord6:从LangChain到Letta的持久化记忆架构演进]
+[KeyWord7:memory maintenance in autonomous cognitive architectures]
+[KeyWord8:遗忘曲线与长上下文模型的伦理遗忘权]
+[KeyWord9:分布式智能体状态同步的弱一致性设计]
+[KeyWord10:记忆反思的哲学基础——从艾宾浩斯到机器遗忘]
+[FlashDeepSearch] 2026-06-27T22:47:35.623Z: 成功提取到 10 个关键词。
+[FlashDeepSearch] 2026-06-27T22:47:35.623Z: 步骤 2: 并发执行 10 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:47:35.624Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.625Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.626Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.627Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.628Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.632Z: 警告: 关键词 "大语言模型智能体记忆衰减曲线维护" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:35.634Z: 警告: 关键词 "LLM agent episodic memory compression with forgetting curve" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:35.635Z: 警告: 关键词 "MemGPT分层记忆管理调度" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:35.635Z: 警告: 关键词 "多智能体共享记忆的CRDT冲突消解" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:35.636Z: 警告: 关键词 "反思摘要机制与知识固化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:35.636Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.637Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.637Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.638Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.638Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:47:35.641Z: 警告: 关键词 "从LangChain到Letta的持久化记忆架构演进" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:35.642Z: 警告: 关键词 "记忆反思的哲学基础——从艾宾浩斯到机器遗忘" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:35.643Z: 警告: 关键词 "分布式智能体状态同步的弱一致性设计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:47:35.643Z: 警告: 关键词 "memory maintenance in autonomous cognitive architectures" 的搜索失败: Request failed with status code 503

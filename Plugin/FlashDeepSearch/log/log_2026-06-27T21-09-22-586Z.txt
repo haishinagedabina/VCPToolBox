@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-27T21:09:22.589Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:09:22.589Z: 研究主题: "LLM Prompt Engineering for structured output: how to control JSON, Markdown, table, and list formats in system prompts and few-shot examples. Include techniques for format stability, JSON mode, and output parsing.", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T21:09:22.589Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:09:22.599Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:09:27.012Z: DeepSearchModel 原始响应: [KeyWord1: Prompt Engineering for Structured Output: JSON Schema Enforcement] [KeyWord2: 大语言模型输出格式控制技术] [KeyWord3: Few-Shot Examples for Markdown & Table Generation] [KeyWord4: Format Stability in LLM Prompt Design] [KeyWord5: JSON Mode and Function Calling Accuracy] [KeyWord6: 输出解析器与正则表达式结合鲁棒性研究] [KeyWord7: Social Impact of Structured vs. Unstructured AI Responses] [KeyWord8: Prompt格式演化的历史与标准化进程] [KeyWord9: Ethical Risks of Over-Structuring LLM Outputs] [KeyWord10: Critique of Prompt-Based Format Control: Steerability Pitfalls] [KeyWord11: Cross-Disciplinary Applications of Structured LLM Output in Biomedicine] [KeyWord12: 哲学视角下的人工智能语言生成与格式约束悖论]
+[FlashDeepSearch] 2026-06-27T21:09:27.012Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T21:09:27.012Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:09:27.012Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.013Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.013Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.014Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.014Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.018Z: 警告: 关键词 "Prompt Engineering for Structured Output: JSON Schema Enforcement" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.019Z: 警告: 关键词 "Few-Shot Examples for Markdown & Table Generation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.020Z: 警告: 关键词 "Format Stability in LLM Prompt Design" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.021Z: 警告: 关键词 "JSON Mode and Function Calling Accuracy" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.022Z: 警告: 关键词 "大语言模型输出格式控制技术" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.022Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.022Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.023Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.024Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.024Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.026Z: 警告: 关键词 "Social Impact of Structured vs. Unstructured AI Responses" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.026Z: 警告: 关键词 "Prompt格式演化的历史与标准化进程" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.027Z: 警告: 关键词 "Critique of Prompt-Based Format Control: Steerability Pitfalls" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.027Z: 警告: 关键词 "Ethical Risks of Over-Structuring LLM Outputs" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.028Z: 警告: 关键词 "输出解析器与正则表达式结合鲁棒性研究" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.028Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.028Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:09:27.029Z: 警告: 关键词 "Cross-Disciplinary Applications of Structured LLM Output in Biomedicine" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:09:27.030Z: 警告: 关键词 "哲学视角下的人工智能语言生成与格式约束悖论" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-27T23:52:27.712Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T23:52:27.712Z: 研究主题: "深度研究类AI Agent的整体架构、关键环节、分类维度以及与其他Agent类型的区别", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T23:52:27.712Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T23:52:27.721Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T23:52:35.255Z: DeepSearchModel 原始响应: [KeyWord1:] 深度研究型AI Agent整体架构与模块设计 [KeyWord2:] Multi-step reasoning and self-reflection mechanisms [KeyWord3:] 检索增强生成(RAG)与知识图谱协同 [KeyWord4:] Research autonomy levels classification [KeyWord5:] 对话式Agent vs. 任务执行Agent边界对比 [KeyWord6:] 科学研究自动化中的幻觉与事实核查缺陷 [KeyWord7:] Multi-agent collaboration for literature review [KeyWord8:] 长期记忆与上下文管理对长程研究的影响 [KeyWord9:] 研究伦理与AI Assisted Knowledge Production偏见 [KeyWord10:] Economic impact of deep research agents on knowledge work [KeyWord11:] 工具调用、API编排与实验环境交互 [KeyWord12:] Agentic workflow orchestration in complex inquiry
+[FlashDeepSearch] 2026-06-27T23:52:35.256Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T23:52:35.256Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T23:52:35.256Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.257Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.257Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.258Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.259Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.267Z: 警告: 关键词 "Multi-step reasoning and self-reflection mechanisms" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.267Z: 警告: 关键词 "深度研究型AI Agent整体架构与模块设计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.267Z: 警告: 关键词 "Research autonomy levels classification" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.268Z: 警告: 关键词 "对话式Agent vs. 任务执行Agent边界对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.270Z: 警告: 关键词 "检索增强生成(RAG)与知识图谱协同" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.271Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.271Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.272Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.272Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.273Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.275Z: 警告: 关键词 "研究伦理与AI Assisted Knowledge Production偏见" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.275Z: 警告: 关键词 "科学研究自动化中的幻觉与事实核查缺陷" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.276Z: 警告: 关键词 "长期记忆与上下文管理对长程研究的影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.277Z: 警告: 关键词 "Multi-agent collaboration for literature review" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.277Z: 警告: 关键词 "Economic impact of deep research agents on knowledge work" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.277Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.277Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:52:35.279Z: 警告: 关键词 "Agentic workflow orchestration in complex inquiry" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:52:35.280Z: 警告: 关键词 "工具调用、API编排与实验环境交互" 的搜索失败: Request failed with status code 503

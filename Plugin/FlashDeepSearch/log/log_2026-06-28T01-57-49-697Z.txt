@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-28T01:57:49.700Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:57:49.700Z: 研究主题: "GPTCache architecture semantic cache LLM response caching, exact match vs embedding similarity threshold, cache key design prompt hash vs normalized hash vs embedding, RAG cache invalidation strategy, cache warmup and TTL, LangChain Cache Redis cache comparison, LLM inference cost savings result cache hit rate", 搜索广度: 15
+[FlashDeepSearch] 2026-06-28T01:57:49.700Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:57:49.709Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:58:03.229Z: DeepSearchModel 原始响应: [KeyWord1: Semantic cache architecture GPTCache] [KeyWord2: Exact match vs embedding similarity threshold] [KeyWord3: Cache key design prompt hash vs normalized hash vs embedding] [KeyWord4: RAG cache invalidation strategy] [KeyWord5: LLM inference cost savings cache hit rate] [KeyWord6: 向量相似度缓存阈值优化] [KeyWord7: LangChain Cache 与 Redis 缓存对比] [KeyWord8: 缓存预热与 TTL 策略] [KeyWord9: 语义缓存导致的响应偏差与公平性] [KeyWord10: 绿色AI 计算资源节约] [KeyWord11: 从Web缓存到AI缓存的历史演变] [KeyWord12: 语义哈希技术信息检索] [KeyWord13: 分布式缓存命中率边际效益] [KeyWord14: 缓存失效复杂性挑战] [KeyWord15: 负责任AI缓存伦理考量]
+[FlashDeepSearch] 2026-06-28T01:58:03.229Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-28T01:58:03.229Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:58:03.230Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.231Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.231Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.232Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.232Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.236Z: 警告: 关键词 "Semantic cache architecture GPTCache" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.236Z: 警告: 关键词 "Cache key design prompt hash vs normalized hash vs embedding" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.237Z: 警告: 关键词 "RAG cache invalidation strategy" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.238Z: 警告: 关键词 "Exact match vs embedding similarity threshold" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.238Z: 警告: 关键词 "LLM inference cost savings cache hit rate" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.238Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.239Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.240Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.240Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.241Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.243Z: 警告: 关键词 "向量相似度缓存阈值优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.244Z: 警告: 关键词 "绿色AI 计算资源节约" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.244Z: 警告: 关键词 "缓存预热与 TTL 策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.245Z: 警告: 关键词 "语义缓存导致的响应偏差与公平性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.245Z: 警告: 关键词 "LangChain Cache 与 Redis 缓存对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.245Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.246Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.246Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.246Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.247Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:03.248Z: 警告: 关键词 "语义哈希技术信息检索" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.249Z: 警告: 关键词 "分布式缓存命中率边际效益" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.249Z: 警告: 关键词 "负责任AI缓存伦理考量" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.250Z: 警告: 关键词 "缓存失效复杂性挑战" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:03.250Z: 警告: 关键词 "从Web缓存到AI缓存的历史演变" 的搜索失败: Request failed with status code 503

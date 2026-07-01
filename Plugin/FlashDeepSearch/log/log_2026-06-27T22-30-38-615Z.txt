@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T22:30:38.617Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:30:38.617Z: 研究主题: "Agent memory system write pipeline indexing - how LangChain AutoGPT MetaGPT Mem0 convert conversations into structured memories, real-time vs batch write strategies, embedding model selection for memory indexing, write consistency in distributed agent systems", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T22:30:38.617Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:30:38.627Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:30:48.303Z: DeepSearchModel 原始响应: [KeyWord1:] 对话记忆结构化索引 [KeyWord2:] LangChain memory indexing pipeline [KeyWord3:] 实时与批处理写入策略 [KeyWord4:] 嵌入模型选择 [KeyWord5:] 分布式一致性协议写入 [KeyWord6:] 向量数据库记忆存储 [KeyWord7:] 记忆索引性能与一致性权衡 [KeyWord8:] 遗忘权与记忆擦除 [KeyWord9:] 人类记忆与AI记忆对比 [KeyWord10:] 分布式代理系统CAP理论 [KeyWord11:] Mem0记忆层写入机制 [KeyWord12:] 大规模记忆系统的隐私挑战 [KeyWord13:] 对话历史到知识图谱转换 [KeyWord14:] 记忆索引导致幻觉固化 [KeyWord15:] 流式写入与事件溯源模式
+[FlashDeepSearch] 2026-06-27T22:30:48.304Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T22:30:48.304Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:30:48.304Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.306Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.306Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.307Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.307Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.313Z: 警告: 关键词 "LangChain memory indexing pipeline" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.313Z: 警告: 关键词 "实时与批处理写入策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.314Z: 警告: 关键词 "嵌入模型选择" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.315Z: 警告: 关键词 "对话记忆结构化索引" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.316Z: 警告: 关键词 "分布式一致性协议写入" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.316Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.316Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.317Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.318Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.318Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.322Z: 警告: 关键词 "向量数据库记忆存储" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.323Z: 警告: 关键词 "记忆索引性能与一致性权衡" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.323Z: 警告: 关键词 "分布式代理系统CAP理论" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.324Z: 警告: 关键词 "人类记忆与AI记忆对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.324Z: 警告: 关键词 "遗忘权与记忆擦除" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.324Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.324Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.325Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.325Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.325Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:30:48.327Z: 警告: 关键词 "Mem0记忆层写入机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.327Z: 警告: 关键词 "对话历史到知识图谱转换" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.328Z: 警告: 关键词 "流式写入与事件溯源模式" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.328Z: 警告: 关键词 "大规模记忆系统的隐私挑战" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:30:48.329Z: 警告: 关键词 "记忆索引导致幻觉固化" 的搜索失败: Request failed with status code 503

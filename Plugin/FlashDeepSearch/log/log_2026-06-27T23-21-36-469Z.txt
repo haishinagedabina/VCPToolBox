@@ -1,0 +1,35 @@
+[FlashDeepSearch] 2026-06-27T23:21:36.471Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T23:21:36.472Z: 研究主题: "Agent记忆系统的检索环节，包括传统RAG检索、混合检索（向量+关键词）、重排序策略、多跳推理、语义路由、高精度记忆召回等核心技术与架构方案", 搜索广度: 14
+[FlashDeepSearch] 2026-06-27T23:21:36.472Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T23:21:36.481Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T23:21:39.627Z: DeepSearchModel 原始响应: [KeyWord1:记忆增强检索架构] [KeyWord2:Hybrid Search Pipeline] [KeyWord3:语义路由与查询分解] [KeyWord4:多跳推理记忆网络] [KeyWord5:重排序算法偏见批判] [KeyWord6:Agent长期记忆管理] [KeyWord7:隐私与遗忘权在记忆召回] [KeyWord8:检索增强生成的历史溯源] [KeyWord9:认知科学中的记忆检索隐喻] [KeyWord10:高精度向量召回的技术瓶颈] [KeyWord11:Multi-agent Episodic Memory] [KeyWord12:知识图谱与符号化记忆融合] [KeyWord13:检索成本与规模化社会效应] [KeyWord14:Memory Retrieval in Embodied AI]
+[FlashDeepSearch] 2026-06-27T23:21:39.628Z: 成功提取到 14 个关键词。
+[FlashDeepSearch] 2026-06-27T23:21:39.628Z: 步骤 2: 并发执行 14 个搜索任务...
+[FlashDeepSearch] 2026-06-27T23:21:39.628Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.629Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.629Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.630Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.630Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.635Z: 警告: 关键词 "记忆增强检索架构" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.636Z: 警告: 关键词 "Hybrid Search Pipeline" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.637Z: 警告: 关键词 "语义路由与查询分解" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.639Z: 警告: 关键词 "重排序算法偏见批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.639Z: 警告: 关键词 "多跳推理记忆网络" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.640Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.640Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.641Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.641Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.642Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.644Z: 警告: 关键词 "Agent长期记忆管理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.644Z: 警告: 关键词 "隐私与遗忘权在记忆召回" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.645Z: 警告: 关键词 "认知科学中的记忆检索隐喻" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.646Z: 警告: 关键词 "高精度向量召回的技术瓶颈" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.646Z: 警告: 关键词 "检索增强生成的历史溯源" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.646Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.646Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.647Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.647Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:39.649Z: 警告: 关键词 "检索成本与规模化社会效应" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.649Z: 警告: 关键词 "Multi-agent Episodic Memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.650Z: 警告: 关键词 "Memory Retrieval in Embodied AI" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:39.650Z: 警告: 关键词 "知识图谱与符号化记忆融合" 的搜索失败: Request failed with status code 503

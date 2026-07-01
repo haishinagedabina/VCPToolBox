@@ -1,0 +1,49 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "WeWritePublish",
+  "version": "0.1.0",
+  "displayName": "微信公众号草稿推送",
+  "description": "把 Markdown 文章渲染为微信兼容 HTML 并推送到公众号草稿箱。会自动上传正文内引用的图片到微信永久素材库, 自动上传封面图为 thumb_media。基于 oaker-io/wewrite 源码原样接入。注: 口头确认 / 管理员验证码校验已临时关闭, agent 可直接调用完成推送。",
+  "author": "VCPToolBox",
+  "pluginType": "synchronous",
+  "requiresAdmin": true,
+  "entryPoint": {
+    "type": "python",
+    "command": "python WeWritePublish.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 300000
+  },
+  "configSchema": {
+    "WECHAT_APPID": {
+      "type": "string",
+      "description": "微信公众号 AppID",
+      "default": ""
+    },
+    "WECHAT_SECRET": {
+      "type": "string",
+      "description": "微信公众号 AppSecret",
+      "default": ""
+    },
+    "WECHAT_AUTHOR": {
+      "type": "string",
+      "description": "默认文章署名",
+      "default": ""
+    },
+    "WEWRITE_DEFAULT_THEME": {
+      "type": "string",
+      "description": "默认排版主题",
+      "default": "professional-clean"
+    }
+  },
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "Publish",
+        "description": "把 Markdown 文章排版后推送到微信公众号草稿箱, 返回草稿 media_id。\n\n注: 口头确认 / 管理员验证码校验已临时关闭, agent 在写完文章 + 生成封面后可直接调用本工具完成推送, 无需等待用户说\"发\"/\"推\"/\"可以\"。仍属于真实写操作 (会推送到公众号后台并消耗 API quota), 请确保正文 + 标题 + 封面齐全后再调用。\n\n参数:\n- markdown (字符串, 必需): Markdown 原文或本地文件路径或 file:// URL。\n- title (字符串, 可选): 文章标题。未传时从 Markdown H1 自动提取。\n- digest (字符串, 可选): 文章摘要 (≤120 UTF-8 字节, 约 40 中文字)。未传时由 converter 从正文自动生成。\n- author (字符串, 可选): 文章署名。未传时使用 WECHAT_AUTHOR / WEWRITE_AUTHOR 配置。\n- theme (字符串, 可选): 排版主题名, 默认 professional-clean。\n- cover_image_url (字符串, 可选): 封面图。支持本地路径、file:// URL (跨节点会触发超栈追踪)、http(s):// URL、data:image/...;base64,... URI。未传时草稿仍可创建, 但会使用公众号默认封面。强烈建议先用 ZImageGen / ComfyUIGen 生成一张封面后传入。\n- requireAdmin (字符串, 可选 / 已废弃): 历史的 6 位 VCP Auth 验证码字段, 当前版本不再校验, 传不传都不影响调用。\n\n返回内容:\n- media_id: 微信草稿 media_id\n- title / digest / author / theme: 实际使用的元数据\n- images_uploaded: 正文图片上传计数\n- cover_uploaded: 封面是否成功上传\n- console_url: 微信公众号后台草稿箱地址 (固定 https://mp.weixin.qq.com)\n\n调用格式:\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWritePublish「末」,\ncommand:「始」Publish「末」,\nmarkdown:「始」# 我的标题\\n\\n## 段落\\n正文...「末」,\ntheme:「始」sspai「末」,\ncover_image_url:「始」file:///path/to/cover.png「末」\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWritePublish「末」,\ncommand:「始」Publish「末」,\nmarkdown:「始」# 周末散记\\n\\n## 引子\\n这是一篇示例文章。「末」,\ntitle:「始」周末散记「末」,\ndigest:「始」一篇示例文章, 用于演示 WeWritePublish 插件。「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+}

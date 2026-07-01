@@ -1,0 +1,42 @@
+[FlashDeepSearch] 2026-06-28T00:47:04.529Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T00:47:04.530Z: 研究主题: "RAG Agent 多源信息整合架构：Pipeline串行 vs Map-Reduce并行 vs Agent自主决策的对比，信息冲突检测与消歧，不同来源给出矛盾信息时如何发现冲突评估可信度，知识整合的最佳实践", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T00:47:04.530Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T00:47:04.539Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T00:47:08.175Z: DeepSearchModel 原始响应: [KeyWord1:Retrieval-Augmented Generation 多源信息融合架构对比]
+[KeyWord2:LLM Agent 自主决策信息冲突检测]
+[KeyWord3:RAG可信度评估与知识消歧]
+[KeyWord4:多知识源矛盾消解算法]
+[KeyWord5:信息源可靠性评估机器学习]
+[KeyWord6:RAG伦理与信息偏见批判]
+[KeyWord7:知识整合最佳实践案例研究]
+[KeyWord8:多模态RAG冲突检测证据理论]
+[KeyWord9:检索增强生成的社会认知影响]
+[KeyWord10:情报分析领域多源信息融合历史]
+[KeyWord11:大型语言模型幻觉与知识一致性]
+[KeyWord12:RAG反模式与局限性评估]
+[FlashDeepSearch] 2026-06-28T00:47:08.176Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T00:47:08.176Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T00:47:08.177Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.178Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.179Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.179Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.180Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.185Z: 警告: 关键词 "Retrieval-Augmented Generation 多源信息融合架构对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.185Z: 警告: 关键词 "LLM Agent 自主决策信息冲突检测" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.187Z: 警告: 关键词 "多知识源矛盾消解算法" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.188Z: 警告: 关键词 "RAG可信度评估与知识消歧" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.189Z: 警告: 关键词 "信息源可靠性评估机器学习" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.189Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.189Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.190Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.190Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.191Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.193Z: 警告: 关键词 "RAG伦理与信息偏见批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.193Z: 警告: 关键词 "检索增强生成的社会认知影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.194Z: 警告: 关键词 "多模态RAG冲突检测证据理论" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.195Z: 警告: 关键词 "情报分析领域多源信息融合历史" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.195Z: 警告: 关键词 "知识整合最佳实践案例研究" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.195Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.196Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:47:08.199Z: 警告: 关键词 "RAG反模式与局限性评估" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:47:08.199Z: 警告: 关键词 "大型语言模型幻觉与知识一致性" 的搜索失败: Request failed with status code 503

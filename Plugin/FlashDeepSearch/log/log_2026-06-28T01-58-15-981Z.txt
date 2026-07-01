@@ -1,0 +1,36 @@
+[FlashDeepSearch] 2026-06-28T01:58:15.983Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:58:15.984Z: 研究主题: "GPTCache semantic cache LLM response caching architecture, exact match vs embedding similarity, cache key design, RAG cache invalidation, LangChain Cache Redis comparison", 搜索广度: 10
+[FlashDeepSearch] 2026-06-28T01:58:15.984Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:58:15.993Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:58:27.825Z: DeepSearchModel 原始响应: [KeyWord1:]语义缓存架构与精确匹配对比（Semantic Cache Architecture vs Exact Match）
+[KeyWord2:]LLM响应缓存键设计模式（LLM Response Cache Key Design Patterns）
+[KeyWord3:]RAG缓存失效与一致性策略（RAG Cache Invalidation and Consistency Strategy）
+[KeyWord4:]LangChain Redis 缓存性能基准测试（LangChain vs Redis Cache Benchmark）
+[KeyWord5:]语义查询缓存的成本效益分析（Economic Cost-Benefit of Semantic Query Caching）
+[KeyWord6:]嵌入相似度阈值对缓存命中率影响（Impact of Embedding Similarity Threshold on Cache Hit Rate）
+[KeyWord7:]缓存数据偏差与AI伦理风险（Cache Data Bias and AI Ethical Risks）
+[KeyWord8:]向量数据库在语义缓存中的应用（Vector Database Applications in Semantic Caching）
+[KeyWord9:]分布式缓存失效与记忆哲学（Distributed Cache Invalidation and Philosophy of Memory）
+[KeyWord10:]语义缓存技术演进史与未来趋势（History and Future Trends of Semantic Caching）
+[FlashDeepSearch] 2026-06-28T01:58:27.825Z: 成功提取到 10 个关键词。
+[FlashDeepSearch] 2026-06-28T01:58:27.825Z: 步骤 2: 并发执行 10 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:58:27.826Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.827Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.827Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.828Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.828Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.833Z: 警告: 关键词 "LLM响应缓存键设计模式（LLM Response Cache Key Design Patterns）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.834Z: 警告: 关键词 "RAG缓存失效与一致性策略（RAG Cache Invalidation and Consistency Strategy）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.835Z: 警告: 关键词 "LangChain Redis 缓存性能基准测试（LangChain vs Redis Cache Benchmark）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.835Z: 警告: 关键词 "语义查询缓存的成本效益分析（Economic Cost-Benefit of Semantic Query Caching）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.840Z: 警告: 关键词 "语义缓存架构与精确匹配对比（Semantic Cache Architecture vs Exact Match）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.840Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.841Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.841Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.842Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.843Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:58:27.846Z: 警告: 关键词 "向量数据库在语义缓存中的应用（Vector Database Applications in Semantic Caching）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.846Z: 警告: 关键词 "缓存数据偏差与AI伦理风险（Cache Data Bias and AI Ethical Risks）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.847Z: 警告: 关键词 "分布式缓存失效与记忆哲学（Distributed Cache Invalidation and Philosophy of Memory）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.847Z: 警告: 关键词 "嵌入相似度阈值对缓存命中率影响（Impact of Embedding Similarity Threshold on Cache Hit Rate）" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:58:27.848Z: 警告: 关键词 "语义缓存技术演进史与未来趋势（History and Future Trends of Semantic Caching）" 的搜索失败: Request failed with status code 503

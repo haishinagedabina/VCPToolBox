@@ -1,0 +1,27 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "WeWriteHumanness",
+  "version": "0.1.0",
+  "displayName": "微信公众号文章 AI 味检测",
+  "description": "wewrite 项目的招牌算法移植: 三层评分体系 (统计层 + 模式层 + LLM 语义层), 对一篇 Markdown / 纯文本文章给出 0-100 的 AI 味综合分 (0=纯人类, 100=纯 AI), 并按 TVSQuillWritingGuide 的 14 条规则定位最薄弱的维度 + 给出具体改稿建议。基于 humanness_score.py 直接 import, 纯标准库, 单次评分 < 50ms。",
+  "author": "VCPToolBox",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python WeWriteHumanness.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 30000
+  },
+  "configSchema": {},
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "Score",
+        "description": "对一篇文章 (Markdown 或纯文本) 进行 AI 味量化评分。\n\n参数 (二选一):\n- content (字符串): 直接传入文章正文 (Markdown 或纯文本)。\n- file_path (字符串): 文章文件路径, 也支持 file:// URL。\n\n可选参数:\n- mode (字符串): \"summary\" (默认, AI 友好的精简摘要 + 改稿建议) 或 \"json\" (完整原始评分 JSON, 含每个 check 的得分/明细/校准过程)\n- tier3_score (浮点 0-1): Agent 自评的语义层分数 (评估 风格漂移 / 密度波浪 / 连贯性打破 等 LLM 才能判断的维度), 不传则用 standalone 模式 (T1=62.5%, T2=37.5%)\n\nsummary 模式返回内容:\n- composite_score: 综合分 0-100 (越低越像人类)\n- verdict: 中文一句话判定 (✅ 人类感很强 / ⚠️ 偏 AI / ❌ AI 味较重 / 🚨 显著 AI 痕迹)\n- char_count: 实际评分的字符数 (扣除标题行后)\n- tier_scores: 两层平均分 (tier1_statistical, tier2_pattern)\n- weakest_dimensions: 最弱的 5 个 check, 每条含 score / detail / tip (改稿建议)\n- param_scores: 14 个写作参数的扁平评分映射 (用于调参)\n\n判分维度 (源自 TVSQuillWritingGuide):\n- Tier1 统计层: 句长方差 / 句长跨度 / 段落节奏 / 词汇丰富度 / 负面情绪占比 / 副词密度\n- Tier2 模式层: AI 套话黑名单 / 破句结构 / 真实信源 / 词汇温度混搭 / 自我纠正\n- Tier3 LLM 层: 由 Agent 自评后通过 tier3_score 传入 (可选)\n\n校准机制: 对 5 个易过度优化的维度采用钟形曲线评分 (人类基线 0.20-0.73), 同时若 60%+ check 都 > 0.8 则触发 15% 全局惩罚 (防止 '完美得可疑')。\n\n调用格式:\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteHumanness「末」,\ncommand:「始」Score「末」,\ncontent:「始」# 标题\\n\\n正文...「末」\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteHumanness「末」,\ncommand:「始」Score「末」,\nfile_path:「始」E:\\\\VCPChat\\\\VCPToolBox\\\\Plugin\\\\WeWriteCore\\\\wewrite\\\\output\\\\article.md「末」,\nmode:「始」summary「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+}

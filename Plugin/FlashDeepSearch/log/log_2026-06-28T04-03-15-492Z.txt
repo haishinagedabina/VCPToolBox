@@ -1,0 +1,66 @@
+[FlashDeepSearch] 2026-06-28T04:03:15.494Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T04:03:15.495Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T04:03:15.495Z: 研究主题: "Transformer 大语言模型推理阶段，相邻层的 Key Value 表征高度相似，层间冗余的数学直觉：从注意力机制信息流角度解释为什么相邻层的 KV 可以共享，DeepSeek-V2 Cross-Layer Attention (CLA) 工作原理，层间 KV 共享方案的精度损失研究。", 搜索广度: 13
+[FlashDeepSearch] 2026-06-28T04:03:15.494Z: 研究主题: "LLM KV Cache 淘汰策略：StreamingLLM 注意力汇聚点 sinks 和近期 token 保留机制、H2O accumulative attention score 重要性驱动淘汰、Scissorhands 削减、滑动窗口注意力 Sliding Window Attention 淘汰对比，PPL 与 KV 保留比例曲线研究。", 搜索广度: 13
+[FlashDeepSearch] 2026-06-28T04:03:15.495Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T04:03:15.504Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T04:03:15.495Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T04:03:15.504Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T04:03:23.412Z: DeepSearchModel 原始响应: [KeyWord1: KV缓存层间冗余] [KeyWord2: 注意力信息流相似性] [KeyWord3: DeepSeek-V2 CLA架构] [KeyWord4: 相邻层KV共享机制] [KeyWord5: 层间表征相似度度量] [KeyWord6: 推理阶段精度损失分析] [KeyWord7: 自注意力数学直觉] [KeyWord8: 经济型模型推理优化] [KeyWord9: 多头注意力信息瓶颈] [KeyWord10: 层参数共享历史演进] [KeyWord11: 可解释性冗余与必要性] [KeyWord12: 绿色AI部署成本权衡] [KeyWord13: 多任务泛化精度退化]
+[FlashDeepSearch] 2026-06-28T04:03:23.413Z: 成功提取到 13 个关键词。
+[FlashDeepSearch] 2026-06-28T04:03:23.414Z: 步骤 2: 并发执行 13 个搜索任务...
+[FlashDeepSearch] 2026-06-28T04:03:23.415Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.418Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.419Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.420Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.420Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.424Z: 警告: 关键词 "KV缓存层间冗余" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.426Z: 警告: 关键词 "相邻层KV共享机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.428Z: 警告: 关键词 "注意力信息流相似性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.429Z: 警告: 关键词 "DeepSeek-V2 CLA架构" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.430Z: 警告: 关键词 "层间表征相似度度量" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.431Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.431Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.431Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.432Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.433Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.435Z: 警告: 关键词 "推理阶段精度损失分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.435Z: 警告: 关键词 "自注意力数学直觉" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.436Z: 警告: 关键词 "多头注意力信息瓶颈" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.438Z: 警告: 关键词 "层参数共享历史演进" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.438Z: 警告: 关键词 "经济型模型推理优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.439Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.439Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.439Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:23.442Z: 警告: 关键词 "多任务泛化精度退化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.445Z: 警告: 关键词 "可解释性冗余与必要性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:23.446Z: 警告: 关键词 "绿色AI部署成本权衡" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.805Z: DeepSearchModel 原始响应: [KeyWord1: StreamingLLM attention sinks 与近期token保留机制] [KeyWord2: H2O accumulative attention score 重要性驱动淘汰] [KeyWord3: Scissorhands KV缓存削减策略] [KeyWord4: Sliding Window Attention 滑动窗口注意力] [KeyWord5: Perplexity 困惑度与KV保留比例曲线] [KeyWord6: KV cache 淘汰策略对比分析] [KeyWord7: 长上下文推理内存优化 Long-context inference memory] [KeyWord8: Heavy Hitter Oracle 动态缓存预算分配] [KeyWord9: 注意力汇聚点 sinks 在流式语言模型中的作用] [KeyWord10: 大模型部署的推理成本与效率] [KeyWord11: 模型记忆的保留与遗忘伦理权衡] [KeyWord12: KV cache eviction policies for efficient LLM serving] [KeyWord13: StreamingLLM H2O Scissorhands 基准测试对比]
+[FlashDeepSearch] 2026-06-28T04:03:25.806Z: 成功提取到 13 个关键词。
+[FlashDeepSearch] 2026-06-28T04:03:25.806Z: 步骤 2: 并发执行 13 个搜索任务...
+[FlashDeepSearch] 2026-06-28T04:03:25.806Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.807Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.808Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.808Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.809Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.813Z: 警告: 关键词 "StreamingLLM attention sinks 与近期token保留机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.814Z: 警告: 关键词 "H2O accumulative attention score 重要性驱动淘汰" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.814Z: 警告: 关键词 "Perplexity 困惑度与KV保留比例曲线" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.815Z: 警告: 关键词 "Sliding Window Attention 滑动窗口注意力" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.815Z: 警告: 关键词 "Scissorhands KV缓存削减策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.816Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.816Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.817Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.817Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.818Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.820Z: 警告: 关键词 "Heavy Hitter Oracle 动态缓存预算分配" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.821Z: 警告: 关键词 "KV cache 淘汰策略对比分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.822Z: 警告: 关键词 "大模型部署的推理成本与效率" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.822Z: 警告: 关键词 "注意力汇聚点 sinks 在流式语言模型中的作用" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.823Z: 警告: 关键词 "长上下文推理内存优化 Long-context inference memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.823Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.824Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.824Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:03:25.826Z: 警告: 关键词 "KV cache eviction policies for efficient LLM serving" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.826Z: 警告: 关键词 "模型记忆的保留与遗忘伦理权衡" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:03:25.827Z: 警告: 关键词 "StreamingLLM H2O Scissorhands 基准测试对比" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,61 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "PaperTrader",
+  "displayName": "短线模拟盘追踪器",
+  "version": "1.0.0",
+  "description": "维护最多 N 仓(默认3)的模拟盘账本，按《短线操盘实战技法》的买卖点(来自 DSA 的 buy_points/exit_plan)做确定性前向模拟：分批建仓、止损(优先)、分批止盈、尾仓移动止损、未触发失效。读 DSA 行情(只读)成交，自有 SQLite 账本读写，并提供收益亏损统计。通过 command 路由 6 个命令：get_portfolio, add_position, run_eod_update, close_position, get_trade_history, get_stats。本插件只做模拟，不下单、不接券商。",
+  "author": "VCP",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python paper_trader.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 60000
+  },
+  "configSchema": {
+    "STOCK_DB_PATH": "string",
+    "PAPER_DB_PATH": "string",
+    "POSITION_CAPITAL": "number",
+    "MAX_SLOTS": "number",
+    "STOCK_DB_TIMEOUT": "number"
+  },
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "get_portfolio",
+        "description": "查看当前模拟盘持仓（含待触发/持仓中），按最新收盘做浮动盈亏估算，并给出空槽数。\\n参数:\\n- command (字符串, 必需): 固定填 get_portfolio\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」get_portfolio「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」get_portfolio「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "add_position",
+        "description": "把一只【全员复核通过 + 操作计划确认 + gate放行】的票加入模拟盘空槽。买卖剧本默认从 DSA 自动提取(buy_points/exit_plan)，也可显式传 plan。满仓或已持有会被拒绝。加入后自动向后模拟到今天。\\n参数:\\n- command (字符串, 必需): 固定填 add_position\\n- code (字符串, 必需): 股票代码\\n- strategy (字符串, 必需): 策略名(如 bottom_divergence_double_breakout / ma100_low123_combined 等)\\n- run_id (字符串, 必需*): 选股批次ID(未显式传 plan 时必需，用于自动提取剧本与 run_trade_date)\\n- name (字符串, 可选): 股票名\\n- run_trade_date (字符串, 可选): 选股日 YYYY-MM-DD，缺省自动取\\n- plan (字符串/对象, 可选): 显式买卖剧本JSON(entries/stop_loss/take_profits/trailing_final/invalidation_days)\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」add_position「末」,\\nrun_id:「始」run-xxx「末」,\\ncode:「始」600403「末」,\\nstrategy:「始」bottom_divergence_double_breakout「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」add_position「末」,\\nrun_id:「始」run-xxx「末」,\\ncode:「始」600403「末」,\\nstrategy:「始」bottom_divergence_double_breakout「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "run_eod_update",
+        "description": "对所有在场持仓做收盘后(EOD)前向模拟更新：从各仓上次模拟日推进到目标交易日，按买卖剧本机械执行建仓/止损/止盈/尾仓清仓/失效，更新盈亏并把平仓的转入历史。返回本次买卖动作 + 最新持仓 + 空槽数。\\n参数:\\n- command (字符串, 必需): 固定填 run_eod_update\\n- trade_date (字符串, 可选): 模拟到的交易日 YYYY-MM-DD，缺省=今天(自动用可得的最新行情)\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」run_eod_update「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」run_eod_update「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "close_position",
+        "description": "手动强制平仓某只票（异常/人工干预/退市等），按最新收盘价结算并转入历史。\\n参数:\\n- command (字符串, 必需): 固定填 close_position\\n- code (字符串, 必需): 股票代码\\n- reason (字符串, 可选): 平仓原因\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」close_position「末」,\\ncode:「始」600403「末」,\\nreason:「始」退市风险「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」close_position「末」,\\ncode:「始」600403「末」,\\nreason:「始」手动平仓「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "get_trade_history",
+        "description": "查询已平仓交易流水（盈亏/持仓天数/平仓原因）。\\n参数:\\n- command (字符串, 必需): 固定填 get_trade_history\\n- limit (数字, 可选): 返回条数，默认 100\\n- strategy (字符串, 可选): 仅看某策略\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」get_trade_history「末」,\\nlimit:「始」30「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」get_trade_history「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "get_stats",
+        "description": "模拟盘绩效统计：总笔数、胜率、累计/平均盈亏、平均持仓天数、盈亏比、最大盈/亏、分策略表现、当前在场浮盈。用于验证书中各策略的实际有效性。\\n参数:\\n- command (字符串, 必需): 固定填 get_stats\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」get_stats「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\nmaid:「始」模拟盘追踪官「末」,\\ntool_name:「始」PaperTrader「末」,\\ncommand:「始」get_stats「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  },
+  "dependencies": {
+    "python": ">=3.8"
+  }
+}

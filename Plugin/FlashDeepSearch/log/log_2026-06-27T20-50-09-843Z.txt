@@ -1,0 +1,27 @@
+[FlashDeepSearch] 2026-06-27T20:50:09.845Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:50:09.845Z: 研究主题: "AI 分镜生成 Storyboard 工具，从文字剧本创建静态分镜图的最佳实践", 搜索广度: 10
+[FlashDeepSearch] 2026-06-27T20:50:09.845Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:50:09.854Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:50:18.010Z: DeepSearchModel 原始响应: [KeyWord1:]AI分镜生成工具最佳实践 [KeyWord2:]text-to-storyboard AI pipeline [KeyWord3:]剧本可视化自动分镜技术 [KeyWord4:]filmmaking pre-production automation [KeyWord5:]故事板设计伦理与AI版权 [KeyWord6:]critical evaluation of AI storyboard generators [KeyWord7:]传统分镜师与AI协作模式 [KeyWord8:]prompt engineering for cinematic composition [KeyWord9:]静态分镜图生成算法比较 [KeyWord10:]storyboard artistry and machine creativity
+[FlashDeepSearch] 2026-06-27T20:50:18.012Z: 成功提取到 10 个关键词。
+[FlashDeepSearch] 2026-06-27T20:50:18.012Z: 步骤 2: 并发执行 10 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:50:18.012Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.013Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.014Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.014Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.015Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.021Z: 警告: 关键词 "text-to-storyboard AI pipeline" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.021Z: 警告: 关键词 "filmmaking pre-production automation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.022Z: 警告: 关键词 "故事板设计伦理与AI版权" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.023Z: 警告: 关键词 "剧本可视化自动分镜技术" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.106Z: 警告: 关键词 "AI分镜生成工具最佳实践" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.107Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.108Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.108Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.109Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.109Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:50:18.112Z: 警告: 关键词 "prompt engineering for cinematic composition" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.113Z: 警告: 关键词 "storyboard artistry and machine creativity" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.114Z: 警告: 关键词 "传统分镜师与AI协作模式" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.114Z: 警告: 关键词 "critical evaluation of AI storyboard generators" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:50:18.115Z: 警告: 关键词 "静态分镜图生成算法比较" 的搜索失败: Request failed with status code 503

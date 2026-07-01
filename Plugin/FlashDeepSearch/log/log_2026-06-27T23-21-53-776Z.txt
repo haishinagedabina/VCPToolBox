@@ -1,0 +1,26 @@
+[FlashDeepSearch] 2026-06-27T23:21:53.778Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T23:21:53.778Z: 研究主题: "Agent 记忆系统 检索 RAG 召回 重排序 混合检索 技术方案", 搜索广度: 10
+[FlashDeepSearch] 2026-06-27T23:21:53.778Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T23:21:53.788Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T23:21:57.941Z: DeepSearchModel 原始响应: [KeyWord1: Agent memory retrieval] [KeyWord2: RAG召回与重排序] [KeyWord3: 混合检索策略] [KeyWord4: 智能体记忆失真] [KeyWord5: 语义向量检索] [KeyWord6: 认知架构记忆模型] [KeyWord7: 记忆隐私与伦理] [KeyWord8: knowledge graph enhanced recall] [KeyWord9: 反RAG批判] [KeyWord10: 人机混合记忆社会影响]
+[FlashDeepSearch] 2026-06-27T23:21:57.942Z: 成功提取到 10 个关键词。
+[FlashDeepSearch] 2026-06-27T23:21:57.942Z: 步骤 2: 并发执行 10 个搜索任务...
+[FlashDeepSearch] 2026-06-27T23:21:57.942Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.943Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.944Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.945Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.945Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.949Z: 警告: 关键词 "Agent memory retrieval" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:57.951Z: 警告: 关键词 "RAG召回与重排序" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:57.951Z: 警告: 关键词 "智能体记忆失真" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:57.951Z: 警告: 关键词 "混合检索策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:57.952Z: 警告: 关键词 "语义向量检索" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:57.952Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.953Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.953Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.954Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.954Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:21:57.956Z: 警告: 关键词 "记忆隐私与伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:57.957Z: 警告: 关键词 "认知架构记忆模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:57.957Z: 警告: 关键词 "反RAG批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:21:57.958Z: 警告: 关键词 "人机混合记忆社会影响" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,65 @@
+# VCP 话题通讯工具箱 (TopicSponsor)
+本工具箱用于Agent主动创建、查询、阅读和回复Vchat聊天话题。
+所有命令均通过 tool_name「始」TopicSponsor「末」 调用。
+**注意：** 只有未锁定（locked: false）或被标记为未读（unread: true）的话题才能被读取或回复。
+**【topic_id 硬规则】** `ReplyToTopic` / `ReadTopicContent` / `CheckTopicOwnership` 用的 `topic_id` 必须**原样复用 `CreateTopic` 返回的 `topic_id`**（其格式恒为 `topic_<数字时间戳>`，例如 `topic_1780989937584`）。严禁自行拼接、改写或追加任何后缀、随机串——传入不存在的 id 会直接报"话题不存在"。若手头没有 CreateTopic 返回的 id，先用 `ListUnlockedTopics` 查到真实 id 再用，不要凭记忆/想象构造 id。
+
+## 1. 创建新话题
+主动对用户发起一个全新的Vchat聊天话题上下文。
+tool_name:「始」TopicSponsor「末」,
+command:「始」CreateTopic「末」,
+maid:「始」发起请求的Agent中文名「末」,
+topic_name:「始」新话题的标题「末」,
+initial_message:「始」初始消息「末」
+
+### 检测是否有未读话题
+command:「始」ReadTopicContent「末」,
+maid: 「始」Agent中文名「末」
+
+### 读取指定的话题内容
+command:「始」ReadTopicContent「末」,
+maid: 「始」Agent中文名「末」 ,
+topic_id:「始」目标话题ID「末」
+
+### 向指定话题发送消息
+command:「始」ReplyToTopic「末」,
+maid: 「始」目标Agent中文名「末」 ,
+topic_id:「始」话题ID「末」,
+message:「始」消息内容「末」,
+sender_name: 「始」发送者名称「末」
+
+[===vcp_fold:0.4===]
+
+## 2. 查询未读消息 (CheckUnreadMessages)
+查询指定Agent是否有被标记为未读的话题。
+tool_name:「始」TopicSponsor「末」,
+command:「始」CheckUnreadMessages「末」,
+maid:「始」目标Agent的中文名「末」
+
+## 3. 查询最近新增话题 (CheckNewTopics)
+查询指定Agent最近几日是否有新增的未锁定话题。
+tool_name:「始」TopicSponsor「末」,
+command:「始」CheckNewTopics「末」,
+maid:「始」目标Agent的中文名「末」,
+days:「始」3「末」 // 可选，默认3天
+
+## 4. 列出未锁定话题 (ListUnlockedTopics)
+仅列出未锁定话题的基本信息（不含消息内容）。
+tool_name:「始」TopicSponsor「末」,
+command:「始」ListUnlockedTopics「末」,
+maid:「始」目标Agent的中文名「末」
+
+## 5. 读取所有未锁定话题及消息 (ReadUnlockedTopics)
+读取指定Agent所有未锁定话题及其完整消息历史。
+tool_name:「始」TopicSponsor「末」,
+command:「始」ReadUnlockedTopics「末」,
+maid:「始」目标Agent的中文名「末」,
+include_read:「始」false「末」 // 可选，默认false（只返回未读话题）；设为true则包含已读
+
+## 6. 验证话题所有权 (CheckTopicOwnership)
+检查指定话题是否为当前调用者创建，用于回复前的权限验证。
+tool_name:「始」TopicSponsor「末」,
+command:「始」CheckTopicOwnership「末」,
+maid:「始」目标Agent的中文名「末」,
+topic_id:「始」话题ID「末」,
+caller_name:「始」调用者名称「末」

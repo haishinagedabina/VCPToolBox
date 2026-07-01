@@ -1,0 +1,42 @@
+[FlashDeepSearch] 2026-06-27T19:39:44.442Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T19:39:44.442Z: 研究主题: "AI辅助小说叙事结构设计 悬念制造 节奏控制 情节构建 科幻写作 prompt 案例", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T19:39:44.442Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T19:39:44.454Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T19:39:53.217Z: DeepSearchModel 原始响应: [KeyWord1:] AI叙事结构生成 悬念节奏控制 提示工程  
+[KeyWord2:] Computational Narratology Plot Generation Suspense Modeling  
+[KeyWord3:] 科幻写作 情节构建 AI辅助案例  
+[KeyWord4:] Cognitive Foundations of Narrative Pacing and Surprise  
+[KeyWord5:] 人工智能与作者身份 原创性 伦理批判  
+[KeyWord6:] GPT-4 Prompt Engineering for Novel Structure Design  
+[KeyWord7:] 叙事学视角下的AI生成故事同质化反思  
+[KeyWord8:] Aristotelian Plot vs. Algorithmic Story Composition  
+[KeyWord9:] Human-AI Co-Creativity in Science Fiction Worldbuilding  
+[KeyWord10:] 节奏控制的认知模型与自然语言生成  
+[KeyWord11:] 类型文学批判：AI写作对悬念套路的强化  
+[KeyWord12:] Open-Source Narrative AI Case Studies for Genre Fiction
+[FlashDeepSearch] 2026-06-27T19:39:53.218Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T19:39:53.219Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T19:39:53.219Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.221Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.223Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.225Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.226Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.229Z: 警告: 关键词 "AI叙事结构生成 悬念节奏控制 提示工程" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.230Z: 警告: 关键词 "Computational Narratology Plot Generation Suspense Modeling" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.231Z: 警告: 关键词 "科幻写作 情节构建 AI辅助案例" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.232Z: 警告: 关键词 "Cognitive Foundations of Narrative Pacing and Surprise" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.232Z: 警告: 关键词 "人工智能与作者身份 原创性 伦理批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.232Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.233Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.233Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.234Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.235Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.239Z: 警告: 关键词 "GPT-4 Prompt Engineering for Novel Structure Design" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.240Z: 警告: 关键词 "Human-AI Co-Creativity in Science Fiction Worldbuilding" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.240Z: 警告: 关键词 "Aristotelian Plot vs. Algorithmic Story Composition" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.241Z: 警告: 关键词 "节奏控制的认知模型与自然语言生成" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.241Z: 警告: 关键词 "叙事学视角下的AI生成故事同质化反思" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.241Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.242Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:39:53.243Z: 警告: 关键词 "类型文学批判：AI写作对悬念套路的强化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:39:53.244Z: 警告: 关键词 "Open-Source Narrative AI Case Studies for Genre Fiction" 的搜索失败: Request failed with status code 503

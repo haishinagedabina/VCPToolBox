@@ -1,0 +1,33 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "WeWriteFetchArticle",
+  "version": "0.1.0",
+  "displayName": "微信文章正文抓取",
+  "description": "把任意微信公众号文章 URL 抓回来转成纯 Markdown (含 H1/H2/段落/图片/引用), 顺带提取作者、发布时间等元信息。来自 oaker-io/wewrite 源码原样接入, 三级抓取降级 (requests → Camoufox 反检测 → Playwright), 任一级成功即返回。专为 Quill 的 '学习这篇文章' / '复盘自己的历史推送' / 'AI 味回测' 场景设计, 通常配合 WeWriteExemplar 建立用户专属范文库, 或喂给 WeWriteHumanness 评分。\n\n参数 (二选一):\n- url (字符串, 必填或与 file_path 二选一): 微信公众号文章 URL, 形如 https://mp.weixin.qq.com/s/...\n- file_path (字符串, 与 url 二选一): 本地或 file:// 形式的 HTML 文件路径, 适用于 requests/Playwright 都被反爬挡住后手工另存为 HTML 再喂给本插件的兜底场景。\n\n可选参数:\n- save_to_corpus (布尔, 默认 false): 是否同时把抓回来的 Markdown 落盘到 wewrite/corpus/<date>-<slug>.md, 方便后续被 WeWriteExemplar 直接引用。\n- include_html (布尔, 默认 false): 同时返回原始 HTML (调试用, 体积大, 默认关闭)。\n- allow_proxy (布尔, 默认 false): 是否允许走代理。WeChat 公开文章不走 IP 白名单, 通常**无需代理**就能直连; 仅当本机 DNS 被污染或网络环境异常时再开。开启后会覆盖 WeWriteCore 默认的代理剥离行为。\n\n返回:\n- title / author / publish_time / url / markdown / char_count / fetched_via (requests|camoufox|playwright|file)\n- 若 save_to_corpus=true, 额外返回 corpus_path (绝对路径)。",
+  "author": "VCPToolBox",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python WeWriteFetchArticle.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 90000
+  },
+  "configSchema": {
+    "WEWRITE_FETCH_TIMEOUT": {
+      "type": "integer",
+      "description": "requests 抓取的超时时间 (秒)。Camoufox/Playwright 有独立的内部超时, 不受此影响",
+      "default": 25
+    }
+  },
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "Fetch",
+        "description": "抓一篇微信公众号文章, 返回 Markdown + 元信息.\n\n参数 (二选一, url 或 file_path):\n- url (字符串): 微信文章 URL, 形如 https://mp.weixin.qq.com/s/xxxxx\n- file_path (字符串): 本地 HTML 文件路径或 file:// URL (从浏览器另存为 HTML)\n\n可选:\n- save_to_corpus (布尔): 是否落盘到 wewrite/corpus/, 默认 false\n- include_html (布尔): 是否在返回里附原始 HTML, 默认 false\n- allow_proxy (布尔): 是否允许走代理, 默认 false (与 WeWriteCore 其他插件一致)\n\n典型用法 (Quill 复盘自己的历史推送):\n  1. 调 WeWriteFetchArticle Fetch url=...  → 拿 markdown\n  2. 调 WeWriteHumanness Score content=<上一步 markdown>  → 量化 AI 味\n  3. (可选) 调 WeWriteExemplar Extract → 落入范文库\n\n失败模式:\n- requests 被反爬挡住 → 自动尝试 Camoufox/Playwright; 都失败时返回明确错误, 提示手工另存为 HTML 后用 file_path 参数重传\n- url 和 file_path 都没传 → INVALID_ARGS",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteFetchArticle「末」,\ncommand:「始」Fetch「末」,\nurl:「始」https://mp.weixin.qq.com/s/abcdef123456「末」,\nsave_to_corpus:「始」true「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+[FlashDeepSearch] 2026-06-27T22:08:32.483Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:08:32.483Z: 研究主题: "AI Agent memory maintenance, forgetting mechanisms, memory management strategies including TTL, LRU, importance scoring, reflection summarization, memory compression, hierarchical memory maintenance for autonomous agents, tradeoffs between soft forgetting and hard deletion, and major frameworks like MemGPT, Letta, LangChain Memory, AutoGPT", 搜索广度: 18
+[FlashDeepSearch] 2026-06-27T22:08:32.483Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:08:32.492Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:08:45.530Z: DeepSearchModel 原始响应: [KeyWord1:] MemGPT  
+[KeyWord2:] Forgetting curve inspired memory decay  
+[KeyWord3:] TTL-based memory eviction  
+[KeyWord4:] 重要性评分驱动的记忆保留策略  
+[KeyWord5:] Cognitive architecture memory consolidation  
+[KeyWord6:] LangChain记忆管理  
+[KeyWord7:] 软遗忘与硬删除的元认知权衡  
+[KeyWord8:] Letta framework lifelong learning  
+[KeyWord9:] LRU缓存替换在智能体记忆中的应用  
+[KeyWord10:] Hierarchical episodic-semantic memory  
+[KeyWord11:] 记忆压缩与知识蒸馏  
+[KeyWord12:] AutoGPT记忆插件架构  
+[KeyWord13:] 自主智能体的记忆权利与遗忘权  
+[KeyWord14:] Memory retention policy GDPR AI  
+[KeyWord15:] Reflection summarization memory abstraction  
+[KeyWord16:] 神经科学中的记忆消退与突触修剪  
+[KeyWord17:] Soft vs hard delete database memory management  
+[KeyWord18:] 智能体遗忘的社会文化影响
+[FlashDeepSearch] 2026-06-27T22:08:45.530Z: 成功提取到 18 个关键词。
+[FlashDeepSearch] 2026-06-27T22:08:45.531Z: 步骤 2: 并发执行 18 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:08:45.531Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.532Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.532Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.533Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.533Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.541Z: 警告: 关键词 "TTL-based memory eviction" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.541Z: 警告: 关键词 "MemGPT" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.541Z: 警告: 关键词 "Forgetting curve inspired memory decay" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.542Z: 警告: 关键词 "重要性评分驱动的记忆保留策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.542Z: 警告: 关键词 "Cognitive architecture memory consolidation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.543Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.543Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.543Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.545Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.545Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.547Z: 警告: 关键词 "软遗忘与硬删除的元认知权衡" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.548Z: 警告: 关键词 "Letta framework lifelong learning" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.548Z: 警告: 关键词 "LRU缓存替换在智能体记忆中的应用" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.549Z: 警告: 关键词 "Hierarchical episodic-semantic memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.549Z: 警告: 关键词 "LangChain记忆管理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.549Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.550Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.550Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.550Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.550Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.553Z: 警告: 关键词 "记忆压缩与知识蒸馏" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.554Z: 警告: 关键词 "Reflection summarization memory abstraction" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.554Z: 警告: 关键词 "AutoGPT记忆插件架构" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.555Z: 警告: 关键词 "自主智能体的记忆权利与遗忘权" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.556Z: 警告: 关键词 "Memory retention policy GDPR AI" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.556Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.557Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.557Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:08:45.559Z: 警告: 关键词 "Soft vs hard delete database memory management" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.559Z: 警告: 关键词 "智能体遗忘的社会文化影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:08:45.560Z: 警告: 关键词 "神经科学中的记忆消退与突触修剪" 的搜索失败: Request failed with status code 503

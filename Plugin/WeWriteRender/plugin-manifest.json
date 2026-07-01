@@ -1,0 +1,33 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "WeWriteRender",
+  "version": "0.1.0",
+  "displayName": "微信公众号排版渲染",
+  "description": "把 Markdown 转换为微信公众号兼容的内联样式 HTML，自带 CJK 间距、加粗标点外移、列表→section、外链转脚注、暗黑模式、容器语法（:::dialogue/:::timeline/:::callout/:::quote）等修复。基于 oaker-io/wewrite 源码原样接入。",
+  "author": "VCPToolBox",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python WeWriteRender.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 60000
+  },
+  "configSchema": {
+    "WEWRITE_DEFAULT_THEME": {
+      "type": "string",
+      "description": "默认排版主题",
+      "default": "professional-clean"
+    }
+  },
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "Render",
+        "description": "把 Markdown 文本渲染为微信公众号兼容的内联样式 HTML。\n\n参数:\n- markdown (字符串, 必需): Markdown 原文。也可传入本地文件路径 (.md) 或 file:// URL。\n- theme (字符串, 可选): 排版主题名, 默认 professional-clean。可用主题: professional-clean, minimal, newspaper, tech-modern, bytedance, github, warm-editorial, sspai, ink, elegant-rose, bold-navy, minimal-gold, bold-green, bauhaus, focus-red, midnight。可先调 WeWriteThemes 工具查看完整描述。\n- save_html (布尔, 可选): 是否把 HTML 落盘到 Plugin/WeWriteCore/wewrite/output/ 目录, 默认 false。\n\n返回内容:\n- title: 从 H1 提取的标题\n- digest: 自动生成的摘要 (≤120 UTF-8 字节, 用于微信文章摘要字段)\n- html: 完整的微信内联样式 HTML\n- images: 文章中引用的图片 src 列表 (供后续上传使用)\n- output_path: 若 save_html=true, 返回保存路径\n\n调用格式:\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteRender「末」,\ncommand:「始」Render「末」,\nmarkdown:「始」# 标题\\n\\n正文段落...「末」,\ntheme:「始」sspai「末」\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteRender「末」,\ncommand:「始」Render「末」,\nmarkdown:「始」# 测试文章\\n\\n## 第一段\\n\\nHello VCP, 这是一段中英文混排测试。「末」,\ntheme:「始」professional-clean「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+}

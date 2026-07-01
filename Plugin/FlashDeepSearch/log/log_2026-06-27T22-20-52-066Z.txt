@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-27T22:20:52.068Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:20:52.069Z: 研究主题: "RAG 检索流程 embedding 向量检索 重排序 BM25 向量检索互补 混合检索 Hybrid Search 架构 多跳推理 Multi-hop Reasoning 查询重写 Query Rewriting", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T22:20:52.069Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:20:52.078Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:21:06.433Z: DeepSearchModel 原始响应: [KeyWord1:] 混合检索架构与实现 (Hybrid Search Architecture and Implementation) [KeyWord2:] 查询重写技术优化 (Query Rewriting Optimization Techniques) [KeyWord3:] 向量检索与 BM25 互补机制 (Complementarity Mechanisms of Vector Search and BM25) [KeyWord4:] 多跳推理知识图谱 (Multi-hop Reasoning over Knowledge Graphs) [KeyWord5:] RAG 中重排序的算法公平性 (Algorithmic Fairness in RAG Re-ranking) [KeyWord6:] 检索增强生成系统的隐私风险 (Privacy Risks in Retrieval-Augmented Generation Systems) [KeyWord7:] 信息检索的历史范式转换 (Historical Paradigm Shifts in Information Retrieval) [KeyWord8:] 知识检索中的语义鸿沟 (Semantic Gap in Knowledge Retrieval) [KeyWord9:] 多模态混合检索 (Multimodal Hybrid Retrieval) [KeyWord10:] Agent 请求的上下文感知 (Context-Aware Agent Querying) [KeyWord11:] 混合搜索的能源效率 (Energy Efficiency of Hybrid Search Systems) [KeyWord12:] 批判视角：RAG 真的理解查询吗？ (Critical Perspective: Does RAG Really Understand Queries?)
+[FlashDeepSearch] 2026-06-27T22:21:06.434Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T22:21:06.434Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:21:06.434Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.435Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.435Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.436Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.436Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.442Z: 警告: 关键词 "混合检索架构与实现 (Hybrid Search Architecture and Implementation)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.442Z: 警告: 关键词 "多跳推理知识图谱 (Multi-hop Reasoning over Knowledge Graphs)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.443Z: 警告: 关键词 "RAG 中重排序的算法公平性 (Algorithmic Fairness in RAG Re-ranking)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.445Z: 警告: 关键词 "向量检索与 BM25 互补机制 (Complementarity Mechanisms of Vector Search and BM25)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.446Z: 警告: 关键词 "查询重写技术优化 (Query Rewriting Optimization Techniques)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.446Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.446Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.447Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.448Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.448Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.450Z: 警告: 关键词 "信息检索的历史范式转换 (Historical Paradigm Shifts in Information Retrieval)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.451Z: 警告: 关键词 "知识检索中的语义鸿沟 (Semantic Gap in Knowledge Retrieval)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.452Z: 警告: 关键词 "Agent 请求的上下文感知 (Context-Aware Agent Querying)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.453Z: 警告: 关键词 "多模态混合检索 (Multimodal Hybrid Retrieval)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.453Z: 警告: 关键词 "检索增强生成系统的隐私风险 (Privacy Risks in Retrieval-Augmented Generation Systems)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.453Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.454Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:21:06.455Z: 警告: 关键词 "混合搜索的能源效率 (Energy Efficiency of Hybrid Search Systems)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:21:06.457Z: 警告: 关键词 "批判视角：RAG 真的理解查询吗？ (Critical Perspective: Does RAG Really Understand Queries?)" 的搜索失败: Request failed with status code 503

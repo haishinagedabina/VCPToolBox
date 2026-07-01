@@ -1,0 +1,51 @@
+[FlashDeepSearch] 2026-06-27T19:14:20.052Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T19:14:20.052Z: 研究主题: "AI辅助科幻世界观构建：LLM生成科幻点子、WorldAnvil Campfire NovelCrafter等专业工具功能对比、硬科幻设定科学验证、worldbuilding AI prompt策略与工作流", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T19:14:20.052Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T19:14:20.061Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T19:14:29.931Z: DeepSearchModel 原始响应: [KeyWord1:] AI-assisted science fiction worldbuilding  
+[KeyWord2:] 科幻世界观构建 AI prompt 策略  
+[KeyWord3:] WorldAnvil vs NovelCrafter feature comparison  
+[KeyWord4:] 硬科幻设定科学验证方法论  
+[KeyWord5:] LLM generated speculative fiction ideas  
+[KeyWord6:] computational creativity and narrative originality  
+[KeyWord7:] AI 辅助创作伦理 创意同质化风险  
+[KeyWord8:] worldbuilding software comparative review 2026  
+[KeyWord9:] prompt engineering for long-form storytelling  
+[KeyWord10:] 科幻创作 AI 辅助工作流最佳实践  
+[KeyWord11:] scientific accuracy verification in sci-fi worldbuilding  
+[KeyWord12:] Campfire Writing 硬科幻设定模块解析  
+[KeyWord13:] generative AI impact on creative writing profession  
+[KeyWord14:] 科学合理性与叙事自由的张力  
+[KeyWord15:] anti-AI sentiment in speculative fiction communities
+[FlashDeepSearch] 2026-06-27T19:14:29.931Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T19:14:29.931Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T19:14:29.931Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.933Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.934Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.934Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.935Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.940Z: 警告: 关键词 "AI-assisted science fiction worldbuilding" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.941Z: 警告: 关键词 "LLM generated speculative fiction ideas" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.942Z: 警告: 关键词 "科幻世界观构建 AI prompt 策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.943Z: 警告: 关键词 "WorldAnvil vs NovelCrafter feature comparison" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.944Z: 警告: 关键词 "硬科幻设定科学验证方法论" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.944Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.945Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.945Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.946Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.946Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.949Z: 警告: 关键词 "computational creativity and narrative originality" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.950Z: 警告: 关键词 "prompt engineering for long-form storytelling" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.950Z: 警告: 关键词 "AI 辅助创作伦理 创意同质化风险" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.951Z: 警告: 关键词 "科幻创作 AI 辅助工作流最佳实践" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.951Z: 警告: 关键词 "worldbuilding software comparative review 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.951Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.951Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.952Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.952Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.952Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:29.954Z: 警告: 关键词 "科学合理性与叙事自由的张力" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.955Z: 警告: 关键词 "anti-AI sentiment in speculative fiction communities" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.956Z: 警告: 关键词 "scientific accuracy verification in sci-fi worldbuilding" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.956Z: 警告: 关键词 "Campfire Writing 硬科幻设定模块解析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:29.956Z: 警告: 关键词 "generative AI impact on creative writing profession" 的搜索失败: Request failed with status code 503

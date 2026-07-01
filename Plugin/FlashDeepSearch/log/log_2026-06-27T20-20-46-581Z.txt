@@ -1,0 +1,42 @@
+[FlashDeepSearch] 2026-06-27T20:20:46.584Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:20:46.584Z: 研究主题: "Sora DiT架构技术细节对比 Runway Gen-3 Gen-4扩散模型路线 视频生成 Diffusion Transformer vs Diffusion 运动连贯性对比评测 2025 ComfyUI AnimateDiff Kling API 工作流搭建教程", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T20:20:46.584Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:20:46.593Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:20:58.748Z: DeepSearchModel 原始响应: [KeyWord1:] Sora DiT架构技术细节  
+[KeyWord2:] Runway Gen-3 vs Gen-4 扩散模型路线对比  
+[KeyWord3:] Diffusion Transformer 运动连贯性评测指标  
+[KeyWord4:] 视频生成模型 FVD 运动连贯性指标  
+[KeyWord5:] ComfyUI AnimateDiff 工作流搭建2025教程  
+[KeyWord6:] Kling API 视频生成集成  
+[KeyWord7:] AI视频生成 对影视行业 经济影响  
+[KeyWord8:] 生成式视频 伦理 深度伪造 风险  
+[KeyWord9:] Diffusion Transformer 对比 扩散模型 批判分析  
+[KeyWord10:] 从GAN到DiT 视频生成技术演变史  
+[KeyWord11:] Sora 架构可扩展性 局限性  
+[KeyWord12:] AI视频内容 真实性 哲学思考
+[FlashDeepSearch] 2026-06-27T20:20:58.748Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T20:20:58.748Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:20:58.748Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.749Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.750Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.750Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.751Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.757Z: 警告: 关键词 "Sora DiT架构技术细节" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.758Z: 警告: 关键词 "视频生成模型 FVD 运动连贯性指标" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.759Z: 警告: 关键词 "ComfyUI AnimateDiff 工作流搭建2025教程" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.760Z: 警告: 关键词 "Runway Gen-3 vs Gen-4 扩散模型路线对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.760Z: 警告: 关键词 "Diffusion Transformer 运动连贯性评测指标" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.760Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.761Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.761Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.762Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.763Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.764Z: 警告: 关键词 "Kling API 视频生成集成" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.765Z: 警告: 关键词 "Diffusion Transformer 对比 扩散模型 批判分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.766Z: 警告: 关键词 "生成式视频 伦理 深度伪造 风险" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.767Z: 警告: 关键词 "AI视频生成 对影视行业 经济影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.768Z: 警告: 关键词 "从GAN到DiT 视频生成技术演变史" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.768Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.768Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:58.770Z: 警告: 关键词 "AI视频内容 真实性 哲学思考" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:58.771Z: 警告: 关键词 "Sora 架构可扩展性 局限性" 的搜索失败: Request failed with status code 503

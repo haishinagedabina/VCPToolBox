@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T22:12:26.648Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:12:26.648Z: 研究主题: "Agent memory system architecture decision framework, selection guide, best practices, trade-off analysis, memory bank, Mem0, Letta, Zep 2025 2026 latest trends and future outlook", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T22:12:26.648Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:12:26.657Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:12:39.693Z: DeepSearchModel 原始响应: [KeyWord1:]智能体记忆架构决策框架 [KeyWord2:]Mem0 agent memory [KeyWord3:]Letta memory bank [KeyWord4:]Zep long-term memory for AI [KeyWord5:]记忆库技术对比与权衡分析 [KeyWord6:]智能体认知架构与记忆模块 [KeyWord7:]retrieval-augmented generation with agent memory [KeyWord8:]persistent memory for autonomous agents best practices [KeyWord9:]智能体记忆伦理与隐私 [KeyWord10:]memory pollution and hallucination amplification risks [KeyWord11:]智能体记忆经济与社会影响 [KeyWord12:]history and evolution of memory in AI systems [KeyWord13:]vector database vs knowledge graph for agent memory [KeyWord14:]智能体遗忘机制与数据主权 [KeyWord15:]2025 2026 agent memory trends and future outlook
+[FlashDeepSearch] 2026-06-27T22:12:39.693Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T22:12:39.694Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:12:39.694Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.695Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.696Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.697Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.698Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.701Z: 警告: 关键词 "智能体记忆架构决策框架" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.702Z: 警告: 关键词 "Mem0 agent memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.702Z: 警告: 关键词 "Zep long-term memory for AI" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.703Z: 警告: 关键词 "记忆库技术对比与权衡分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.704Z: 警告: 关键词 "Letta memory bank" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.704Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.704Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.705Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.706Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.706Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.709Z: 警告: 关键词 "retrieval-augmented generation with agent memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.709Z: 警告: 关键词 "persistent memory for autonomous agents best practices" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.710Z: 警告: 关键词 "智能体记忆伦理与隐私" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.710Z: 警告: 关键词 "memory pollution and hallucination amplification risks" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.711Z: 警告: 关键词 "智能体认知架构与记忆模块" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.711Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.711Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.712Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.712Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.712Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:12:39.714Z: 警告: 关键词 "history and evolution of memory in AI systems" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.715Z: 警告: 关键词 "vector database vs knowledge graph for agent memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.715Z: 警告: 关键词 "智能体遗忘机制与数据主权" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.716Z: 警告: 关键词 "2025 2026 agent memory trends and future outlook" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:12:39.716Z: 警告: 关键词 "智能体记忆经济与社会影响" 的搜索失败: Request failed with status code 503

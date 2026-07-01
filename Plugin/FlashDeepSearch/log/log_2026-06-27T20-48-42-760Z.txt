@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-27T20:48:42.763Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:48:42.763Z: 研究主题: "AI Agent 记忆系统 老化淘汰策略 对比 FIFO LRU LFU TTL 适用场景 工程实现复杂度。冲突解决 记忆冲突 数据版本仲裁 最后写入胜出 置信度加权 自动修复 人工干预边界。", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T20:48:42.763Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:48:42.772Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:48:54.325Z: DeepSearchModel 原始响应: [KeyWord1:] LRU与LFU在AI Agent工作记忆中的应用局限性对比 [KeyWord2:] TTL-based Memory Expiration in Multi-Agent Systems and Consistency Trade-offs [KeyWord3:] 从人类“遗忘曲线”到机器记忆淘汰的认知隐喻与伦理隐喻 [KeyWord4:] 置信度加权仲裁下知识冲突的隐性偏见与公平性风险 [KeyWord5:] 分布式Agent记忆冲突的向量时钟与多版本并发控制机制 [KeyWord6:] Compute and Storage Cost Analysis of Eviction Policies for LLM-Powered Agents [KeyWord7:] 最后写入胜出策略引发的历史记忆抹除与数据权伦理 [KeyWord8:] 缓存置换算法演进史：自操作系统页面置换至认知架构记忆管理 [KeyWord9:] 自动修复与人工干预边界的困境——AI自主决策的问责漏洞 [KeyWord10:] Failure Cases of Hybrid FIFO-LRU-TTL Policies in Long-Horizon Agent Tasks [KeyWord11:] 语义感知的动态淘汰策略：融合使用频次、时效与任务相关度 [KeyWord12:] 遗忘的权利与记忆的韧性：AI记忆系统设计中的隐私保护悖论
+[FlashDeepSearch] 2026-06-27T20:48:54.325Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T20:48:54.325Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:48:54.326Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.327Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.327Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.328Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.328Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.333Z: 警告: 关键词 "LRU与LFU在AI Agent工作记忆中的应用局限性对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.334Z: 警告: 关键词 "TTL-based Memory Expiration in Multi-Agent Systems and Consistency Trade-offs" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.335Z: 警告: 关键词 "置信度加权仲裁下知识冲突的隐性偏见与公平性风险" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.336Z: 警告: 关键词 "分布式Agent记忆冲突的向量时钟与多版本并发控制机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.337Z: 警告: 关键词 "从人类“遗忘曲线”到机器记忆淘汰的认知隐喻与伦理隐喻" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.337Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.338Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.338Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.339Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.340Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.343Z: 警告: 关键词 "缓存置换算法演进史：自操作系统页面置换至认知架构记忆管理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.343Z: 警告: 关键词 "Compute and Storage Cost Analysis of Eviction Policies for LLM-Powered Agents" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.344Z: 警告: 关键词 "Failure Cases of Hybrid FIFO-LRU-TTL Policies in Long-Horizon Agent Tasks" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.344Z: 警告: 关键词 "自动修复与人工干预边界的困境——AI自主决策的问责漏洞" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.344Z: 警告: 关键词 "最后写入胜出策略引发的历史记忆抹除与数据权伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.344Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.345Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:54.346Z: 警告: 关键词 "语义感知的动态淘汰策略：融合使用频次、时效与任务相关度" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:54.347Z: 警告: 关键词 "遗忘的权利与记忆的韧性：AI记忆系统设计中的隐私保护悖论" 的搜索失败: Request failed with status code 503

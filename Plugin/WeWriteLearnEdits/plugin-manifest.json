@@ -1,0 +1,37 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "WeWriteLearnEdits",
+  "version": "0.1.0",
+  "displayName": "微信公众号改稿学习 (Playbook 飞轮)",
+  "description": "wewrite 的招牌学习飞轮: 对比 Quill 出的 AI 初稿 vs 主人最终改完的稿子, 把每一处修改都识别成 typed pattern (用词替换 / 段落删除 / 段落新增 / 结构调整 / 标题修改 / 语气调整 / 表达偏好), 落到 wewrite/lessons/。多次积累后, summarize 输出按 confidence 排序的 pattern 列表, Quill 用这个列表把高 confidence 规则补到自己的写作清单里, 形成 '越改越像主人风格' 的循环。\n\n三个命令:\n- Diff: 输入 draft + final (Markdown 字符串或文件路径), 生成结构化 diff + 落盘空 patterns 的 lesson 文件\n- RecordPattern: Agent 分析完 diff 后, 把 pattern 写回最近一次 Diff 生成的 lesson (或指定 lesson_file), 一次可以加多条 pattern\n- Summarize: 加载全部 lessons → 按 key 聚合 → 计算 confidence (occurrences + recency - age decay) → 排序输出, 供生成 playbook.md\n\n参数 (Diff):\n- draft_content 或 draft_path (二选一): AI 初稿\n- final_content 或 final_path (二选一): 用户终稿\n- auto_extract_exemplar (布尔, 默认 true): 若终稿 humanness_score ≤ 50, 自动入范文库\n\n参数 (RecordPattern):\n- lesson_file (字符串, 可选): 目标 lesson 路径; 不传则默认追加到最新一条\n- patterns (数组, 必填): [{type, key, description, rule}], type 候选 [word_sub, para_delete, para_add, structure, title, tone, expression]\n- merge (布尔, 默认 false): true=合并到现有 patterns; false=覆盖\n\n参数 (Summarize):\n- min_confidence (浮点, 可选, 默认 0): 过滤 confidence 阈值\n- format (字符串, 可选, 默认 'summary'): summary | json (后者给 Quill 原始数据)\n\n返回 (Diff): lesson_file 路径 + diff_summary (title_changed / structure_changed / lines_added / lines_deleted / char_diff / draft_h2s / final_h2s) + additions_sample / deletions_sample\n返回 (RecordPattern): updated_count + saved_path\n返回 (Summarize): total_lessons + total_patterns + patterns (按 confidence 降序) + playbook_suggestion (若 ≥5 lessons)",
+  "author": "VCPToolBox",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python WeWriteLearnEdits.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 60000
+  },
+  "configSchema": {},
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "Diff",
+        "description": "对比 AI 初稿与人工终稿, 生成结构化 diff 并落盘 lesson 文件 (patterns 字段为空, 待 Agent 用 RecordPattern 回填).\n\n参数:\n- draft_content (字符串) 或 draft_path (路径或 file:// URL): AI 初稿\n- final_content (字符串) 或 final_path (路径或 file:// URL): 用户终稿\n- auto_extract_exemplar (布尔, 默认 true): 若终稿 humanness_score ≤ 50, 同步入范文库\n\n返回: lesson_file 路径 + diff_summary + additions_sample/deletions_sample (各取前 20 行) + extracted_to_exemplar (若入库, 给出范文文件路径)",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteLearnEdits「末」,\ncommand:「始」Diff「末」,\ndraft_path:「始」E:/path/to/draft.md「末」,\nfinal_path:「始」E:/path/to/final.md「末」\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "RecordPattern",
+        "description": "Agent 分析完 Diff 输出后, 把识别出的修改模式写回到 lesson 文件.\n\n参数:\n- patterns (数组, 必填): [{type, key, description, rule}], 例如:\n    [{\"type\":\"word_sub\",\"key\":\"avoid_jiangzhen\",\"description\":\"主人把'讲真'改成'坦白说'\",\"rule\":\"不要使用'讲真', 用'坦白说'代替\"}]\n  type 必须是: word_sub | para_delete | para_add | structure | title | tone | expression\n  key 必须唯一短标识符 (snake_case)\n  rule 必须是可执行的祈使句, 不是描述句\n\n- lesson_file (字符串, 可选): 目标 lesson 文件路径, 不传则取 lessons/ 下最新的\n- merge (布尔, 默认 false): true=追加新 patterns 到现有列表; false=覆盖原有 patterns",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteLearnEdits「末」,\ncommand:「始」RecordPattern「末」,\npatterns:「始」[{\"type\":\"word_sub\",\"key\":\"shorten_paragraph\",\"description\":\"主人把长段拆成 2-3 句一段\",\"rule\":\"段落不超过 80 字, 长段必须在 3 句内换行\"}]「末」\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "Summarize",
+        "description": "加载全部 lessons, 按 pattern key 聚合, 计算 confidence (基于 occurrences 频次 + 7 天 recency bonus - 30 天 age decay, 范围 1-10), 返回排序后的 pattern 列表.\n\n参数 (可选):\n- min_confidence (浮点, 默认 0): 过滤 confidence ≥ 该值的 pattern\n- format (字符串, 默认 'summary'): summary (按 type 分组, 含 verdict) | json (原始数据, 适合传给后续 prompt)\n\n触发提示: 当 total_lessons ≥ 5 且为 5 的倍数时, 返回里会附 playbook_suggestion 字段, 提示 Agent 更新 wewrite/playbook.md (高 confidence 规则 ≥ 7 的优先采纳)",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteLearnEdits「末」,\ncommand:「始」Summarize「末」,\nmin_confidence:「始」5「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+[FlashDeepSearch] 2026-06-28T00:00:42.693Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T00:00:42.693Z: 研究主题: "检索技术 RAG 混合检索 BM25 向量检索 HNSW 索引 Reranker 重排序模型 Cohere bge-reranker 性能对比 QPS 延迟 生产环境优化", 搜索广度: 10
+[FlashDeepSearch] 2026-06-28T00:00:42.694Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T00:00:42.703Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T00:00:49.899Z: DeepSearchModel 原始响应: [KeyWord1: BM25 混合向量检索 Reranker 延迟 QPS 生产环境 基准测试] [KeyWord2: HNSW 索引 近似最近邻搜索 对比 大规模嵌入 召回率] [KeyWord3: Cohere vs bge-reranker 重排序 准确率 成本 权衡] [KeyWord4: 检索增强生成 RAG 稀疏稠密融合 语义匹配 词频逆向文档频率] [KeyWord5: 向量检索 模型偏差 公平性 伦理 搜索结果多样性] [KeyWord6: 实时搜索 低延迟 缓存策略 索引分片 生产部署 优化实践] [KeyWord7: 信息检索历史 BM25 TF-IDF 神经排序模型 演进 对比 范式转移] [KeyWord8: 混合检索 召回阶段 粗排 精排 流水线 架构 工程挑战] [KeyWord9: RAG pipeline cost performance optimization open-source enterprise] [KeyWord10: 批判分析 向量检索 幻觉 语义漂移 稀疏检索 鲁棒性 互补性]
+[FlashDeepSearch] 2026-06-28T00:00:49.899Z: 成功提取到 10 个关键词。
+[FlashDeepSearch] 2026-06-28T00:00:49.899Z: 步骤 2: 并发执行 10 个搜索任务...
+[FlashDeepSearch] 2026-06-28T00:00:49.899Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.900Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.901Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.901Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.902Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.909Z: 警告: 关键词 "HNSW 索引 近似最近邻搜索 对比 大规模嵌入 召回率" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.910Z: 警告: 关键词 "BM25 混合向量检索 Reranker 延迟 QPS 生产环境 基准测试" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.910Z: 警告: 关键词 "Cohere vs bge-reranker 重排序 准确率 成本 权衡" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.911Z: 警告: 关键词 "检索增强生成 RAG 稀疏稠密融合 语义匹配 词频逆向文档频率" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.912Z: 警告: 关键词 "向量检索 模型偏差 公平性 伦理 搜索结果多样性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.912Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.912Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.913Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.914Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.914Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:00:49.916Z: 警告: 关键词 "混合检索 召回阶段 粗排 精排 流水线 架构 工程挑战" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.917Z: 警告: 关键词 "信息检索历史 BM25 TF-IDF 神经排序模型 演进 对比 范式转移" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.919Z: 警告: 关键词 "RAG pipeline cost performance optimization open-source enterprise" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.919Z: 警告: 关键词 "批判分析 向量检索 幻觉 语义漂移 稀疏检索 鲁棒性 互补性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:00:49.919Z: 警告: 关键词 "实时搜索 低延迟 缓存策略 索引分片 生产部署 优化实践" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,84 @@
+[FlashDeepSearch] 2026-06-27T21:58:54.450Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:58:54.450Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:58:54.450Z: 研究主题: "Prompt评测方法论的整体版图，包括Prompt评测是什么、核心环节、主流分类维度", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T21:58:54.451Z: 研究主题: "Prompt自动化评测方法分类，Prompt任务类型分类维度（如分类、生成、推理），Prompt评测的工程化框架", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T21:58:54.451Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:58:54.451Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:58:54.459Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:58:54.459Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:58:58.207Z: DeepSearchModel 原始响应: [KeyWord1:] Prompt自动化评测方法 taxonomy
+[KeyWord2:] 提示工程任务类型 分类维度 生成 推理
+[KeyWord3:] NLP benchmark 工程化框架 自动化评估
+[KeyWord4:] LLM evaluation rubric 批判性视角 测评失真
+[KeyWord5:] 哲学诠释学 提示交互 意义生成 评估效度
+[KeyWord6:] 社会技术想象 自动化评测 劳动替代 伦理风险
+[KeyWord7:] historical evolution of language model benchmarks
+[KeyWord8:] 对抗性提示设计 鲁棒性测评 对抗攻击
+[KeyWord9:] 跨学科视角 认知科学 prompt 评测 人类对齐
+[KeyWord10:] 提示审计 黑箱评估 问责机制 透明度
+[KeyWord11:] prompt leakage 评测作弊 生态污染
+[KeyWord12:] 经济成本 自动化评测 边际效益 闭环优化
+[FlashDeepSearch] 2026-06-27T21:58:58.207Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T21:58:58.208Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:58:58.208Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.209Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.209Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.210Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.210Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.216Z: 警告: 关键词 "Prompt自动化评测方法 taxonomy" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.217Z: 警告: 关键词 "NLP benchmark 工程化框架 自动化评估" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.218Z: 警告: 关键词 "LLM evaluation rubric 批判性视角 测评失真" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.218Z: 警告: 关键词 "哲学诠释学 提示交互 意义生成 评估效度" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.220Z: 警告: 关键词 "提示工程任务类型 分类维度 生成 推理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.220Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.221Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.221Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.222Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.222Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.225Z: 警告: 关键词 "historical evolution of language model benchmarks" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.225Z: 警告: 关键词 "对抗性提示设计 鲁棒性测评 对抗攻击" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.226Z: 警告: 关键词 "提示审计 黑箱评估 问责机制 透明度" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.227Z: 警告: 关键词 "跨学科视角 认知科学 prompt 评测 人类对齐" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.228Z: 警告: 关键词 "社会技术想象 自动化评测 劳动替代 伦理风险" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.228Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.228Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:58:58.230Z: 警告: 关键词 "prompt leakage 评测作弊 生态污染" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:58:58.230Z: 警告: 关键词 "经济成本 自动化评测 边际效益 闭环优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.813Z: DeepSearchModel 原始响应: [KeyWord1:] Prompt Evaluation Taxonomy
+[KeyWord2:] 提示工程评测的核心环节
+[KeyWord3:] Robustness of Prompts across LLMs
+[KeyWord4:] 从语言学视角看提示设计
+[KeyWord5:] Human vs Automated Prompt Evaluation
+[KeyWord6:] 伦理维度：提示中的社会偏见检测
+[KeyWord7:] Cost-Effectiveness Analysis of Prompting Strategies
+[KeyWord8:] 历史脉络：从特征工程到提示工程
+[KeyWord9:] Cognitive Load and Prompt Complexity
+[KeyWord10:] 批判反思：Prompt脆弱性及其评测局限
+[KeyWord11:] Multilingual and Cross-cultural Prompting
+[KeyWord12:] 评测基准：PromptBench与HELM等指标体系
+[FlashDeepSearch] 2026-06-27T21:59:05.814Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T21:59:05.815Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:59:05.815Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.816Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.817Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.817Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.818Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.823Z: 警告: 关键词 "Prompt Evaluation Taxonomy" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.824Z: 警告: 关键词 "提示工程评测的核心环节" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.825Z: 警告: 关键词 "从语言学视角看提示设计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.827Z: 警告: 关键词 "Robustness of Prompts across LLMs" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.827Z: 警告: 关键词 "Human vs Automated Prompt Evaluation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.828Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.828Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.828Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.829Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.830Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.832Z: 警告: 关键词 "Cost-Effectiveness Analysis of Prompting Strategies" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.833Z: 警告: 关键词 "Cognitive Load and Prompt Complexity" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.833Z: 警告: 关键词 "伦理维度：提示中的社会偏见检测" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.834Z: 警告: 关键词 "历史脉络：从特征工程到提示工程" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.834Z: 警告: 关键词 "批判反思：Prompt脆弱性及其评测局限" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.834Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.835Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:59:05.836Z: 警告: 关键词 "Multilingual and Cross-cultural Prompting" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:59:05.837Z: 警告: 关键词 "评测基准：PromptBench与HELM等指标体系" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,31 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "WeWriteThemes",
+  "version": "0.1.0",
+  "displayName": "微信公众号排版主题查询",
+  "description": "查询 wewrite 内置的 16+ 微信公众号排版主题, 可选择生成一个并排对比的主题画廊 HTML, 帮助 Agent 为用户选定排版风格。基于 oaker-io/wewrite 源码原样接入。",
+  "author": "VCPToolBox",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python WeWriteThemes.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 60000
+  },
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "ListThemes",
+        "description": "列出 wewrite 自带的全部排版主题及描述, 用于辅助选择 theme 字段。\n\n参数: 无\n\n返回内容:\n- count: 主题数量\n- themes: 主题列表, 每项含 name (主题键) / description (一句话描述) / colors (主色板, hex)\n- categories: 按 README 分类的主题分组 (通用 / 科技 / 文艺 / 商务 / 风格)\n\n调用格式:\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteThemes「末」,\ncommand:「始」ListThemes「末」\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteThemes「末」,\ncommand:「始」ListThemes「末」\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "Gallery",
+        "description": "为给定的 Markdown 文章生成一个 HTML 主题画廊, 把全部主题并排渲染, 便于一眼对比选定。\n\n参数:\n- markdown (字符串, 可选): Markdown 原文 / 本地路径 / file:// URL。未传时使用 wewrite 自带的示例 Markdown。\n- save_html (布尔, 可选): 是否把画廊 HTML 落盘到 Plugin/WeWriteCore/wewrite/output/, 默认 true。\n\n返回内容:\n- html: 主题画廊完整 HTML 字符串 (含全部主题预览卡片)\n- themes: 渲染的主题 name 列表\n- output_path: 若 save_html=true, 返回保存路径\n\n调用格式:\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteThemes「末」,\ncommand:「始」Gallery「末」,\nmarkdown:「始」# 示例\\n\\n## 第一段\\n用于对比 16 个主题的效果。「末」\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteThemes「末」,\ncommand:「始」Gallery「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+}

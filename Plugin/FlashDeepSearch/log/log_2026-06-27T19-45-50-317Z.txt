@@ -1,0 +1,88 @@
+[FlashDeepSearch] 2026-06-27T19:45:50.319Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T19:45:50.319Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T19:45:50.319Z: 研究主题: "AI辅助科幻小说情节生成与叙事引擎：当前有哪些主流工具（如Claude、GPT-4、Sudowrite、NovelAI）、它们各自的叙事能力、技术方案（如RAG记忆系统解决遗忘曲线）、以及多智能体协作叙事的案例和最新的研究进展？", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T19:45:50.319Z: 研究主题: "长篇小说情节连贯性技术方案：如何应对"遗忘曲线"与逻辑断层？RAG记忆系统、情节摘要缓存、长上下文窗口应用；科幻写作中主流叙事架构（三幕剧、英雄之旅、非线性叙事）的AI适配与Prompt示例；AI生成科幻冲突（科技伦理、文明碰撞）和"意料之外情理之中"反转的Prompt技巧；节奏控制与信息释放的Prompt模板，避免信息dump；AI辅助科幻情节设计的实战案例与作者访谈；多智能体（Agent）协作进行小说创作的技术方案与可行性分析。", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T19:45:50.319Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T19:45:50.328Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T19:45:50.319Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T19:45:50.328Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T19:45:54.228Z: DeepSearchModel 原始响应: [KeyWord1: 科幻小说 AI 情节生成] [KeyWord2: GPT-4 长篇小说 叙事连贯性] [KeyWord3: Sudowrite 故事引擎 功能评测] [KeyWord4: RAG 记忆系统 长文本遗忘曲线] [KeyWord5: 多智能体叙事 协作写作 案例] [KeyWord6: computational narratology 叙事智能 最新进展] [KeyWord7: NovelAI 图像生成 多模态 故事] [KeyWord8: AI authorship ethical debates 2025] [KeyWord9: 生成式AI 文学创造力 批判性分析] [KeyWord10: transformer 架构 故事架构 局限] [KeyWord11: interactive fiction AI dungeon 进化] [KeyWord12: 语言模型 情节规划 层级叙事] [KeyWord13: memory augmentation long context evaluation 2026] [KeyWord14: 科幻写作 人类-AI 协作 认知劳动分工] [KeyWord15: 叙事引擎 商业应用 出版行业 影响研究]
+[FlashDeepSearch] 2026-06-27T19:45:54.228Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T19:45:54.228Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T19:45:54.228Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.229Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.230Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.230Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.231Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.238Z: 警告: 关键词 "GPT-4 长篇小说 叙事连贯性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.238Z: 警告: 关键词 "科幻小说 AI 情节生成" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.240Z: 警告: 关键词 "RAG 记忆系统 长文本遗忘曲线" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.241Z: 警告: 关键词 "Sudowrite 故事引擎 功能评测" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.242Z: 警告: 关键词 "多智能体叙事 协作写作 案例" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.242Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.243Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.243Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.244Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.245Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.246Z: 警告: 关键词 "NovelAI 图像生成 多模态 故事" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.247Z: 警告: 关键词 "transformer 架构 故事架构 局限" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.248Z: 警告: 关键词 "生成式AI 文学创造力 批判性分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.248Z: 警告: 关键词 "AI authorship ethical debates 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.248Z: 警告: 关键词 "computational narratology 叙事智能 最新进展" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.248Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.249Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.249Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.249Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.250Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:45:54.252Z: 警告: 关键词 "memory augmentation long context evaluation 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.252Z: 警告: 关键词 "interactive fiction AI dungeon 进化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.252Z: 警告: 关键词 "科幻写作 人类-AI 协作 认知劳动分工" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.253Z: 警告: 关键词 "语言模型 情节规划 层级叙事" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:45:54.253Z: 警告: 关键词 "叙事引擎 商业应用 出版行业 影响研究" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.063Z: DeepSearchModel 原始响应: [KeyWord1: 长篇小说遗忘曲线解决方案与RAG记忆系统]
+[KeyWord2: "plot coherence" long context window technique]
+[KeyWord3: 情节摘要缓存与长上下文窗口协同策略]
+[KeyWord4: 三幕剧与英雄之旅的AI Prompt适配]
+[KeyWord5: "nonlinear narrative" generation language model]
+[KeyWord6: AI生成科幻冲突：科技伦理与文明碰撞]
+[KeyWord7: "意料之外 情理之中" 反转Prompt技巧]
+[KeyWord8: 节奏控制信息释放 Prompt 模板避免信息dump]
+[KeyWord9: multi-agent collaborative fiction writing architecture]
+[KeyWord10: 科幻写作AI辅助实战案例与作者访谈]
+[KeyWord11: RAG for long-form narrative consistency logical gap]
+[KeyWord12: 叙事同质化风险：AI生成科幻故事的批判性审视]
+[KeyWord13: "hero's journey" prompt engineering for sci-fi]
+[KeyWord14: 多智能体协作小说创作可行性分析与技术路线]
+[KeyWord15: 长篇小说情节连贯性自动评估指标与方法]
+[FlashDeepSearch] 2026-06-27T19:46:04.064Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T19:46:04.064Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T19:46:04.064Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.065Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.066Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.066Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.067Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.071Z: 警告: 关键词 "长篇小说遗忘曲线解决方案与RAG记忆系统" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.071Z: 警告: 关键词 "情节摘要缓存与长上下文窗口协同策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.073Z: 警告: 关键词 ""plot coherence" long context window technique" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.073Z: 警告: 关键词 ""nonlinear narrative" generation language model" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.074Z: 警告: 关键词 "三幕剧与英雄之旅的AI Prompt适配" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.074Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.074Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.075Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.076Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.076Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.078Z: 警告: 关键词 "AI生成科幻冲突：科技伦理与文明碰撞" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.079Z: 警告: 关键词 ""意料之外 情理之中" 反转Prompt技巧" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.080Z: 警告: 关键词 "科幻写作AI辅助实战案例与作者访谈" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.080Z: 警告: 关键词 "multi-agent collaborative fiction writing architecture" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.081Z: 警告: 关键词 "节奏控制信息释放 Prompt 模板避免信息dump" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.081Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.081Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.082Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.082Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.082Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:46:04.084Z: 警告: 关键词 "叙事同质化风险：AI生成科幻故事的批判性审视" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.084Z: 警告: 关键词 "多智能体协作小说创作可行性分析与技术路线" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.085Z: 警告: 关键词 "长篇小说情节连贯性自动评估指标与方法" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.085Z: 警告: 关键词 "RAG for long-form narrative consistency logical gap" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:46:04.085Z: 警告: 关键词 ""hero's journey" prompt engineering for sci-fi" 的搜索失败: Request failed with status code 503

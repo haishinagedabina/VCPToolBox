@@ -1,0 +1,76 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "StockScreener",
+  "displayName": "DSA选股数据读取器",
+  "version": "1.0.0",
+  "description": "访问 daily_stock_analysis(DSA) 的数据与选股能力，为 VCP Agent 团队提供取数 + 板块锁定选股触发。前 8 个命令为只读取数（不做 AI 分析）；trigger_board_run 为写/触发命令（HTTP 调 DSA 选股接口）。通过 command 路由：list_screening_runs(选股批次列表)、get_screening_candidates(批次候选清单)、get_candidate_detail(单票完整选股决策详情)、get_strategy_evidence(单策略域裁剪复核证据包，供选股复核Agent)、query_stock_daily(个股日线行情，支持列裁剪与锚点窗口)、get_stock_info(股票主数据)、list_boards(板块列表+成员数)、get_board_constituents(板块成分股，板块→股票反向查询)、trigger_board_run(把题材板块成分股作为限定宇宙交给 DSA 选股，让题材真正驱动选谁，热点题材师主用)。",
+  "author": "VCP",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python stock_screener.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 600000
+  },
+  "configSchema": {
+    "STOCK_DB_PATH": "string",
+    "STOCK_DB_TIMEOUT": "number",
+    "DSA_API_BASE_URL": "string",
+    "DSA_API_TIMEOUT": "number",
+    "DSA_API_COOKIE": "string"
+  },
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "list_screening_runs",
+        "description": "查询 DSA 的历史选股批次列表（按开始时间倒序）。用于先找到要分析的某次选股运行 run_id。\\n参数:\\n- command (字符串, 必需): 固定填 list_screening_runs\\n- market (字符串, 可选): 市场，如 cn，缺省返回全部市场\\n- status (字符串, 可选): 过滤状态，如 completed / completed_with_ai_degraded / failed / running\\n- limit (数字, 可选): 返回条数，默认 20，最大 100\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」list_screening_runs「末」,\\nmarket:「始」cn「末」,\\nlimit:「始」10「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」list_screening_runs「末」,\\nlimit:「始」5「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "get_screening_candidates",
+        "description": "查询某次选股批次的候选股票清单（按 rank 升序），含规则得分、命中策略、五层决策字段、DSA 当时的 AI 二筛结论摘要。用于团队分析整批选股结果。\\n参数:\\n- command (字符串, 必需): 固定填 get_screening_candidates\\n- run_id (字符串, 必需): 选股批次ID（来自 list_screening_runs）\\n- limit (数字, 可选): 返回条数，默认 100，最大 500\\n- with_ai_only (布尔值, 可选): 为 true 时只返回经过 AI 二筛(selected_for_ai)的候选\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_screening_candidates「末」,\\nrun_id:「始」run_20260603_cn_xxx「末」,\\nwith_ai_only:「始」true「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_screening_candidates「末」,\\nrun_id:「始」run_20260603_cn_xxx「末」,\\nlimit:「始」30「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "get_candidate_detail",
+        "description": "查询某次选股批次中单只股票的完整选股决策详情，包含五层决策(trade_stage/setup_type/risk_level/market_regime/theme_position)、因子快照、命中策略、规则命中项、以及 DSA 当时的 AI 理由(ai_summary/ai_reasoning/ai_operation_advice/ai_confidence)。这是复盘『当初为什么选这只票』的核心数据。\\n参数:\\n- command (字符串, 必需): 固定填 get_candidate_detail\\n- run_id (字符串, 必需): 选股批次ID\\n- code (字符串, 必需): 股票代码，如 600519\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_candidate_detail「末」,\\nrun_id:「始」run_20260603_cn_xxx「末」,\\ncode:「始」600519「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_candidate_detail「末」,\\nrun_id:「始」run_20260603_cn_xxx「末」,\\ncode:「始」600519「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "get_strategy_evidence",
+        "description": "【选股复核专用】返回某候选在【单个策略域】下裁剪+清洗后的复核证据包。从 155 字段的 factor_snapshot 中只取本策略相关字段(按前缀白名单)，附该策略 hit_reasons、从文本解析出的锚点日期(anchor_dates 如P1/P2/P3、A/B/H)、数据质量标注(data_quality/missing_fields)、DSA 自带 AI 结论，以及 run_trade_date(供 Agent 钳制K线避免前视偏差)。专供复核 Agent，体量约20-32字段，避免上下文爆炸。\\n参数:\\n- command (字符串, 必需): 固定填 get_strategy_evidence\\n- run_id (字符串, 必需): 选股批次ID\\n- code (字符串, 必需): 股票代码\\n- strategy (字符串, 必需): 策略名，取值之一: bottom_divergence_double_breakout, ma100_low123_combined, ma100_60min_combined, gap_limitup_breakout, shrink_pullback, trendline_breakout, volume_breakout, extreme_strength_combo, one_yang_three_yin, bottom_volume\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_strategy_evidence「末」,\\nrun_id:「始」run-xxx「末」,\\ncode:「始」600103「末」,\\nstrategy:「始」ma100_low123_combined「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_strategy_evidence「末」,\\nrun_id:「始」run-xxx「末」,\\ncode:「始」600103「末」,\\nstrategy:「始」bottom_divergence_double_breakout「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "query_stock_daily",
+        "description": "查询个股的日线行情(OHLCV + 涨跌幅 + ma5/ma10/ma20 + 量比)，按日期升序。用于追踪走势或核验结构锚点。支持任意日期区间、列裁剪与锚点窗口取数(防上下文爆炸)。\\n参数:\\n- command (字符串, 必需): 固定填 query_stock_daily\\n- code (字符串, 必需): 股票代码，如 600519\\n- start_date (字符串, 可选): 起始日期 YYYY-MM-DD\\n- end_date (字符串, 可选): 结束日期 YYYY-MM-DD。【复核必传】钳制到 run_trade_date，避免看到选股当日之后的未来K线(前视偏差)\\n- limit (数字, 可选): 普通模式最多返回条数，默认 60，最大 500\\n- columns (字符串, 可选): 逗号分隔的列子集，默认精简如 date,open,high,low,close,volume_ratio，可选列: date/open/high/low/close/volume/amount/pct_chg/ma5/ma10/ma20/volume_ratio/data_source/adj_factor/adj_anchor_date\\n- anchor_dates (字符串, 可选): 逗号分隔的锚点日期(YYYY-MM-DD)。传入则启用锚点模式，只返回每个锚点 ±window 根 + 最近尾窗，而非整段区间\\n- window (数字, 可选): 锚点模式每侧K线根数，默认 3，最大 20\\n调用格式(锚点模式):\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」query_stock_daily「末」,\\ncode:「始」600103「末」,\\ncolumns:「始」date,open,high,low,close,volume_ratio「末」,\\nanchor_dates:「始」2026-04-03,2026-05-14,2026-06-02「末」,\\nwindow:「始」2「末」,\\nend_date:「始」2026-06-03「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」query_stock_daily「末」,\\ncode:「始」600519「末」,\\nstart_date:「始」2026-05-01「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "get_stock_info",
+        "description": "查询股票主数据：名称、市场、交易所、上市状态、是否ST、所属行业、上市日期。\\n参数:\\n- command (字符串, 必需): 固定填 get_stock_info\\n- code (字符串, 必需): 股票代码，如 600519\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_stock_info「末」,\\ncode:「始」600519「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_stock_info「末」,\\ncode:「始」600519「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "list_boards",
+        "description": "查询指定市场下的活跃板块及其成员股票数量（按成员数降序）。用于先找到要分析的板块名称。\\n参数:\\n- command (字符串, 必需): 固定填 list_boards\\n- market (字符串, 可选): 市场，如 cn/hk/us，缺省 cn\\n- board_type (字符串, 可选): 板块类型过滤，如 industry / concept\\n- min_member_count (数字, 可选): 最小成员股票数量，缺省 0（不过滤）\\n返回字段: boards[].board_id / board_name / board_type / member_count\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」list_boards「末」,\\nmarket:「始」cn「末」,\\nboard_type:「始」concept「末」,\\nmin_member_count:「始」10「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」list_boards「末」,\\nmarket:「始」cn「末」,\\nmin_member_count:「始」20「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "get_board_constituents",
+        "description": "查询指定板块的成分股代码与名称（板块→股票反向查询）。board_name 取自 list_boards 的返回。\\n参数:\\n- command (字符串, 必需): 固定填 get_board_constituents\\n- board_name (字符串, 必需): 板块名称，如 白酒\\n- market (字符串, 可选): 市场，如 cn/hk/us，缺省 cn\\n返回字段: codes(代码列表) / constituents[].code / constituents[].name(股票池无记录时为 null)。查无成分股时 total=0。\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_board_constituents「末」,\\nboard_name:「始」白酒「末」,\\nmarket:「始」cn「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_board_constituents「末」,\\nboard_name:「始」白酒「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "trigger_board_run",
+        "description": "【写/触发，热点题材师主用】到最热的题材板块去选股：本命令用只读库把 board_names 解析成板块成分股代码，作为【限定选股宇宙】POST 给 DSA 的 /runs 接口(stock_codes 限定宇宙)，DSA 只在这些成分股内跑策略选股——这才是『传入板块=选股宇宙』，新闻催化题材真正驱动『选谁』，返回 run_id。注：DSA 的 openclaw-theme-run 写死全市场跑、题材只作软打分不锁宇宙，故本命令不走 openclaw。\\n参数:\\n- command (字符串, 必需): 固定填 trigger_board_run\\n- board_names (字符串, 必需(或用 stock_codes)): 题材对齐到的真实板块名，逗号分隔或 JSON 数组字符串(如 半导体概念,国产芯片 或 [\"半导体概念\",\"国产芯片\"])；将取各板块成分股并集为选股宇宙\\n- stock_codes (字符串, 可选): 直接指定股票池(逗号分隔/JSON数组)，与 board_names 可叠加\\n- trade_date (字符串, 可选): 交易日 YYYY-MM-DD，缺省今天\\n- market (字符串, 可选): 缺省 cn\\n- mode (字符串, 可选): balanced/aggressive/quality，缺省 balanced\\n- candidate_limit (数字, 可选): **热点选股默认只取 5 只**(龙头主选+备选，少即是多；下游模拟盘仅3仓，多选浪费)，最大 200\\n- ai_top_k (数字, 可选): 默认 5，不得大于 candidate_limit\\n- strategies (字符串, 可选): 指定策略(逗号分隔/JSON数组)，缺省用 DSA 全部策略；想聚焦龙头可填 extreme_strength_combo\\n返回: triggered/http_status/universe_mode(board_restricted)/board_names/board_member_counts/resolved_code_count/sample_codes/universe_size(应=resolved_code_count)/candidate_count/dsa_response(含 run_id、status)\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」trigger_board_run「末」,\\nboard_names:「始」半导体概念,国产芯片「末」,\\ntrade_date:「始」2026-06-05「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」trigger_board_run「末」,\\nboard_names:「始」[\"新能源汽车\",\"锂电池\"]「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  },
+  "dependencies": {
+    "python": ">=3.8"
+  }
+}

@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-28T00:13:53.623Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T00:13:53.623Z: 研究主题: "Deep Research Agent task planning and decomposition paradigms like Plan-and-Execute, ReAct, hierarchical planning, constraint-driven planning, and their comparison, advantages and disadvantages. Include academic papers and surveys.", 搜索广度: 15
+[FlashDeepSearch] 2026-06-28T00:13:53.623Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T00:13:53.632Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T00:14:00.685Z: DeepSearchModel 原始响应: [KeyWord1: Plan and Execute agent survey] [KeyWord2: ReAct reasoning and acting paradigm] [KeyWord3: hierarchical task network planning review] [KeyWord4: constraint-driven agent planning] [KeyWord5: LLM agent task decomposition] [KeyWord6: 大型语言模型规划范式比较] [KeyWord7: autonomous agent ethical responsibility] [KeyWord8: 认知架构与任务规划] [KeyWord9: 分层强化学习与智能体规划] [KeyWord10: ReAct vs Plan-and-Execute comparison] [KeyWord11: 约束满足问题在机器人决策中的应用] [KeyWord12: task planning failure modes analysis] [KeyWord13: 自动规划历史演进] [KeyWord14: multi-agent cooperative planning survey] [KeyWord15: 机器意图与哲学自由意志]
+[FlashDeepSearch] 2026-06-28T00:14:00.685Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-28T00:14:00.686Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-28T00:14:00.686Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.686Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.687Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.688Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.688Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.693Z: 警告: 关键词 "Plan and Execute agent survey" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.694Z: 警告: 关键词 "hierarchical task network planning review" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.695Z: 警告: 关键词 "ReAct reasoning and acting paradigm" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.697Z: 警告: 关键词 "LLM agent task decomposition" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.697Z: 警告: 关键词 "constraint-driven agent planning" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.697Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.698Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.698Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.699Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.700Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.702Z: 警告: 关键词 "大型语言模型规划范式比较" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.702Z: 警告: 关键词 "认知架构与任务规划" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.703Z: 警告: 关键词 "ReAct vs Plan-and-Execute comparison" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.703Z: 警告: 关键词 "分层强化学习与智能体规划" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.703Z: 警告: 关键词 "autonomous agent ethical responsibility" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.704Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.704Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.704Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.704Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.705Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:00.706Z: 警告: 关键词 "约束满足问题在机器人决策中的应用" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.707Z: 警告: 关键词 "task planning failure modes analysis" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.707Z: 警告: 关键词 "机器意图与哲学自由意志" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.708Z: 警告: 关键词 "multi-agent cooperative planning survey" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:00.709Z: 警告: 关键词 "自动规划历史演进" 的搜索失败: Request failed with status code 503

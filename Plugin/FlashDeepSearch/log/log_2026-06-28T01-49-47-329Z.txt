@@ -1,0 +1,42 @@
+[FlashDeepSearch] 2026-06-28T01:49:47.332Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:49:47.332Z: 研究主题: "KV Cache optimization techniques for large language model inference, including PagedAttention from vLLM, RadixAttention from SGLang, KV Cache quantization like KIVI 2-bit, FP8 KV Cache, Mooncake KV cache pooling, Ring Attention, speculative decoding KV reuse, and benchmark comparison across vLLM SGLang TensorRT-LLM TGI.", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T01:49:47.332Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:49:47.341Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:50:02.012Z: DeepSearchModel 原始响应: [KeyWord1: KV Cache管理技术综述 (Survey of KV Cache Management Techniques)]
+[KeyWord2: PagedAttention虚拟内存与内存碎片 (PagedAttention Virtual Memory Fragmentation)]
+[KeyWord3: RadixAttention前缀共享缓存复用 (RadixAttention Prefix Sharing Cache Reuse)]
+[KeyWord4: KV Cache量化KIVI 2-bit精度损失 (KV Cache Quantization KIVI 2-bit Accuracy Loss)]
+[KeyWord5: FP8 KV Cache推理吞吐与误差 (FP8 KV Cache Inference Throughput Error)]
+[KeyWord6: Mooncake分布式KV缓存池化架构 (Mooncake Distributed KV Cache Pooling Architecture)]
+[KeyWord7: 推测解码KV重用加速比 (Speculative Decoding KV Reuse Speedup)]
+[KeyWord8: 推理引擎基准vLLM vs SGLang vs TensorRT-LLM (Inference Engine Benchmark vLLM SGLang TensorRT-LLM)]
+[KeyWord9: 大模型推理碳足迹与KV缓存 (Carbon Footprint of LLM Inference and KV Cache)]
+[KeyWord10: KV缓存优化降低推理成本经济分析 (KV Cache Optimization Reducing Inference Cost Economic Analysis)]
+[KeyWord11: 长上下文推理中KV缓存瓶颈与局限 (KV Cache Bottlenecks in Long-context Inference Limitations)]
+[KeyWord12: 注意力机制KV缓存历史演进 (Historical Evolution of Attention Mechanism KV Caches)]
+[FlashDeepSearch] 2026-06-28T01:50:02.013Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T01:50:02.013Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:50:02.013Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.014Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.015Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.015Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.016Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.021Z: 警告: 关键词 "KV Cache管理技术综述 (Survey of KV Cache Management Techniques)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.022Z: 警告: 关键词 "RadixAttention前缀共享缓存复用 (RadixAttention Prefix Sharing Cache Reuse)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.022Z: 警告: 关键词 "FP8 KV Cache推理吞吐与误差 (FP8 KV Cache Inference Throughput Error)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.022Z: 警告: 关键词 "PagedAttention虚拟内存与内存碎片 (PagedAttention Virtual Memory Fragmentation)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.023Z: 警告: 关键词 "KV Cache量化KIVI 2-bit精度损失 (KV Cache Quantization KIVI 2-bit Accuracy Loss)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.023Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.023Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.024Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.024Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.025Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.027Z: 警告: 关键词 "Mooncake分布式KV缓存池化架构 (Mooncake Distributed KV Cache Pooling Architecture)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.028Z: 警告: 关键词 "推测解码KV重用加速比 (Speculative Decoding KV Reuse Speedup)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.028Z: 警告: 关键词 "推理引擎基准vLLM vs SGLang vs TensorRT-LLM (Inference Engine Benchmark vLLM SGLang TensorRT-LLM)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.029Z: 警告: 关键词 "大模型推理碳足迹与KV缓存 (Carbon Footprint of LLM Inference and KV Cache)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.029Z: 警告: 关键词 "KV缓存优化降低推理成本经济分析 (KV Cache Optimization Reducing Inference Cost Economic Analysis)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.029Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.030Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:50:02.031Z: 警告: 关键词 "注意力机制KV缓存历史演进 (Historical Evolution of Attention Mechanism KV Caches)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:50:02.031Z: 警告: 关键词 "长上下文推理中KV缓存瓶颈与局限 (KV Cache Bottlenecks in Long-context Inference Limitations)" 的搜索失败: Request failed with status code 503

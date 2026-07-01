@@ -807,6 +807,14 @@ async function replaceOtherVariables(text, model, role, context) {
         const pluginName = asyncMatch[1] || asyncMatch[3] || asyncMatch[5];
         const requestId = asyncMatch[2] || asyncMatch[4] || asyncMatch[6];
 
+        if (pluginName === 'AgentAssistant' && !requestId.startsWith('aa-delegation-')) {
+            tempAsyncProcessedText = tempAsyncProcessedText.replace(
+                placeholder,
+                `[无效的 AgentAssistant 异步占位符: ${requestId}]`
+            );
+            continue;
+        }
+
         promises.push(
             (async () => {
                 const resultFilePath = path.join(VCP_ASYNC_RESULTS_DIR, `${pluginName}-${requestId}.json`);

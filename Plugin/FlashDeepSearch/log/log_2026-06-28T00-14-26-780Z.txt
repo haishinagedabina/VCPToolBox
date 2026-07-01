@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-28T00:14:26.782Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T00:14:26.783Z: 研究主题: "task decomposition strategies for LLM agents, including recursive decomposition, template-based decomposition, LLM self-decomposition, for complex research tasks, and how to do automatic sub-task generation", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T00:14:26.783Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T00:14:26.793Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T00:14:31.196Z: DeepSearchModel 原始响应: [KeyWord1: 递归任务分解算法] [KeyWord2: LLM self-decomposition reliability] [KeyWord3: 模板化子目标生成] [KeyWord4: 自动任务规划中的偏见与盲区] [KeyWord5: task decomposition in cognitive science] [KeyWord6: 多层分解的失效模式] [KeyWord7: 从GOFAI到LLM的规划演进史] [KeyWord8: 巨型模型自主拆解任务的能源成本批判] [KeyWord9: ethical oversight in automated research workflows] [KeyWord10: 子任务自动生成的可解释性缺口] [KeyWord11: hierarchical planning for multi-agent systems] [KeyWord12: 复杂科学问题的人工智能分解边界]
+[FlashDeepSearch] 2026-06-28T00:14:31.196Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T00:14:31.197Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T00:14:31.197Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.198Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.198Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.199Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.199Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.204Z: 警告: 关键词 "递归任务分解算法" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.204Z: 警告: 关键词 "模板化子目标生成" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.205Z: 警告: 关键词 "自动任务规划中的偏见与盲区" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.206Z: 警告: 关键词 "task decomposition in cognitive science" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.207Z: 警告: 关键词 "LLM self-decomposition reliability" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.207Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.207Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.208Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.208Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.209Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.211Z: 警告: 关键词 "从GOFAI到LLM的规划演进史" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.213Z: 警告: 关键词 "多层分解的失效模式" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.214Z: 警告: 关键词 "巨型模型自主拆解任务的能源成本批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.214Z: 警告: 关键词 "子任务自动生成的可解释性缺口" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.214Z: 警告: 关键词 "ethical oversight in automated research workflows" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.215Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.215Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:14:31.217Z: 警告: 关键词 "复杂科学问题的人工智能分解边界" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:14:31.217Z: 警告: 关键词 "hierarchical planning for multi-agent systems" 的搜索失败: Request failed with status code 503

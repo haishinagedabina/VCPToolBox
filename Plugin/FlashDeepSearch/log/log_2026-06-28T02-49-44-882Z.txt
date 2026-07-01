@@ -1,0 +1,42 @@
+[FlashDeepSearch] 2026-06-28T02:49:44.884Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T02:49:44.884Z: 研究主题: "Prompt Injection 攻击面分类：直接注入、间接注入、Jailbreak 差异，防御策略如输入过滤、意图分类、沙箱隔离", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T02:49:44.884Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T02:49:44.894Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T02:49:55.123Z: DeepSearchModel 原始响应: [KeyWord1:] Direct Prompt Injection
+[KeyWord2:] Indirect Prompt Injection
+[KeyWord3:] Jailbreak vs Prompt Injection
+[KeyWord4:] Input Filtering for LLM
+[KeyWord5:] Intent Classification Defense
+[KeyWord6:] Sandbox Isolation Agent
+[KeyWord7:] 提示注入攻击面分类
+[KeyWord8:] 大模型越狱防御差异
+[KeyWord9:] 防御策略局限性批判
+[KeyWord10:] 提示工程伦理风险
+[KeyWord11:] AI安全经济成本
+[KeyWord12:] 对抗性攻击跨学科分析
+[FlashDeepSearch] 2026-06-28T02:49:55.125Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T02:49:55.125Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T02:49:55.125Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.127Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.128Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.128Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.129Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.132Z: 警告: 关键词 "Direct Prompt Injection" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.133Z: 警告: 关键词 "Indirect Prompt Injection" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.134Z: 警告: 关键词 "Jailbreak vs Prompt Injection" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.135Z: 警告: 关键词 "Intent Classification Defense" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.135Z: 警告: 关键词 "Input Filtering for LLM" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.136Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.136Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.137Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.137Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.138Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.140Z: 警告: 关键词 "提示注入攻击面分类" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.141Z: 警告: 关键词 "Sandbox Isolation Agent" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.141Z: 警告: 关键词 "提示工程伦理风险" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.142Z: 警告: 关键词 "防御策略局限性批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.142Z: 警告: 关键词 "大模型越狱防御差异" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.142Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.143Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:49:55.144Z: 警告: 关键词 "对抗性攻击跨学科分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:49:55.145Z: 警告: 关键词 "AI安全经济成本" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,27 @@
+[FlashDeepSearch] 2026-06-27T20:48:42.764Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:48:42.764Z: 研究主题: "记忆冲突解决算法：时间戳 vs 置信度加权 vs 来源权威度。AI Agent 记忆维护，何时采用自动仲裁（如 LWW）何时必须引入人工干预。 长会话记忆与持久记忆的混合淘汰策略。冲突检测的工程框架。", 搜索广度: 10
+[FlashDeepSearch] 2026-06-27T20:48:42.764Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:48:42.773Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:48:56.478Z: DeepSearchModel 原始响应: [KeyWord1:] 记忆冲突自动仲裁算法比较 [KeyWord2:] 最后写入胜利与人工干预触发机制 [KeyWord3:] 置信度加权与来源权威度融合模型 [KeyWord4:] 长会话记忆与持久记忆淘汰策略 [KeyWord5:] Agent记忆一致性冲突检测框架 [KeyWord6:] 记忆真实性与信息伦理 [KeyWord7:] 多源信息融合中的权威偏误 [KeyWord8:] Confidence-weighted Belief Revision in LLM Agents [KeyWord9:] Human-in-the-loop Memory Conflict Resolution [KeyWord10:] Critique of Timestamp-based Arbitration
+[FlashDeepSearch] 2026-06-27T20:48:56.478Z: 成功提取到 10 个关键词。
+[FlashDeepSearch] 2026-06-27T20:48:56.479Z: 步骤 2: 并发执行 10 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:48:56.479Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.480Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.480Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.481Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.481Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.486Z: 警告: 关键词 "记忆冲突自动仲裁算法比较" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.487Z: 警告: 关键词 "长会话记忆与持久记忆淘汰策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.488Z: 警告: 关键词 "置信度加权与来源权威度融合模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.489Z: 警告: 关键词 "最后写入胜利与人工干预触发机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.490Z: 警告: 关键词 "Agent记忆一致性冲突检测框架" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.490Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.490Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.491Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.492Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.493Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:48:56.494Z: 警告: 关键词 "Confidence-weighted Belief Revision in LLM Agents" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.495Z: 警告: 关键词 "多源信息融合中的权威偏误" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.495Z: 警告: 关键词 "Critique of Timestamp-based Arbitration" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.496Z: 警告: 关键词 "Human-in-the-loop Memory Conflict Resolution" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:48:56.496Z: 警告: 关键词 "记忆真实性与信息伦理" 的搜索失败: Request failed with status code 503

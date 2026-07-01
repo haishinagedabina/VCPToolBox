@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-28T03:14:26.631Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T03:14:26.632Z: 研究主题: "跨模型 Prompt Cache 统一管理, Prefix Caching 异构, KV Cache 跨模型复用, Multi-LLM cost optimization", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T03:14:26.632Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T03:14:26.641Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T03:14:34.650Z: DeepSearchModel 原始响应: [KeyWord1:跨模型KV缓存共享] [KeyWord2:Multi-LLM inference cost reduction] [KeyWord3:异构模型前缀缓存对齐] [KeyWord4:Cross-model prefix caching standardization] [KeyWord5:LLM serving cost optimization strategies] [KeyWord6:KV cache interoperability across architectures] [KeyWord7:缓存一致性在多模型系统中的挑战] [KeyWord8:Ethical implications of shared inference caches] [KeyWord9:绿色AI与推理能效优化] [KeyWord10:Memory-efficient transformer serving] [KeyWord11:Economic analysis of shared LLM infrastructure] [KeyWord12:跨组织缓存联合运营的商业模式]
+[FlashDeepSearch] 2026-06-28T03:14:34.650Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T03:14:34.650Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T03:14:34.651Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.653Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.653Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.654Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.654Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.659Z: 警告: 关键词 "跨模型KV缓存共享" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.661Z: 警告: 关键词 "Multi-LLM inference cost reduction" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.662Z: 警告: 关键词 "Cross-model prefix caching standardization" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.663Z: 警告: 关键词 "异构模型前缀缓存对齐" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.664Z: 警告: 关键词 "LLM serving cost optimization strategies" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.665Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.665Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.666Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.666Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.667Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.669Z: 警告: 关键词 "缓存一致性在多模型系统中的挑战" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.671Z: 警告: 关键词 "Ethical implications of shared inference caches" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.672Z: 警告: 关键词 "KV cache interoperability across architectures" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.672Z: 警告: 关键词 "绿色AI与推理能效优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.672Z: 警告: 关键词 "Memory-efficient transformer serving" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.673Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.673Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:14:34.675Z: 警告: 关键词 "Economic analysis of shared LLM infrastructure" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:14:34.676Z: 警告: 关键词 "跨组织缓存联合运营的商业模式" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,33 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "WeWriteHotspots",
+  "version": "0.1.0",
+  "displayName": "微信公众号热点抓取",
+  "description": "并行抓取微博热搜、今日头条热榜、百度热搜 (国内三大平台), 跨平台去重 + 排名归一化后给出今日热点候选池。专为 Quill Agent 的选题环节设计, 配合 TVSQuillTopicRules 的三维评分公式使用。基于 oaker-io/wewrite 源码原样接入。",
+  "author": "VCPToolBox",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python WeWriteHotspots.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 45000
+  },
+  "configSchema": {
+    "WEWRITE_HOTSPOTS_DEFAULT_LIMIT": {
+      "type": "integer",
+      "description": "未指定 limit 时返回的热点条数",
+      "default": 20
+    }
+  },
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "Fetch",
+        "description": "并行抓取微博/头条/百度三大平台的实时热搜, 跨平台去重并按归一化热度排序。\n\n参数:\n- limit (整数, 可选): 返回的热点条数, 默认 20, 上限 50。\n\n返回内容:\n- timestamp: 抓取时间 (UTC+8)\n- sources: 成功抓取的平台列表, 如 [\"weibo\",\"toutiao\",\"baidu\"]\n- sources_failed: 抓取失败的平台列表\n- count: 实际返回条数\n- items: 热点数组, 每条含 title / source (中文平台名) / hot (原始热度) / hot_normalized (0-100 跨平台可比) / url / description\n- skip_reason: 全部平台失败时给出提示 (Agent 应降级到 VSearch / DailyHot / WebSearch)\n\n国内三大平台**直连最稳**, 本插件继承 WeWriteCore 的代理剥离机制 (默认不走系统 HTTP_PROXY)。\n\n调用格式:\n<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteHotspots「末」,\ncommand:「始」Fetch「末」,\nlimit:「始」20「末」\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteHotspots「末」,\ncommand:「始」Fetch「末」,\nlimit:「始」15「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+}

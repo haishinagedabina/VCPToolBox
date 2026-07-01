@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T22:08:54.140Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T22:08:54.140Z: 研究主题: "agent memory management: forgetting, maintenance strategies, TTL, LRU, importance scoring, reflection summarization, soft vs hard deletion, hierarchical memory, MemGPT, Letta, LangChain, AutoGPT engineering practices", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T22:08:54.140Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T22:08:54.150Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T22:09:09.518Z: DeepSearchModel 原始响应: [KeyWord1:] 分层记忆架构 (Hierarchical Memory Architecture) [KeyWord2:] TTL缓存淘汰算法 (TTL Cache Eviction) [KeyWord3:] Importance Scoring for Memory Retention [KeyWord4:] 反思摘要与记忆压缩 (Reflective Summarization & Compression) [KeyWord5:] 软删除与硬删除策略对比 [KeyWord6:] Forgetting Curve in Cognitive Science [KeyWord7:] MemGPT: Memory-Augmented GPT Architectures [KeyWord8:] Letta框架的智能体记忆设计 [KeyWord9:] LangChain中的Memory模块实现 [KeyWord10:] AutoGPT工程记忆管理的实践挑战 [KeyWord11:] 灾难性遗忘与持续学习 (Catastrophic Forgetting & Continual Learning) [KeyWord12:] AI伦理：被遗忘权与数据最小化 (Right to be Forgotten & Data Minimization) [KeyWord13:] 存储系统的垃圾回收与生命周期管理 (Garbage Collection & Lifecycle Management) [KeyWord14:] 记忆维护的经济成本模型 (Economic Cost Model of Memory Maintenance) [KeyWord15:] 冯·诺依曼架构的记忆墙批判 (Critique of von Neumann Memory Wall)
+[FlashDeepSearch] 2026-06-27T22:09:09.518Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T22:09:09.518Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T22:09:09.518Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.519Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.520Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.521Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.521Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.526Z: 警告: 关键词 "分层记忆架构 (Hierarchical Memory Architecture)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.526Z: 警告: 关键词 "反思摘要与记忆压缩 (Reflective Summarization & Compression)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.527Z: 警告: 关键词 "Importance Scoring for Memory Retention" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.527Z: 警告: 关键词 "TTL缓存淘汰算法 (TTL Cache Eviction)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.528Z: 警告: 关键词 "软删除与硬删除策略对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.528Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.528Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.529Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.530Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.530Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.533Z: 警告: 关键词 "Letta框架的智能体记忆设计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.533Z: 警告: 关键词 "LangChain中的Memory模块实现" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.534Z: 警告: 关键词 "AutoGPT工程记忆管理的实践挑战" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.535Z: 警告: 关键词 "Forgetting Curve in Cognitive Science" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.535Z: 警告: 关键词 "MemGPT: Memory-Augmented GPT Architectures" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.535Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.536Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.536Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.536Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.537Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T22:09:09.539Z: 警告: 关键词 "存储系统的垃圾回收与生命周期管理 (Garbage Collection & Lifecycle Management)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.539Z: 警告: 关键词 "AI伦理：被遗忘权与数据最小化 (Right to be Forgotten & Data Minimization)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.540Z: 警告: 关键词 "冯·诺依曼架构的记忆墙批判 (Critique of von Neumann Memory Wall)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.540Z: 警告: 关键词 "记忆维护的经济成本模型 (Economic Cost Model of Memory Maintenance)" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T22:09:09.541Z: 警告: 关键词 "灾难性遗忘与持续学习 (Catastrophic Forgetting & Continual Learning)" 的搜索失败: Request failed with status code 503

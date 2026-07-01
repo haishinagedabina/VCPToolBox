@@ -1,0 +1,35 @@
+[FlashDeepSearch] 2026-06-27T20:31:18.848Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:31:18.848Z: 研究主题: "AI video animation generation technology comparison AnimateDiff Runway Gen Pika OpenAI Sora diffusion models interpolation motion techniques 2025 2026", 搜索广度: 14
+[FlashDeepSearch] 2026-06-27T20:31:18.848Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:31:18.857Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:31:27.507Z: DeepSearchModel 原始响应: [KeyWord1: AnimateDiff diffusion video generation technique comparison 2025] [KeyWord2: OpenAI Sora motion consistency evaluation 2026] [KeyWord3: Runway Gen-3 Pika text-to-video benchmark] [KeyWord4: 人工智能视频生成伦理风险 深度伪造 2025] [KeyWord5: AI动画对传统动画产业冲击 2026] [KeyWord6: temporal interpolation techniques latent diffusion models] [KeyWord7: synthetic video detection and authenticity] [KeyWord8: 扩散模型视频插帧运动平滑技术] [KeyWord9: AI视频生成工具比较 Runway Pika Sora 2025] [KeyWord10: creative industries AI animation copyright 2026] [KeyWord11: video diffusion model architecture survey 2025] [KeyWord12: 生成式AI与电影制作 美学 批判] [KeyWord13: Pika 2.0 AnimateDiff motion transfer evaluation] [KeyWord14: multimodal video generation human evaluation metrics]
+[FlashDeepSearch] 2026-06-27T20:31:27.508Z: 成功提取到 14 个关键词。
+[FlashDeepSearch] 2026-06-27T20:31:27.508Z: 步骤 2: 并发执行 14 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:31:27.508Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.509Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.510Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.510Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.511Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.517Z: 警告: 关键词 "AnimateDiff diffusion video generation technique comparison 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.517Z: 警告: 关键词 "人工智能视频生成伦理风险 深度伪造 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.518Z: 警告: 关键词 "AI动画对传统动画产业冲击 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.519Z: 警告: 关键词 "OpenAI Sora motion consistency evaluation 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.520Z: 警告: 关键词 "Runway Gen-3 Pika text-to-video benchmark" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.520Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.520Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.521Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.522Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.523Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.526Z: 警告: 关键词 "creative industries AI animation copyright 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.527Z: 警告: 关键词 "AI视频生成工具比较 Runway Pika Sora 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.529Z: 警告: 关键词 "temporal interpolation techniques latent diffusion models" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.530Z: 警告: 关键词 "扩散模型视频插帧运动平滑技术" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.533Z: 警告: 关键词 "synthetic video detection and authenticity" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.533Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.533Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.534Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.534Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:31:27.536Z: 警告: 关键词 "video diffusion model architecture survey 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.536Z: 警告: 关键词 "multimodal video generation human evaluation metrics" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.537Z: 警告: 关键词 "Pika 2.0 AnimateDiff motion transfer evaluation" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:31:27.538Z: 警告: 关键词 "生成式AI与电影制作 美学 批判" 的搜索失败: Request failed with status code 503

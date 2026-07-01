@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-28T01:14:17.324Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:14:17.324Z: 研究主题: "Deep Research Agent 多步推理框架对比 ReAct Chain-of-Thought Tree of Thoughts Plan-and-Execute 工具编排 2024 2025", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T01:14:17.325Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:14:17.334Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:14:23.544Z: DeepSearchModel 原始响应: [KeyWord1:] Deep Research Agent architecture [KeyWord2:] 多步推理框架对比 [KeyWord3:] ReAct vs Tree of Thoughts [KeyWord4:] 工具编排 tool orchestration [KeyWord5:] Chain-of-Thought prompting limitations [KeyWord6:] Plan-and-Execute agent reliability [KeyWord7:] AI agent cognitive architectures 2024 [KeyWord8:] 大模型智能体伦理风险 [KeyWord9:] multi-step reasoning benchmarks 2025 [KeyWord10:] agentic workflow design patterns [KeyWord11:] 经济影响 深度研究智能体 [KeyWord12:] 历史发展 推理框架 AI
+[FlashDeepSearch] 2026-06-28T01:14:23.544Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T01:14:23.544Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:14:23.545Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.547Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.547Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.548Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.548Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.553Z: 警告: 关键词 "Deep Research Agent architecture" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.553Z: 警告: 关键词 "多步推理框架对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.554Z: 警告: 关键词 "ReAct vs Tree of Thoughts" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.555Z: 警告: 关键词 "Chain-of-Thought prompting limitations" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.556Z: 警告: 关键词 "工具编排 tool orchestration" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.556Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.557Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.558Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.559Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.559Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.563Z: 警告: 关键词 "agentic workflow design patterns" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.563Z: 警告: 关键词 "AI agent cognitive architectures 2024" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.564Z: 警告: 关键词 "Plan-and-Execute agent reliability" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.564Z: 警告: 关键词 "multi-step reasoning benchmarks 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.564Z: 警告: 关键词 "大模型智能体伦理风险" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.565Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.565Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:14:23.567Z: 警告: 关键词 "历史发展 推理框架 AI" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:14:23.567Z: 警告: 关键词 "经济影响 深度研究智能体" 的搜索失败: Request failed with status code 503

@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-28T00:15:09.360Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T00:15:09.362Z: 研究主题: "dynamic replanning in AI agent systems, replanning trigger conditions, plan quality evaluation metrics for LLM agents, and case study of BabyAGI AutoGPT TaskWeaver XAgent planning module open source project.", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T00:15:09.362Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T00:15:09.371Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T00:15:17.440Z: DeepSearchModel 原始响应: [KeyWord1:动态重规划触发机制] [KeyWord2:大型语言模型代理计划评估] [KeyWord3:开源AI代理规划模块比较] [KeyWord4:BabyAGI任务分解策略] [KeyWord5:AutoGPT循环反馈规划] [KeyWord6:TaskWeaver代码生成规划] [KeyWord7:XAgent人机协同重规划] [KeyWord8:计划执行失败检测与恢复] [KeyWord9:自主代理决策伦理] [KeyWord10:从分层规划到持续重规划的历史范式] [KeyWord11:社会技术系统中代理计划的可靠性] [KeyWord12:过度规划与行动瘫痪的博弈论分析]
+[FlashDeepSearch] 2026-06-28T00:15:17.440Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T00:15:17.440Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T00:15:17.440Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.441Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.444Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.445Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.446Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.450Z: 警告: 关键词 "动态重规划触发机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.451Z: 警告: 关键词 "大型语言模型代理计划评估" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.451Z: 警告: 关键词 "BabyAGI任务分解策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.452Z: 警告: 关键词 "AutoGPT循环反馈规划" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.453Z: 警告: 关键词 "开源AI代理规划模块比较" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.453Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.453Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.454Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.455Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.455Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.458Z: 警告: 关键词 "计划执行失败检测与恢复" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.459Z: 警告: 关键词 "XAgent人机协同重规划" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.459Z: 警告: 关键词 "从分层规划到持续重规划的历史范式" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.460Z: 警告: 关键词 "自主代理决策伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.460Z: 警告: 关键词 "TaskWeaver代码生成规划" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.460Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.461Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:15:17.463Z: 警告: 关键词 "社会技术系统中代理计划的可靠性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:15:17.464Z: 警告: 关键词 "过度规划与行动瘫痪的博弈论分析" 的搜索失败: Request failed with status code 503

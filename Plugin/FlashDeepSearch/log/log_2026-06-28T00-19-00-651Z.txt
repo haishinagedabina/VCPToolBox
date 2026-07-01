@@ -1,0 +1,51 @@
+[FlashDeepSearch] 2026-06-28T00:19:00.653Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T00:19:00.654Z: 研究主题: "Agent memory maintenance strategies: forgetting mechanisms, memory expiration, deduplication, incremental re-indexing, consistency in multi-agent systems. Cover Mem0, LangChain Memory, Letta MemGPT, AutoGen, CrewAI, and vector databases like Chroma, Milvus, Qdrant, Pinecone. Topics include TTL, sliding window, LRU/LFU for memories, semantic deduplication, memory compression and summarization, conflict resolution and knowledge versioning.", 搜索广度: 15
+[FlashDeepSearch] 2026-06-28T00:19:00.654Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T00:19:00.663Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T00:19:13.201Z: DeepSearchModel 原始响应: [KeyWord1: Multi-agent memory forgetting mechanisms and TTL-based expiration strategies]
+[KeyWord2: 向量数据库语义去重与Qdrant/Pinecone增量索引]
+[KeyWord3: LangChain Memory sliding window LRU/LFU eviction policies]
+[KeyWord4: MemGPT memory compression via summarization and long-term context retrieval]
+[KeyWord5: 机器遗忘权：智能体记忆的伦理边界与社会接受度]
+[KeyWord6: Economic impact of memory deduplication in large-scale agent systems]
+[KeyWord7: CrewAI conflict resolution and knowledge versioning for shared memory]
+[KeyWord8: 增量重索引与动态知识库更新中的一致性挑战]
+[KeyWord9: 人类遗忘曲线与数字遗忘律的跨学科比较研究]
+[KeyWord10: Critical risks of memory hallucination and over-reliance in autonomous agents]
+[KeyWord11: Chroma/Milvus time-to-live (TTL) and sliding window for persistent agent memory]
+[KeyWord12: 分布式多智能体系统最终一致性与共识算法应用]
+[KeyWord13: AutoGen group chat memory consistency and shared context deduplication]
+[KeyWord14: 审计追踪：知识版本控制与合规性在记忆系统中的实现]
+[KeyWord15: Letta MemGPT personalized episodic memory for long-term agent-user interaction]
+[FlashDeepSearch] 2026-06-28T00:19:13.201Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-28T00:19:13.201Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-28T00:19:13.201Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.202Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.203Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.203Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.204Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.212Z: 警告: 关键词 "向量数据库语义去重与Qdrant/Pinecone增量索引" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.212Z: 警告: 关键词 "Multi-agent memory forgetting mechanisms and TTL-based expiration strategies" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.213Z: 警告: 关键词 "LangChain Memory sliding window LRU/LFU eviction policies" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.215Z: 警告: 关键词 "机器遗忘权：智能体记忆的伦理边界与社会接受度" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.215Z: 警告: 关键词 "MemGPT memory compression via summarization and long-term context retrieval" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.216Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.216Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.216Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.217Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.218Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.220Z: 警告: 关键词 "Economic impact of memory deduplication in large-scale agent systems" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.221Z: 警告: 关键词 "CrewAI conflict resolution and knowledge versioning for shared memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.223Z: 警告: 关键词 "人类遗忘曲线与数字遗忘律的跨学科比较研究" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.223Z: 警告: 关键词 "Critical risks of memory hallucination and over-reliance in autonomous agents" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.224Z: 警告: 关键词 "增量重索引与动态知识库更新中的一致性挑战" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.224Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.224Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.225Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.225Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.225Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T00:19:13.227Z: 警告: 关键词 "Chroma/Milvus time-to-live (TTL) and sliding window for persistent agent memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.227Z: 警告: 关键词 "AutoGen group chat memory consistency and shared context deduplication" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.228Z: 警告: 关键词 "Letta MemGPT personalized episodic memory for long-term agent-user interaction" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.228Z: 警告: 关键词 "分布式多智能体系统最终一致性与共识算法应用" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T00:19:13.229Z: 警告: 关键词 "审计追踪：知识版本控制与合规性在记忆系统中的实现" 的搜索失败: Request failed with status code 503

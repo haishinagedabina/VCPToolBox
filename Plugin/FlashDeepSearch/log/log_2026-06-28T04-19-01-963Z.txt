@@ -1,0 +1,23 @@
+[FlashDeepSearch] 2026-06-28T04:19:01.965Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T04:19:01.965Z: 研究主题: "Prefill-Decode Disaggregation: architecture, principles, and performance comparisons", 搜索广度: 8
+[FlashDeepSearch] 2026-06-28T04:19:01.965Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T04:19:01.975Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T04:19:18.709Z: DeepSearchModel 原始响应: [KeyWord1: Prefill-Decode Disaggregation 架构解析] [KeyWord2: 性能对比：吞吐量 vs. 延迟] [KeyWord3: 云推理服务成本效益分析] [KeyWord4: Green AI 能源消耗与伦理反思] [KeyWord5: 分离式推理的可靠性风险与批判] [KeyWord6: LLM推理架构的演进历史] [KeyWord7: 系统解耦设计的哲学原则] [KeyWord8: 异构计算负载均衡策略]
+[FlashDeepSearch] 2026-06-28T04:19:18.709Z: 成功提取到 8 个关键词。
+[FlashDeepSearch] 2026-06-28T04:19:18.709Z: 步骤 2: 并发执行 8 个搜索任务...
+[FlashDeepSearch] 2026-06-28T04:19:18.709Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:19:18.710Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:19:18.711Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:19:18.712Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:19:18.712Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:19:18.716Z: 警告: 关键词 "Prefill-Decode Disaggregation 架构解析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:19:18.717Z: 警告: 关键词 "云推理服务成本效益分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:19:18.717Z: 警告: 关键词 "Green AI 能源消耗与伦理反思" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:19:18.718Z: 警告: 关键词 "性能对比：吞吐量 vs. 延迟" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:19:18.718Z: 警告: 关键词 "分离式推理的可靠性风险与批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:19:18.718Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:19:18.719Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:19:18.719Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T04:19:18.723Z: 警告: 关键词 "LLM推理架构的演进历史" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:19:18.723Z: 警告: 关键词 "异构计算负载均衡策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T04:19:18.724Z: 警告: 关键词 "系统解耦设计的哲学原则" 的搜索失败: Request failed with status code 503

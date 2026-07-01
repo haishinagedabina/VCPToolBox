@@ -1,0 +1,51 @@
+[FlashDeepSearch] 2026-06-28T02:41:11.698Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T02:41:11.698Z: 研究主题: "vLLM Automatic Prefix Caching APC vs SGLang RadixAttention prefix cache comparison, how they work, hash-based vs radix tree KV cache sharing mechanism", 搜索广度: 15
+[FlashDeepSearch] 2026-06-28T02:41:11.698Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T02:41:11.707Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T02:41:24.044Z: DeepSearchModel 原始响应: [KeyWord1:] vLLM Automatic Prefix Caching 原理
+[KeyWord2:] SGLang RadixAttention 实现
+[KeyWord3:] hash-based vs radix tree KV cache 共享机制
+[KeyWord4:] 前缀缓存 性能 benchmark
+[KeyWord5:] attention cache 命中率 提升
+[KeyWord6:] LLM serving 吞吐量 优化
+[KeyWord7:] 哈希冲突 对 prefix cache 的影响
+[KeyWord8:] 基树 内存开销 分析
+[KeyWord9:] KV cache eviction 策略 对比
+[KeyWord10:] distributed prefix cache 架构
+[KeyWord11:] cache sharing privacy implications
+[KeyWord12:] 缓存策略 公平性 研究
+[KeyWord13:] SGLang vs vLLM 推理框架 比较
+[KeyWord14:] automatic prefix caching 未来方向
+[KeyWord15:] 推理加速 系统 权衡 与 局限
+[FlashDeepSearch] 2026-06-28T02:41:24.044Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-28T02:41:24.045Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-28T02:41:24.045Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.046Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.047Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.047Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.048Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.052Z: 警告: 关键词 "vLLM Automatic Prefix Caching 原理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.052Z: 警告: 关键词 "SGLang RadixAttention 实现" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.053Z: 警告: 关键词 "hash-based vs radix tree KV cache 共享机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.054Z: 警告: 关键词 "前缀缓存 性能 benchmark" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.054Z: 警告: 关键词 "attention cache 命中率 提升" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.054Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.055Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.055Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.056Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.057Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.059Z: 警告: 关键词 "distributed prefix cache 架构" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.060Z: 警告: 关键词 "基树 内存开销 分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.060Z: 警告: 关键词 "哈希冲突 对 prefix cache 的影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.061Z: 警告: 关键词 "LLM serving 吞吐量 优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.061Z: 警告: 关键词 "KV cache eviction 策略 对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.061Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.062Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.062Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.062Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.062Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T02:41:24.064Z: 警告: 关键词 "推理加速 系统 权衡 与 局限" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.065Z: 警告: 关键词 "cache sharing privacy implications" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.065Z: 警告: 关键词 "缓存策略 公平性 研究" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.066Z: 警告: 关键词 "automatic prefix caching 未来方向" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T02:41:24.066Z: 警告: 关键词 "SGLang vs vLLM 推理框架 比较" 的搜索失败: Request failed with status code 503

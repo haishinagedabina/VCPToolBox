@@ -1,0 +1,27 @@
+[FlashDeepSearch] 2026-06-27T21:00:54.767Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:00:54.767Z: 研究主题: "Chain-of-Thought reasoning prompting techniques survey, Tree of Thoughts, Graph of Thoughts, ReAct framework, failure modes of chain of thought prompting", 搜索广度: 10
+[FlashDeepSearch] 2026-06-27T21:00:54.767Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:00:54.776Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:01:02.710Z: DeepSearchModel 原始响应: [KeyWord1: Chain-of-Thought Prompting Failure Modes and Limitations] [KeyWord2: 思维树与思维图架构的性能对比分析] [KeyWord3: ReAct框架在大语言模型中的可信度与对齐失败] [KeyWord4: 大语言模型链式推理的认知科学审视] [KeyWord5: Heuristic Reasoning vs. Structured Search in LLM Prompting] [KeyWord6: 提示工程的伦理学与责任归属反思] [KeyWord7: 思维链提示的社会建构与文化偏见研究] [KeyWord8: Graph-of-Thoughts for Multi-Agent Complex Problem Solving] [KeyWord9: 从哲学逻辑学到LLM推理的失效根源] [KeyWord10: Alternatives to Chain-of-Thought: Direct Reasoning and Programmatic Prompting]
+[FlashDeepSearch] 2026-06-27T21:01:02.710Z: 成功提取到 10 个关键词。
+[FlashDeepSearch] 2026-06-27T21:01:02.710Z: 步骤 2: 并发执行 10 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:01:02.710Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.711Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.712Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.712Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.712Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.719Z: 警告: 关键词 "Chain-of-Thought Prompting Failure Modes and Limitations" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.720Z: 警告: 关键词 "大语言模型链式推理的认知科学审视" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.721Z: 警告: 关键词 "思维树与思维图架构的性能对比分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.721Z: 警告: 关键词 "ReAct框架在大语言模型中的可信度与对齐失败" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.722Z: 警告: 关键词 "Heuristic Reasoning vs. Structured Search in LLM Prompting" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.722Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.722Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.723Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.724Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.724Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:01:02.726Z: 警告: 关键词 "提示工程的伦理学与责任归属反思" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.727Z: 警告: 关键词 "从哲学逻辑学到LLM推理的失效根源" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.727Z: 警告: 关键词 "Alternatives to Chain-of-Thought: Direct Reasoning and Programmatic Prompting" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.728Z: 警告: 关键词 "Graph-of-Thoughts for Multi-Agent Complex Problem Solving" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:01:02.728Z: 警告: 关键词 "思维链提示的社会建构与文化偏见研究" 的搜索失败: Request failed with status code 503

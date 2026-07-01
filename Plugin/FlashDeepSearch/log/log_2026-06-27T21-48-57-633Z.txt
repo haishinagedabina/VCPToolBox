@@ -1,0 +1,48 @@
+[FlashDeepSearch] 2026-06-27T21:48:57.635Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:48:57.635Z: 研究主题: "prompt engineering advanced techniques 2025 2026: Chain-of-Verification, Tree-of-Thought, Graph-of-Thought, Self-Consistency, Step-Back Prompting, ReAct, Reflexion, Auto-CoT, EmotionPrompt, DSPy, TextGrad, OPRO, Automatic Prompt Engineer, multimodal prompting text image audio, prompt version control git CI/CD promptfoo LangSmith, prompt engineering future outlook", 搜索广度: 14
+[FlashDeepSearch] 2026-06-27T21:48:57.636Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:48:57.644Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:49:07.557Z: DeepSearchModel 原始响应: [KeyWord1: Chain-of-Verification 验证链推理]
+[KeyWord2: Tree-of-Thought 思维树提示]
+[KeyWord3: Mechanistic Interpretability 机制可解释性]
+[KeyWord4: Prompt Version Control CI/CD 提示版本管理]
+[KeyWord5: Multimodal Prompt Composition 多模态提示编排]
+[KeyWord6: Prompt Security Adversarial Attacks 提示安全对抗攻击]
+[KeyWord7: Prompt Engineering Ethics 提示工程伦理]
+[KeyWord8: TextGrad OPRO Automatic Prompt Optimization 自动提示优化]
+[KeyWord9: DSPy Meta-Prompting Programming Paradigm 元提示编程范式]
+[KeyWord10: Self-Consistency Faithfulness Evaluation 自洽性与忠实性评估]
+[KeyWord11: Cultural Sensitivity Multilingual Prompting 多语言提示文化敏感性]
+[KeyWord12: Human-AI Co-writing Prompting Strategies 人机协同写作提示策略]
+[KeyWord13: Prompt Engineering Economic Impact 提示工程经济影响]
+[KeyWord14: Future Prompt Engineering Autonomous Agents 提示工程未来自主代理]
+[FlashDeepSearch] 2026-06-27T21:49:07.557Z: 成功提取到 14 个关键词。
+[FlashDeepSearch] 2026-06-27T21:49:07.557Z: 步骤 2: 并发执行 14 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:49:07.558Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.559Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.559Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.560Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.560Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.566Z: 警告: 关键词 "Tree-of-Thought 思维树提示" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.566Z: 警告: 关键词 "Mechanistic Interpretability 机制可解释性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.570Z: 警告: 关键词 "Multimodal Prompt Composition 多模态提示编排" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.570Z: 警告: 关键词 "Chain-of-Verification 验证链推理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.572Z: 警告: 关键词 "Prompt Version Control CI/CD 提示版本管理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.572Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.572Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.573Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.574Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.574Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.578Z: 警告: 关键词 "Prompt Engineering Ethics 提示工程伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.579Z: 警告: 关键词 "Self-Consistency Faithfulness Evaluation 自洽性与忠实性评估" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.580Z: 警告: 关键词 "TextGrad OPRO Automatic Prompt Optimization 自动提示优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.580Z: 警告: 关键词 "Prompt Security Adversarial Attacks 提示安全对抗攻击" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.581Z: 警告: 关键词 "DSPy Meta-Prompting Programming Paradigm 元提示编程范式" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.581Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.581Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.582Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.582Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:49:07.584Z: 警告: 关键词 "Prompt Engineering Economic Impact 提示工程经济影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.584Z: 警告: 关键词 "Human-AI Co-writing Prompting Strategies 人机协同写作提示策略" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.585Z: 警告: 关键词 "Future Prompt Engineering Autonomous Agents 提示工程未来自主代理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:49:07.585Z: 警告: 关键词 "Cultural Sensitivity Multilingual Prompting 多语言提示文化敏感性" 的搜索失败: Request failed with status code 503

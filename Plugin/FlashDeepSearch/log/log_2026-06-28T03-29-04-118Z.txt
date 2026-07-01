@@ -1,0 +1,43 @@
+[FlashDeepSearch] 2026-06-28T03:29:04.121Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T03:29:04.121Z: 研究主题: "KV cache mathematical derivation transformer attention Q K V matrix definition prefill compute-bound decode memory-bound GQA MQA KV heads memory reduction", 搜索广度: 18
+[FlashDeepSearch] 2026-06-28T03:29:04.121Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T03:29:04.130Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T03:29:08.515Z: DeepSearchModel 原始响应: [KeyWord1: KV cache 数学推导] [KeyWord2: transformer attention Q K V 矩阵定义] [KeyWord3: prefill 阶段 计算受限 分析] [KeyWord4: decode 阶段 内存受限 理论] [KeyWord5: GQA 多查询注意力 内存优化] [KeyWord6: MQA 头缩减 KV 缓存 节约] [KeyWord7: KV heads 内存减少 技术对比] [KeyWord8: attention 缓存 压缩 方法 综述] [KeyWord9: 大模型 推理 内存瓶颈 经济性] [KeyWord10: transformer 注意力 历史演变 效率] [KeyWord11: KV cache 伦理 资源公平 可及性] [KeyWord12: 批判视角 注意力冗余 过度缓存] [KeyWord13: mathematical derivation of KV cache in transformers] [KeyWord14: compute-bound vs memory-bound attention decoding] [KeyWord15: Grouped-Query Attention memory reduction theory] [KeyWord16: Multi-Query Attention head sharing critique] [KeyWord17: KV cache compression algorithms survey] [KeyWord18: societal impact of memory-efficient transformers]
+[FlashDeepSearch] 2026-06-28T03:29:08.515Z: 成功提取到 18 个关键词。
+[FlashDeepSearch] 2026-06-28T03:29:08.515Z: 步骤 2: 并发执行 18 个搜索任务...
+[FlashDeepSearch] 2026-06-28T03:29:08.515Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.516Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.517Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.517Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.518Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.524Z: 警告: 关键词 "KV cache 数学推导" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.525Z: 警告: 关键词 "GQA 多查询注意力 内存优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.526Z: 警告: 关键词 "decode 阶段 内存受限 理论" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.526Z: 警告: 关键词 "prefill 阶段 计算受限 分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.527Z: 警告: 关键词 "transformer attention Q K V 矩阵定义" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.527Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.528Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.528Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.529Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.530Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.532Z: 警告: 关键词 "MQA 头缩减 KV 缓存 节约" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.534Z: 警告: 关键词 "KV heads 内存减少 技术对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.536Z: 警告: 关键词 "transformer 注意力 历史演变 效率" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.537Z: 警告: 关键词 "大模型 推理 内存瓶颈 经济性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.538Z: 警告: 关键词 "attention 缓存 压缩 方法 综述" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.538Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.538Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.538Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.539Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.539Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.541Z: 警告: 关键词 "compute-bound vs memory-bound attention decoding" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.541Z: 警告: 关键词 "KV cache 伦理 资源公平 可及性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.542Z: 警告: 关键词 "批判视角 注意力冗余 过度缓存" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.542Z: 警告: 关键词 "mathematical derivation of KV cache in transformers" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.543Z: 警告: 关键词 "Grouped-Query Attention memory reduction theory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.543Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.543Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.544Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T03:29:08.545Z: 警告: 关键词 "Multi-Query Attention head sharing critique" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.546Z: 警告: 关键词 "KV cache compression algorithms survey" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T03:29:08.546Z: 警告: 关键词 "societal impact of memory-efficient transformers" 的搜索失败: Request failed with status code 503

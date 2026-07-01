@@ -9,7 +9,6 @@
   "approvalList": [
     "PowerShellExecutor",
     "ServerPowerShellExecutor",
-    "FileOperator",
-    "ServerFileOperator"
+    "FileOperator"
   ]
 }

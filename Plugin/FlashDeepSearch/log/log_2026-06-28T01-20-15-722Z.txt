@@ -1,0 +1,42 @@
+[FlashDeepSearch] 2026-06-28T01:20:15.725Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:20:15.725Z: 研究主题: "Prompt Cache in LLM inference serving systems: caching input token KV states to skip repeated prefill phase. SGLang RadixAttention prefix tree based matching with LRU eviction and cross-request sharing. vLLM Automatic Prefix Caching block-hash based automatic matching. Performance comparison: hit rate, memory overhead, implementation complexity. Real-world benchmarks for multi-turn dialogue system prompt caching, batch evaluation with same prompt template, RAG scenarios, agent tool calling. Engineering tradeoffs: cache pool vs on-demand allocation, interaction with speculative decoding, distributed cache consistency problem.", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T01:20:15.725Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:20:15.734Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:20:26.691Z: DeepSearchModel 原始响应: [KeyWord1:] prompt KV cache sharing
+[KeyWord2:] 提示缓存前缀匹配
+[KeyWord3:] SGLang RadixAttention
+[KeyWord4:] vLLM automatic block-hash caching
+[KeyWord5:] cache hit rate benchmark
+[KeyWord6:] multi-turn dialogue system prompt reuse
+[KeyWord7:] speculative decoding cache interaction
+[KeyWord8:] distributed cache consistency problem
+[KeyWord9:] memory overhead vs latency tradeoff
+[KeyWord10:] inference cost savings with caching
+[KeyWord11:] RAG scenario prompt caching
+[KeyWord12:] 缓存失效导致的一致性风险
+[FlashDeepSearch] 2026-06-28T01:20:26.691Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T01:20:26.691Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:20:26.691Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.692Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.693Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.694Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.694Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.697Z: 警告: 关键词 "prompt KV cache sharing" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.698Z: 警告: 关键词 "SGLang RadixAttention" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.699Z: 警告: 关键词 "提示缓存前缀匹配" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.699Z: 警告: 关键词 "vLLM automatic block-hash caching" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.700Z: 警告: 关键词 "cache hit rate benchmark" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.700Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.701Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.701Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.702Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.702Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.706Z: 警告: 关键词 "speculative decoding cache interaction" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.706Z: 警告: 关键词 "memory overhead vs latency tradeoff" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.707Z: 警告: 关键词 "multi-turn dialogue system prompt reuse" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.707Z: 警告: 关键词 "inference cost savings with caching" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.708Z: 警告: 关键词 "distributed cache consistency problem" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.708Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.708Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:20:26.710Z: 警告: 关键词 "RAG scenario prompt caching" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:20:26.710Z: 警告: 关键词 "缓存失效导致的一致性风险" 的搜索失败: Request failed with status code 503

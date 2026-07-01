@@ -1,0 +1,60 @@
+[FlashDeepSearch] 2026-06-28T01:38:19.641Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:38:19.642Z: 研究主题: "Prompt caching for large language models LLM matching strategies exact prefix hash versus semantic embedding fuzzy match SGLang vLLM context caching radix attention automatic prefix caching prefill optimization KV cache bridging mechanism token level chunk level cache granularity cache storage medium memory SSD distributed LRU LFU eviction policy multi-tenant SaaS isolation sharing cache side channel attack academic papers Gim Prompt Cache Modular Attention Reuse", 搜索广度: 18
+[FlashDeepSearch] 2026-06-28T01:38:19.642Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:38:19.651Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:38:26.302Z: DeepSearchModel 原始响应: [KeyWord1: 大型语言模型 提示缓存 精确前缀哈希 匹配]
+[KeyWord2: Prompt caching semantic embedding fuzzy match]
+[KeyWord3: KV cache 桥接机制 预填充优化]
+[KeyWord4: SGLang radix attention 自动前缀缓存]
+[KeyWord5: vLLM context caching chunk level granularity]
+[KeyWord6: 多租户 SaaS 缓存隔离 侧信道攻击]
+[KeyWord7: LRU LFU eviction policy distributed cache SSD]
+[KeyWord8: 缓存粒度 token级 块级 对比]
+[KeyWord9: Gim Prompt Cache 论文 方法]
+[KeyWord10: Modular Attention Reuse memory overhead]
+[KeyWord11: 语义缓存 嵌入模糊匹配 命中率 权衡]
+[KeyWord12: 推理成本优化 缓存经济 大规模部署]
+[KeyWord13: 缓存共享 隐私泄露 审计]
+[KeyWord14: 缓存哲学 临时性 记忆伦理]
+[KeyWord15: 提示缓存失效 对抗样本 安全鲁棒性]
+[KeyWord16: prompt cache history CPU cache analogy]
+[KeyWord17: 长上下文 缓存挑战 稀疏注意力]
+[KeyWord18: 缓存基准测试 开源实现 MLsys]
+[FlashDeepSearch] 2026-06-28T01:38:26.302Z: 成功提取到 18 个关键词。
+[FlashDeepSearch] 2026-06-28T01:38:26.302Z: 步骤 2: 并发执行 18 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:38:26.302Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.303Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.304Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.304Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.307Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.311Z: 警告: 关键词 "大型语言模型 提示缓存 精确前缀哈希 匹配" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.313Z: 警告: 关键词 "Prompt caching semantic embedding fuzzy match" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.314Z: 警告: 关键词 "SGLang radix attention 自动前缀缓存" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.315Z: 警告: 关键词 "vLLM context caching chunk level granularity" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.315Z: 警告: 关键词 "KV cache 桥接机制 预填充优化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.315Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.316Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.316Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.317Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.317Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.320Z: 警告: 关键词 "Modular Attention Reuse memory overhead" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.321Z: 警告: 关键词 "LRU LFU eviction policy distributed cache SSD" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.321Z: 警告: 关键词 "Gim Prompt Cache 论文 方法" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.322Z: 警告: 关键词 "缓存粒度 token级 块级 对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.322Z: 警告: 关键词 "多租户 SaaS 缓存隔离 侧信道攻击" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.322Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.323Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.323Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.323Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.323Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.326Z: 警告: 关键词 "推理成本优化 缓存经济 大规模部署" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.327Z: 警告: 关键词 "提示缓存失效 对抗样本 安全鲁棒性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.328Z: 警告: 关键词 "缓存共享 隐私泄露 审计" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.328Z: 警告: 关键词 "语义缓存 嵌入模糊匹配 命中率 权衡" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.329Z: 警告: 关键词 "缓存哲学 临时性 记忆伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.329Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.329Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.329Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:38:26.331Z: 警告: 关键词 "prompt cache history CPU cache analogy" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.332Z: 警告: 关键词 "长上下文 缓存挑战 稀疏注意力" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:38:26.332Z: 警告: 关键词 "缓存基准测试 开源实现 MLsys" 的搜索失败: Request failed with status code 503

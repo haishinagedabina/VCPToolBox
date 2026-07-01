@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T20:34:58.731Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:34:58.732Z: 研究主题: "Chain of Thought prompting mechanism why step by step reasoning improves accuracy, latest research on internal mechanism, CoT variants Tree of Thoughts Graph of Thoughts Self-Consistency, ReAct MRKL reasoning tool use agent architecture 2024 2025 2026", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T20:34:58.732Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:34:58.740Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:35:08.278Z: DeepSearchModel 原始响应: [KeyWord1: 思维链提示内部机制与逐步推理的认知心理学基础] [KeyWord2: Chain-of-Thought prompting internal mechanism and computational expressiveness analysis] [KeyWord3: Tree of Thoughts 图搜索与启发式算法在推理中的效率对比] [KeyWord4: Self-Consistency decoding robustness and sample diversity in language model reasoning] [KeyWord5: ReAct 智能体架构中的推理-行动协同与工具使用闭环] [KeyWord6: MRKL 模块化推理系统与知识检索增强生成架构分析] [KeyWord7: 2024-2026 年大模型推理能力进化路径与架构创新] [KeyWord8: 思维链的批判性审视：幻觉放大、过信与多项式推理短板] [KeyWord9: 哲学角度下的逐步推理本质：从符号逻辑到神经概率模型的认识论断裂] [KeyWord10: Graph of Thoughts 图神经网络与组合优化推理的交叉研究] [KeyWord11: 多步推理智能体的伦理风险与可信赖自主决策框架] [KeyWord12: 从思维链到自主代理：提示工程的范式迁移与社会自动化影响] [KeyWord13: 神经符号混合架构下的可解释推理与因果链挖掘] [KeyWord14: 自反推理与元认知：LLM 中的 Internal Consistency 与自我验证机制] [KeyWord15: 跨领域对比：数学推理、代码生成与开放域问答中的 CoT 变体性能极限]
+[FlashDeepSearch] 2026-06-27T20:35:08.279Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T20:35:08.280Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:35:08.280Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.282Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.283Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.283Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.284Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.288Z: 警告: 关键词 "思维链提示内部机制与逐步推理的认知心理学基础" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.288Z: 警告: 关键词 "Chain-of-Thought prompting internal mechanism and computational expressiveness analysis" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.289Z: 警告: 关键词 "Self-Consistency decoding robustness and sample diversity in language model reasoning" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.289Z: 警告: 关键词 "Tree of Thoughts 图搜索与启发式算法在推理中的效率对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.290Z: 警告: 关键词 "ReAct 智能体架构中的推理-行动协同与工具使用闭环" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.290Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.291Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.291Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.292Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.293Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.295Z: 警告: 关键词 "Graph of Thoughts 图神经网络与组合优化推理的交叉研究" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.295Z: 警告: 关键词 "MRKL 模块化推理系统与知识检索增强生成架构分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.296Z: 警告: 关键词 "哲学角度下的逐步推理本质：从符号逻辑到神经概率模型的认识论断裂" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.296Z: 警告: 关键词 "2024-2026 年大模型推理能力进化路径与架构创新" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.297Z: 警告: 关键词 "思维链的批判性审视：幻觉放大、过信与多项式推理短板" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.297Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.297Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.297Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.298Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.298Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:35:08.300Z: 警告: 关键词 "从思维链到自主代理：提示工程的范式迁移与社会自动化影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.300Z: 警告: 关键词 "神经符号混合架构下的可解释推理与因果链挖掘" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.301Z: 警告: 关键词 "跨领域对比：数学推理、代码生成与开放域问答中的 CoT 变体性能极限" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.301Z: 警告: 关键词 "自反推理与元认知：LLM 中的 Internal Consistency 与自我验证机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:35:08.302Z: 警告: 关键词 "多步推理智能体的伦理风险与可信赖自主决策框架" 的搜索失败: Request failed with status code 503

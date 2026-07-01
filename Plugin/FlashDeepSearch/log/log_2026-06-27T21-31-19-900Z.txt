@@ -1,0 +1,35 @@
+[FlashDeepSearch] 2026-06-27T21:31:19.903Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T21:31:19.903Z: 研究主题: "Prompt Injection 攻击技术全景：直接注入、间接注入、越狱攻击（Jailbreak）进化路线（DAN到递归越狱）、多模态注入的原理和代表案例。LLM架构的天然脆弱性分析。", 搜索广度: 14
+[FlashDeepSearch] 2026-06-27T21:31:19.903Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T21:31:19.912Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T21:31:33.596Z: DeepSearchModel 原始响应: [KeyWord1:] Prompt Injection攻击技术全景 [KeyWord2:] Indirect Prompt Injection real-world cases [KeyWord3:] 从DAN到递归越狱的进化路线 [KeyWord4:] 多模态注入：对抗性图像与文本隐藏指令 [KeyWord5:] Transformer注意力机制的天然脆弱性分析 [KeyWord6:] AI Safety vs Adversarial Prompting: ethical dilemmas [KeyWord7:] 提示注入防御技术：检测、过滤与对齐 [KeyWord8:] Large Language Model supply chain injection risks [KeyWord9:] 从SQL注入到Prompt注入：半个世纪的注入攻击史 [KeyWord10:] Recursive self-improvement jailbreak techniques [KeyWord11:] AI规制与提示注入：欧盟AI法案的启示 [KeyWord12:] 对抗性攻击不可避免性批判：LLM设计根本缺陷 [KeyWord13:] Cross-modal adversarial examples in vision-language models [KeyWord14:] 隐性社会工程：间接注入的心理操纵机制
+[FlashDeepSearch] 2026-06-27T21:31:33.597Z: 成功提取到 14 个关键词。
+[FlashDeepSearch] 2026-06-27T21:31:33.598Z: 步骤 2: 并发执行 14 个搜索任务...
+[FlashDeepSearch] 2026-06-27T21:31:33.598Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.600Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.601Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.602Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.603Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.606Z: 警告: 关键词 "Prompt Injection攻击技术全景" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.607Z: 警告: 关键词 "Indirect Prompt Injection real-world cases" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.608Z: 警告: 关键词 "多模态注入：对抗性图像与文本隐藏指令" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.608Z: 警告: 关键词 "从DAN到递归越狱的进化路线" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.609Z: 警告: 关键词 "Transformer注意力机制的天然脆弱性分析" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.610Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.610Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.610Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.611Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.612Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.615Z: 警告: 关键词 "Large Language Model supply chain injection risks" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.616Z: 警告: 关键词 "提示注入防御技术：检测、过滤与对齐" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.616Z: 警告: 关键词 "从SQL注入到Prompt注入：半个世纪的注入攻击史" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.617Z: 警告: 关键词 "AI Safety vs Adversarial Prompting: ethical dilemmas" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.617Z: 警告: 关键词 "Recursive self-improvement jailbreak techniques" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.618Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.618Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.618Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.618Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T21:31:33.620Z: 警告: 关键词 "对抗性攻击不可避免性批判：LLM设计根本缺陷" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.621Z: 警告: 关键词 "AI规制与提示注入：欧盟AI法案的启示" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.621Z: 警告: 关键词 "隐性社会工程：间接注入的心理操纵机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T21:31:33.622Z: 警告: 关键词 "Cross-modal adversarial examples in vision-language models" 的搜索失败: Request failed with status code 503

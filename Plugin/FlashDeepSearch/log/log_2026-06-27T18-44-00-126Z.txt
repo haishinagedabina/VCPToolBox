@@ -1,0 +1,37 @@
+[FlashDeepSearch] 2026-06-27T18:44:00.128Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T18:44:00.128Z: 研究主题: "Agent memory maintenance self-reflection self-critique mechanisms like Self-Reflective RAG, CRITIC framework, Reflexion paper, how LLM agents review and correct their own memories, memory consistency check, memory update based on new evidence", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T18:44:00.128Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T18:44:00.137Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T18:44:12.950Z: DeepSearchModel 原始响应: [KeyWord1:]Self-Reflective RAG [KeyWord2:]CRITIC framework [KeyWord3:]Reflexion paper LLM agents [KeyWord4:]LLM智能体记忆一致性检查 [KeyWord5:]基于新证据的记忆更新机制 [KeyWord6:]memory reconsolidation in AI agents [KeyWord7:]epistemic self-correction in AI [KeyWord8:]AI反思的无限回归问题 [KeyWord9:]hallucination in self-critique [KeyWord10:]过度自我修正导致知识僵化 [KeyWord11:]social implications of self-correcting AI agents [KeyWord12:]儒家自省传统与AI反思机制类比 [KeyWord13:]cost-benefit analysis of agent self-reflection [KeyWord14:]AI自我批判的伦理边界 [KeyWord15:]memory-augmented LLM self-improvement loops
+[FlashDeepSearch] 2026-06-27T18:44:12.950Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T18:44:12.950Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T18:44:12.950Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.952Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.953Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.953Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.954Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.959Z: 警告: 关键词 "Self-Reflective RAG" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.960Z: 警告: 关键词 "CRITIC framework" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.961Z: 警告: 关键词 "基于新证据的记忆更新机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.962Z: 警告: 关键词 "Reflexion paper LLM agents" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.962Z: 警告: 关键词 "LLM智能体记忆一致性检查" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.963Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.963Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.964Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.964Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.965Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.967Z: 警告: 关键词 "memory reconsolidation in AI agents" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.967Z: 警告: 关键词 "AI反思的无限回归问题" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.969Z: 警告: 关键词 "epistemic self-correction in AI" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.969Z: 警告: 关键词 "hallucination in self-critique" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.969Z: 警告: 关键词 "过度自我修正导致知识僵化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.969Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.970Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.970Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.970Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.971Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T18:44:12.973Z: 警告: 关键词 "social implications of self-correcting AI agents" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.973Z: 警告: 关键词 "memory-augmented LLM self-improvement loops" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.974Z: 警告: 关键词 "儒家自省传统与AI反思机制类比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.974Z: 警告: 关键词 "cost-benefit analysis of agent self-reflection" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T18:44:12.974Z: 警告: 关键词 "AI自我批判的伦理边界" 的搜索失败: Request failed with status code 503

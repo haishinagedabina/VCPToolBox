@@ -4,6 +4,11 @@ const path = require('path');
 const dotenv = require('dotenv');
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
+const {
+    registerDelegationCallback,
+    runDelegationHandoffIfNeeded,
+    detectDelegationCompletion
+} = require('./delegationCallbacks');
 
 // --- State and Config Variables ---
 let VCP_SERVER_PORT;
@@ -477,6 +482,26 @@ function buildTemporaryToolsSystemPrompt(injectToolsRaw) {
 
             if (description) {
                 sections.push(`### ${plugin?.displayName || toolName} (${toolName})\n${description}`);
+            // ===== [主编修复] Quill 专项：若插件未在全局 register 也未在 AgentAssistant 目录下，则去 Plugin 根目录主动扫描 WeWritePublish =====
+            } else if (toolName === 'WeWritePublish') {
+                try {
+                    const wpDir = path.join(__dirname, '..', 'WeWritePublish');
+                    if (fs.existsSync(wpDir)) {
+                        const wpManifestPath = path.join(wpDir, 'plugin-manifest.json');
+                        if (fs.existsSync(wpManifestPath)) {
+                            const wpRaw = fs.readFileSync(wpManifestPath, 'utf8');
+                            const wpManifest = JSON.parse(wpRaw);
+                            if (wpManifest && wpManifest.tools && wpManifest.tools.length > 0) {
+                                wpManifest.tools.forEach(t => {
+                                    sections.push(`### ${t.displayName || t.name} (${t.name})\n${t.description || '来自 WeWritePublish 插件的工具'}`);
+                                });
+                                if (DEBUG_MODE) console.error(`[AgentAssistant][主编修复] 强制注入 WeWritePublish 成功，工具数: ${wpManifest.tools.length}`);
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.error('[AgentAssistant][主编修复] 强制注入 WeWritePublish 异常:', e.message);
+                }
             } else {
                 const fallbackDescription = plugin?.description
                     ? `${plugin.description}\n\n[警告] 该工具缺少 invocationCommands 级别的详细描述，当前仅注入 manifest 描述。`
@@ -736,6 +761,13 @@ async function processToolCall(args) {
         const delegationSenderName = maid || "系统任务中心";
         const temporaryToolsSystemPrompt = buildTemporaryToolsSystemPrompt(inject_tools);
 
+        let callbackSpec = null;
+        try {
+            callbackSpec = registerDelegationCallback(delegationId, args, { agents: AGENTS });
+        } catch (e) {
+            throwToolError(e.message);
+        }
+
         activeDelegations.set(delegationId, {
             id: delegationId,
             status: 'running',
@@ -774,7 +806,11 @@ async function processToolCall(args) {
             activeDelegations.delete(delegationId);
         });
 
-        const successMessage = `委托任务 (ID: ${delegationId}) 已成功提交给 ${agent_name} 进行后台处理。\n您可以使用带有 \`query_delegation: "${delegationId}"\` 参数的工具调用来查询其进度。\n这是一个动态上下文占位符，当任务完全完成时，它会被自动替换为实际的最终报告。\n请在你的回复中包含以下占位符原文：{{VCP_ASYNC_RESULT::AgentAssistant::${delegationId}}}`;
+        let successMessage = `委托任务 (ID: ${delegationId}) 已成功提交给 ${agent_name} 进行后台处理。\n您可以使用带有 \`query_delegation: "${delegationId}"\` 参数的工具调用来查询其进度。`;
+        if (callbackSpec) {
+            successMessage += `\n任务结束后将由 AgentAssistant 按 ${callbackSpec.on} 条件自动交接给 ${callbackSpec.agentName}。`;
+        }
+        successMessage += `\n这是一个动态上下文占位符，当任务完全完成时，它会被自动替换为实际的最终报告。\n请在你的回复中包含以下占位符原文：{{VCP_ASYNC_RESULT::AgentAssistant::${delegationId}}}`;
 
         return createTextResult(successMessage);
     }
@@ -1024,16 +1060,15 @@ async function executeDelegation(delegationId, agentConfig, taskPromptContent, t
             state.updatedAt = Date.now();
             activeDelegations.set(delegationId, state);
 
-            // 检查完成标记的容错正则
-            const completionMatch = cleanedAssistantResponse.match(/\[\[TaskComplete(?:\s*\]\]|\s[\s\S]*?\]\])/i);
-            const failureMatch = cleanedAssistantResponse.match(/\[\[TaskFailed(?:\s*\]\]|\s[\s\S]*?\]\])/i);
+            // 完成/失败标记判定（详见 delegationCallbacks.detectDelegationCompletion）。
+            // 取“最后一次出现”的标记为准、失败优先，避免叙述中顺带提及导致误判。
+            const completion = detectDelegationCompletion(cleanedAssistantResponse);
 
-            if (completionMatch) {
+            if (completion.status === 'Succeed') {
                 // Task is completed
                 completionStatus = 'Succeed';
                 // 提取标记后面的内容作为报告
-                const reportStartIndex = completionMatch.index + completionMatch[0].length;
-                let potentialReport = cleanedAssistantResponse.substring(reportStartIndex).trim();
+                let potentialReport = cleanedAssistantResponse.substring(completion.reportStart).trim();
 
                 // 如果标记后面没有内容，把整个回复当做报告
                 if (!potentialReport) {
@@ -1046,12 +1081,11 @@ async function executeDelegation(delegationId, agentConfig, taskPromptContent, t
                 state.updatedAt = Date.now();
                 activeDelegations.set(delegationId, state);
                 break; // Exit the loop
-            } else if (failureMatch) {
+            } else if (completion.status === 'Failed') {
                 // Task is explicitly failed by the agent
                 completionStatus = 'Failed';
                 // 提取标记后面的内容作为报告
-                const reportStartIndex = failureMatch.index + failureMatch[0].length;
-                let potentialReport = cleanedAssistantResponse.substring(reportStartIndex).trim();
+                let potentialReport = cleanedAssistantResponse.substring(completion.reportStart).trim();
 
                 // 如果标记后面没有内容，把整个回复当做报告
                 if (!potentialReport) {
@@ -1134,6 +1168,16 @@ async function executeDelegation(delegationId, agentConfig, taskPromptContent, t
         activeDelegations.delete(delegationId);
 
         await sendDelegationCallback(delegationId, completionStatus, secureReport, agentConfig.baseName);
+
+        await runDelegationHandoffIfNeeded(delegationId, {
+            status: completionStatus,
+            report: secureReport,
+            archivePath: archivePath || '',
+            agentBaseName: agentConfig.baseName,
+            processToolCall,
+            pushVcpInfo,
+            debugMode: DEBUG_MODE
+        });
     }
 }
 

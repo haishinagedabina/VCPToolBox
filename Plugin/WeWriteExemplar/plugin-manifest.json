@@ -1,0 +1,37 @@
+{
+  "manifestVersion": "1.0.0",
+  "name": "WeWriteExemplar",
+  "version": "0.1.0",
+  "displayName": "微信公众号范文库 (SICO 风格少样本)",
+  "description": "wewrite 的范文库 (Exemplar Library) 移植: 用 humanness_score 的统计指纹分析人类范文, 自动抽取 4 个关键片段 (开头钩子 / 情绪高峰 / 转折自纠 / 收尾), 给文章打 category 分类标签, 沉到 wewrite/references/exemplars/。Quill 写作前调 Inject 命令, 按写作框架取 top-N 范文片段拼到系统提示里, 实现 'SICO 风格的少样本引导' — 让 AI 的稿子真的带上某种人类风格, 而不是泛 AI 的中位风格。\n\n三个命令:\n- Extract: 把一篇 Markdown 文章 → 范文库 (用 WeWriteFetchArticle 抓回来的文章直接喂)\n- List: 列出当前范文库的所有条目, 按 category 分组, 含 humanness 评分\n- Inject: 按 framework 类型 (痛点/故事/清单/对比/热点解读/纯观点/复盘) 取 top-N 高人类感的范文, 返回可直接拼到 Quill 写作 prompt 里的文本片段\n\n参数 (Extract):\n- content 或 file_path (二选一): Markdown 文章正文 或 .md 文件路径 (支持 file://)\n- category (可选): 手动指定分类, 候选 [tech-opinion, story-emotional, list-practical, hot-take, general], 不传则自动检测\n- source (可选): 来源名 (公众号名 / 作者名), 不传则使用文章 H1 标题或文件名\n\n参数 (Inject):\n- framework (可选): 写作框架, 候选 [痛点驱动, 故事驱动, 清单观点, 对比拆解, 热点解读, 纯观点, 复盘类], 自动映射到对应 category\n- category (可选, 与 framework 二选一): 直接指定 category\n- top_n (可选, 默认 3): 返回的范文条数\n- max_humanness (可选, 默认 50): humanness_score 上限 (越低越人类化), 用于过滤掉 AI 味重的范文\n\n参数 (List): 无 (或可选 category 做筛选)\n\n返回 (Extract): title / category / humanness_score / fingerprint{} / segments{} / saved_path\n返回 (List): exemplars: [{file, source, category, humanness_score, extracted_at}] + total\n返回 (Inject): exemplars: [{source, category, humanness_score, segments{}}] + prompt_snippet (可直接 copy-paste 到 prompt 的预格式化范文示范文本) + matched_category / used_count",
+  "author": "VCPToolBox",
+  "pluginType": "synchronous",
+  "entryPoint": {
+    "type": "python",
+    "command": "python WeWriteExemplar.py"
+  },
+  "communication": {
+    "protocol": "stdio",
+    "timeout": 60000
+  },
+  "configSchema": {},
+  "capabilities": {
+    "invocationCommands": [
+      {
+        "commandIdentifier": "Extract",
+        "description": "把一篇 Markdown 文章入库 (自动算指纹 + 抽 4 个片段 + 分类).\n参数:\n- content (字符串) 或 file_path (路径或 file:// URL): 二选一, 提供文章正文\n- category (字符串, 可选): tech-opinion | story-emotional | list-practical | hot-take | general\n- source (字符串, 可选): 来源名, 不传则用 H1 标题或文件名\n\n返回包括 humanness_score、fingerprint、segments、saved_path (落盘后的范文文件路径)",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteExemplar「末」,\ncommand:「始」Extract「末」,\nfile_path:「始」E:/some/article.md「末」,\nsource:「始」三五环「末」\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "List",
+        "description": "列出当前范文库的所有条目.\n参数 (全部可选):\n- category: 按分类筛选 (tech-opinion / story-emotional / list-practical / hot-take / general)\n\n返回 exemplars 数组 (按 category 分组, 含 source / humanness_score / extracted_at) + total 总数",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteExemplar「末」,\ncommand:「始」List「末」\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "Inject",
+        "description": "按写作框架取 top-N 高人类感范文片段, 返回可直接拼到 Quill 写作 prompt 里的文本.\n\n参数:\n- framework (字符串, 可选): 痛点驱动 | 故事驱动 | 清单观点 | 对比拆解 | 热点解读 | 纯观点 | 复盘类 (与 TVSQuillFrameworks 的 7 种框架一一对应, 自动映射)\n- category (字符串, 可选, 与 framework 二选一): 直接指定 category\n- top_n (整数, 可选, 默认 3): 返回的范文条数\n- max_humanness (浮点, 可选, 默认 50): humanness_score 上限, 越低越人类化\n\n返回:\n- exemplars: 范文数组 (每条含 source / category / humanness_score / segments)\n- prompt_snippet: 已格式化好的范文示范文本, 可直接拼到 Quill 的系统提示里, 形如 '以下是 N 篇高人类感的范文片段, 写作时请参考其语感和节奏: ...'\n- matched_category / used_count: 实际使用的 category 和 范文数量",
+        "example": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」WeWriteExemplar「末」,\ncommand:「始」Inject「末」,\nframework:「始」痛点驱动「末」,\ntop_n:「始」3「末」\n<<<[END_TOOL_REQUEST]>>>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+[FlashDeepSearch] 2026-06-27T19:30:43.800Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T19:30:43.801Z: 研究主题: "科幻创作角色 世界观 情节 三角协同设计方法论 互相制约 互相激发 系统论 底层逻辑 创作理论", 搜索广度: 15
+[FlashDeepSearch] 2026-06-27T19:30:43.801Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T19:30:43.809Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T19:30:58.854Z: DeepSearchModel 原始响应: [KeyWord1:] 科幻三角协同设计方法论
+[KeyWord2:] System Dynamics of Storyworlds
+[KeyWord3:] 世界观-情节-角色互锁机制
+[KeyWord4:] Emergent Narrative in Sci-Fi
+[KeyWord5:] 底层逻辑驱动的叙事建构
+[KeyWord6:] Computational Narratology and Creativity
+[KeyWord7:] 虚构世界的内在一致性检验
+[KeyWord8:] Social Simulation in Speculative Fiction
+[KeyWord9:] 反协同：叙事自由与去中心化
+[KeyWord10:] Heterotopia and Ideological Critique in Sci-Fi
+[KeyWord11:] 复杂适应叙事系统
+[KeyWord12:] Worldbuilding as Systems Engineering
+[KeyWord13:] 技术奇点叙事的伦理预设
+[KeyWord14:] Cross-cultural Sci-Fi Narrative Structures
+[KeyWord15:] 叙事自创生与涌现秩序
+[FlashDeepSearch] 2026-06-27T19:30:58.854Z: 成功提取到 15 个关键词。
+[FlashDeepSearch] 2026-06-27T19:30:58.854Z: 步骤 2: 并发执行 15 个搜索任务...
+[FlashDeepSearch] 2026-06-27T19:30:58.855Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.856Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.856Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.857Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.857Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.861Z: 警告: 关键词 "科幻三角协同设计方法论" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.864Z: 警告: 关键词 "世界观-情节-角色互锁机制" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.865Z: 警告: 关键词 "Emergent Narrative in Sci-Fi" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.865Z: 警告: 关键词 "System Dynamics of Storyworlds" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.866Z: 警告: 关键词 "底层逻辑驱动的叙事建构" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.866Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.867Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.867Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.868Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.868Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.872Z: 警告: 关键词 "Social Simulation in Speculative Fiction" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.872Z: 警告: 关键词 "虚构世界的内在一致性检验" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.873Z: 警告: 关键词 "Heterotopia and Ideological Critique in Sci-Fi" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.873Z: 警告: 关键词 "反协同：叙事自由与去中心化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.873Z: 警告: 关键词 "Computational Narratology and Creativity" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.874Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.874Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.874Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.874Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.875Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:30:58.876Z: 警告: 关键词 "Worldbuilding as Systems Engineering" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.877Z: 警告: 关键词 "复杂适应叙事系统" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.877Z: 警告: 关键词 "技术奇点叙事的伦理预设" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.878Z: 警告: 关键词 "叙事自创生与涌现秩序" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:30:58.878Z: 警告: 关键词 "Cross-cultural Sci-Fi Narrative Structures" 的搜索失败: Request failed with status code 503

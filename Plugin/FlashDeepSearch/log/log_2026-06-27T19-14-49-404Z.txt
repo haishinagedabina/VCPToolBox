@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-27T19:14:49.407Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T19:14:49.407Z: 研究主题: "science fiction worldbuilding with AI tools: WorldAnvil features, Campfire writing software AI assistant, NotebookLM creative writing, NovelCrafter Sudowrite comparison, AI prompt engineering for sci-fi universe creation", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T19:14:49.407Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T19:14:49.416Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T19:14:53.207Z: DeepSearchModel 原始响应: [KeyWord1:科幻世界构建 AI 工具对比] [KeyWord2:WorldAnvil 功能 评测 2026] [KeyWord3:Campfire Writing AI assistant creative storytelling] [KeyWord4:NotebookLM 创意写作 实验] [KeyWord5:NovelCrafter vs Sudowrite novel generation comparison] [KeyWord6:AI prompt engineering for science fiction universe design] [KeyWord7:人工智能辅助叙事 伦理困境] [KeyWord8:生成式AI 科幻写作 原创性 批判] [KeyWord9:科幻世界 社会建构 技术奇点 文化影响] [KeyWord10:historical evolution of worldbuilding tools authors] [KeyWord11:computational creativity narrative coherence machine authorship] [KeyWord12:大型语言模型 科幻 世界观 构建 元叙事]
+[FlashDeepSearch] 2026-06-27T19:14:53.207Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T19:14:53.207Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T19:14:53.208Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.208Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.209Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.210Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.210Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.214Z: 警告: 关键词 "科幻世界构建 AI 工具对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.215Z: 警告: 关键词 "WorldAnvil 功能 评测 2026" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.215Z: 警告: 关键词 "NotebookLM 创意写作 实验" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.216Z: 警告: 关键词 "NovelCrafter vs Sudowrite novel generation comparison" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.216Z: 警告: 关键词 "Campfire Writing AI assistant creative storytelling" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.216Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.217Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.217Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.218Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.218Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.222Z: 警告: 关键词 "生成式AI 科幻写作 原创性 批判" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.222Z: 警告: 关键词 "historical evolution of worldbuilding tools authors" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.223Z: 警告: 关键词 "科幻世界 社会建构 技术奇点 文化影响" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.223Z: 警告: 关键词 "人工智能辅助叙事 伦理困境" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.224Z: 警告: 关键词 "AI prompt engineering for science fiction universe design" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.224Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.224Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T19:14:53.226Z: 警告: 关键词 "大型语言模型 科幻 世界观 构建 元叙事" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T19:14:53.227Z: 警告: 关键词 "computational creativity narrative coherence machine authorship" 的搜索失败: Request failed with status code 503

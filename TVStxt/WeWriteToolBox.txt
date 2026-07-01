@@ -1,0 +1,202 @@
+# 微信公众号写作工具箱 (WeWrite)
+
+这里收纳了把 Markdown 文章转换为微信公众号排版 HTML、推送到草稿箱、查询/对比排版主题的工具。基于 oaker-io/wewrite 源码原样接入。
+
+## 1. 公众号排版渲染 (WeWriteRender)
+
+把 Markdown 转为微信兼容内联样式 HTML, 自带 CJK 间距、加粗标点外移、列表→section、外链转脚注、暗黑模式、容器语法 (`:::dialogue` / `:::timeline` / `:::callout` / `:::quote`)。**不会推送, 只产出 HTML**, 适合预览/调试/拼装。
+
+tool_name:「始」WeWriteRender「末」,
+command:「始」Render「末」,
+markdown:「始」(必需) Markdown 原文。也接受本地 .md 路径或 file:// URL。「末」,
+theme:「始」(可选, 默认 professional-clean) 排版主题名「末」,
+save_html:「始」(可选) 设为 true 时把渲染结果落盘到 Plugin/WeWriteCore/wewrite/output/ 「末」
+
+返回: title / digest (自动生成, ≤120 UTF-8 字节) / html / images / theme / theme_description / char_count [/ output_path]
+
+## 2. 推送公众号草稿箱 (WeWritePublish)
+
+把 Markdown 排版后**真实推送到微信公众号草稿箱**, 自动上传正文图片到永久素材, 自动上传封面图为 thumb_media。属于敏感写操作, 已启用 VCP Auth 管理员验证, 必须由用户授权并提供 6 位 requireAdmin 验证码。
+
+tool_name:「始」WeWritePublish「末」,
+command:「始」Publish「末」,
+markdown:「始」(必需) Markdown 原文或路径「末」,
+title:「始」(可选) 文章标题, 默认从 H1 提取「末」,
+digest:「始」(可选) 文章摘要, ≤40 中文字, 默认 converter 自动生成「末」,
+author:「始」(可选) 文章署名「末」,
+theme:「始」(可选, 默认 professional-clean) 排版主题名「末」,
+cover_image_url:「始」(可选, 强烈建议) 封面图路径/URL。支持 file://、http(s)://、data:image/...;base64,...。先用 ZImageGen 等生成一张, 把返回的图片路径填入这里。「末」,
+requireAdmin:「始」(必需) 6 位 VCP Auth 管理员验证码「末」
+
+返回: media_id / title / digest / author / theme / images_uploaded / cover_uploaded / console_url
+
+## 3. 今日热点抓取 (WeWriteHotspots)
+
+并行抓取微博热搜、今日头条热榜、百度热搜, 跨平台去重 + 排名归一化, 给出选题候选池。专配 Quill Step 1 的选题环节, 配合 `{{TVSQuillTopicRules}}` 的三维评分公式使用。**国内三大平台直连最稳**, 内部已剥离系统代理。
+
+tool_name:「始」WeWriteHotspots「末」,
+command:「始」Fetch「末」,
+limit:「始」(可选, 默认 20, 上限 50) 返回的热点条数「末」
+
+返回: timestamp / sources / sources_failed / count / items[{title, source, hot, hot_normalized (0-100 跨平台可比), url, description}] [/ skip_reason]
+
+**降级**: 三个平台全挂时 `skip_reason` 非空, 此时 Agent 应回退到 `{{VCPDailyHot}}` / `{{VCPVSearch}}` / `{{VCPFlashDeepSearch}}`。
+
+## 4. 文章 AI 味检测 (WeWriteHumanness)
+
+对 Markdown / 纯文本文章给出 0-100 综合分 (0=完美人类, 100=明显 AI), 并按 `{{TVSQuillWritingGuide}}` 的 14 条规则定位最薄弱维度 + 给出具体改稿建议。Quill 写完每篇文章应跑一次, 校准统计指纹。
+
+tool_name:「始」WeWriteHumanness「末」,
+command:「始」Score「末」,
+content:「始」(二选一) 文章正文字符串 (Markdown 或纯文本)「末」,
+file_path:「始」(二选一) 文章文件路径, 支持 file:// URL「末」,
+mode:「始」(可选, 默认 summary) summary=精简摘要+改稿建议; json=完整原始评分「末」,
+tier3_score:「始」(可选, 0-1 浮点) Agent 自评的语义层分数, 不传则用 standalone 模式「末」
+
+summary 模式返回:
+- composite_score: 综合分 0-100
+- verdict: 中文判定 (✅ 人类感很强 / ⚠️ 偏 AI / ❌ AI 味较重 / 🚨 显著 AI 痕迹)
+- tier_scores: { tier1_statistical, tier2_pattern, tier3_llm }
+- weakest_dimensions: [{check, score, detail, tip}] 最低 3-5 项, 每条 tip 标注 `[1.1]`/`[2.1]` 等规则编号 (对应 TVSQuillWritingGuide)
+- param_scores: 14 个写作参数扁平评分映射
+- rewrite_required (bool, ≥70 分): 必须改稿
+- rewrite_recommended (bool, ≥50 分): 建议改稿
+
+校准: 对 5 个易过度优化的维度 (banned_words / broken_sentences / self_correction / sentence_length_range / paragraph_length_variance) 采用钟形曲线评分 — 太低和太高都扣分。整篇 60%+ check > 0.8 时触发 15% 全局惩罚 (防"完美得可疑")。
+
+## 5. 微信文章正文抓取 (WeWriteFetchArticle)
+
+把任意微信公众号文章 URL 抓回来转成纯 Markdown (含 H1/H2/段落/图片/引用), 顺带提取作者、发布时间等元信息。三级降级 (requests → Camoufox → Playwright), 任一级成功即返回。**配合 WeWriteHumanness 做回测、配合 WeWriteExemplar 建范文库、配合 WeWriteLearnEdits 做改稿对比**, 是 Quill "向人类学习" 的入口。
+
+tool_name:「始」WeWriteFetchArticle「末」,
+command:「始」Fetch「末」,
+url:「始」(二选一) 微信文章 URL, 形如 https://mp.weixin.qq.com/s/xxxxx 「末」,
+file_path:「始」(二选一) 本地 HTML 文件路径或 file:// URL (浏览器另存为后)「末」,
+save_to_corpus:「始」(可选, 默认 false) 是否落盘到 wewrite/corpus/, 供 Exemplar 后续引用「末」,
+allow_proxy:「始」(可选, 默认 false) 是否允许走代理 (一般不需要)「末」
+
+返回: title / author / publish_time / url / markdown / char_count / fetched_via (requests|camoufox|playwright|file) [/ corpus_path]
+
+**失败兜底**: 三级抓取都被反爬挡住 → Agent 提示用户在浏览器打开 → 右键 "另存为 HTML" → 用 `file_path` 参数重新调用。
+
+## 6. 范文库与少样本注入 (WeWriteExemplar)
+
+wewrite 招牌的 SICO (Style-Inspired Curated Output) 风格少样本系统: 把人类范文按 4 个关键片段 (开头钩子 / 情绪高峰 / 转折自纠 / 收尾) 拆解 + 统计指纹分析 + category 分类。Quill 写作前调 `Inject` 命令, 按写作框架 (痛点驱动/故事驱动/清单观点等) 取 top-N 高人类感范文, 拿到一段可直接拼到自己 prompt 里的范文示范。**这是让 Quill 的稿子不再是 "AI 中位风格" 而是 "某种具体人类风格" 的关键工具**。
+
+# 入库一篇文章 (通常先用 WeWriteFetchArticle 抓回来)
+tool_name:「始」WeWriteExemplar「末」,
+command:「始」Extract「末」,
+content:「始」(二选一) Markdown 字符串「末」,
+file_path:「始」(二选一) .md 文件路径或 file:// URL「末」,
+category:「始」(可选) tech-opinion | story-emotional | list-practical | hot-take | general; 不传则自动检测「末」,
+source:「始」(可选) 来源名 (公众号名 / 作者名)「末」
+
+# 列出范文库
+tool_name:「始」WeWriteExemplar「末」,
+command:「始」List「末」,
+category:「始」(可选) 按分类筛选「末」
+
+# 写作前注入范文示范 (Quill 写作循环里的高频命令)
+tool_name:「始」WeWriteExemplar「末」,
+command:「始」Inject「末」,
+framework:「始」(可选, 与 category 二选一) 痛点驱动 | 故事驱动 | 清单观点 | 对比拆解 | 热点解读 | 纯观点 | 复盘类「末」,
+category:「始」(可选, 与 framework 二选一) 直接指定 category「末」,
+top_n:「始」(可选, 默认 3) 返回的范文数量「末」,
+max_humanness:「始」(可选, 默认 50) humanness_score 上限, 越低越人类化「末」
+
+Inject 返回: exemplars[{source, category, humanness_score, segments{opening, emotional_peak, transition, closing}}] + prompt_snippet (已格式化好可直接拼到 Quill 系统提示) + matched_category / used_count + notes (若发生 fallback)。
+
+## 7. 改稿学习与 Playbook 飞轮 (WeWriteLearnEdits)
+
+wewrite 的招牌学习闭环: 对比 Quill 出的 AI 初稿 vs 主人最终改完的稿子, 把每一处修改识别成 typed pattern (用词替换 / 段落删除 / 段落新增 / 结构调整 / 标题修改 / 语气调整 / 表达偏好), 落到 wewrite/lessons/。多次积累后, `Summarize` 输出按 confidence 排序的 pattern 列表, Quill 把高 confidence 规则 (≥7) 补到自己的写作清单里, 形成 "越改越像主人风格" 的循环。**主人首次大改 Quill 稿子时务必跑一次 Diff**, 否则学习飞轮永远转不起来。
+
+# 第一步: 对比初稿和终稿 (生成 lesson 文件, patterns 留空待填)
+tool_name:「始」WeWriteLearnEdits「末」,
+command:「始」Diff「末」,
+draft_content:「始」(二选一) AI 初稿 Markdown 字符串「末」,
+draft_path:「始」(二选一) AI 初稿文件路径或 file:// URL「末」,
+final_content:「始」(二选一) 主人改完的终稿 Markdown「末」,
+final_path:「始」(二选一) 终稿文件路径或 file:// URL「末」,
+auto_extract_exemplar:「始」(可选, 默认 true) 若终稿 humanness ≤ 50, 自动入范文库「末」
+
+返回 Diff 后看 `additions_sample` 和 `deletions_sample`, 由 Agent 抽象出修改模式。
+
+# 第二步: Agent 分析后回写 patterns (一次可加多条)
+tool_name:「始」WeWriteLearnEdits「末」,
+command:「始」RecordPattern「末」,
+patterns:「始」[{"type":"word_sub","key":"snake_case_id","description":"主人把'讲真'改成'坦白说'","rule":"不要使用'讲真', 用'坦白说'代替"}]「末」,
+lesson_file:「始」(可选) 目标 lesson 文件路径, 不传则取最新的「末」,
+merge:「始」(可选, 默认 false) true=追加, false=覆盖「末」
+
+type 候选: word_sub (用词) / para_delete (段落删) / para_add (段落加) / structure (结构) / title (标题) / tone (语气) / expression (表达偏好)
+rule **必须是可执行祈使句**, 不是描述句。坏: "用户偏好简短段落"; 好: "段落不超过 80 字, 长段必须在 3 句内换行"。
+
+# 第三步: 攒够数据后查看高 confidence 规则 (5/10/15 篇时 Quill 应主动跑)
+tool_name:「始」WeWriteLearnEdits「末」,
+command:「始」Summarize「末」,
+min_confidence:「始」(可选, 默认 0) 过滤阈值, 取 ≥5 = medium, ≥7 = high「末」,
+format:「始」(可选, summary | json, 默认 summary)「末」
+
+Summarize 返回: total_lessons / total_patterns / patterns (按 confidence 降序) [+ by_type 按类型分组 + high_confidence / medium_confidence 列表 + playbook_suggestion (≥5 lessons 时触发)]
+
+confidence 公式: base = min(8, 2 + occurrences*2); + 1 (7天内 recency); - (days_since_last/30) age decay; 最终钳到 1-10。1 次出现=5; 2 次=6; 3 次=7+ (确认偏好); 30 天没复现就开始衰减。
+
+## 8. 排版主题查询 (WeWriteThemes)
+
+查询 wewrite 内置的 16+ 微信排版主题, 或生成一个并排对比的 HTML 主题画廊。**辅助选定 theme 字段, 不影响最终发布**。
+
+# 列出主题
+tool_name:「始」WeWriteThemes「末」,
+command:「始」ListThemes「末」
+
+# 生成主题画廊 (并排对比 16 个主题渲染同一篇文章)
+tool_name:「始」WeWriteThemes「末」,
+command:「始」Gallery「末」,
+markdown:「始」(可选) Markdown 原文或路径, 未传时使用内置示例「末」,
+save_html:「始」(可选, 默认 true) 是否落盘到 wewrite/output/ 「末」
+
+[===vcp_fold:0.4===]
+
+## 内置主题速查表
+
+| 类别 | 主题 (theme 参数值) |
+|------|---------------------|
+| 通用 | `professional-clean` (默认) · `minimal` · `newspaper` |
+| 科技 | `tech-modern` · `bytedance` · `github` |
+| 文艺 | `warm-editorial` · `sspai` · `ink` · `elegant-rose` |
+| 商务 | `bold-navy` · `minimal-gold` · `bold-green` |
+| 风格 | `bauhaus` · `focus-red` · `midnight` |
+
+所有主题均支持微信暗黑模式。需要精确预览效果时, 先调 `WeWriteThemes → Gallery` 生成画廊。
+
+## 容器语法 (在 Markdown 中可直接使用)
+
+```markdown
+:::dialogue
+左边气泡的话
+> 右边气泡的回复 (用 > 开头)
+:::
+
+:::timeline
+**2024 Q1** 立项启动
+**2024 Q3** MVP 上线
+:::
+
+:::callout tip
+提示框, 类型支持 tip / warning / info / danger
+:::
+
+:::quote
+引用块文本
+:::
+```
+
+## 与其他 VCP 工具的配合习惯
+
+- **封面/配图生成**: 先调用 `ComfyUIGen` (强烈优先, 本地工作流稳定且无云图床代理问题) / `ZImageGen` / `ZImageGen2` / `DMXDoubaoGen` 等生图插件, 拿到返回的 `file://` 或绝对路径, 再填入 `WeWritePublish.cover_image_url`。
+- **热点选题**: 首选 `WeWriteHotspots` (微博+头条+百度并行抓取), 不可用时回退到 `VSearch` / `FlashDeepSearch` / `DailyHot`。
+- **写作前注入风格示范**: 选好框架后调 `WeWriteExemplar.Inject framework=...`, 把 `prompt_snippet` 字段拼到自己的写作 prompt 里, 让稿子带上某种具体人类风格而不是 AI 中位风格。**范文库为空时** Inject 会返回 note 提示, Quill 回退到只用 `{{TVSQuillWritingGuide}}` 的抽象规则即可。
+- **学一篇人类范文**: 想模仿某个公众号风格 → `WeWriteFetchArticle.Fetch url=... save_to_corpus=true` → `WeWriteExemplar.Extract file_path=<返回的 corpus_path>` → 这篇就进入了下次 Inject 的候选池。
+- **写完自检**: 文章定稿后 (推送前) 跑 `WeWriteHumanness` 评分, `composite_score ≥ 70` 必须按 `weakest_dimensions[].tip` 定向重写; `50 ≤ < 70` 建议重写; `< 50` 可以推送。
+- **改稿学习飞轮**: 主人手动改了 Quill 出的稿子后, 一定要跑 `WeWriteLearnEdits.Diff draft=<AI 初稿> final=<主人终稿>` → 看 additions_sample/deletions_sample → 抽象出 patterns → `RecordPattern` 写回。每 5 次改稿跑一次 `Summarize`, 把 confidence ≥7 的规则补到 Quill 的写作清单里 (TVSQuillWritingGuide 之外的个人化补丁)。
+- **跨节点图片**: 当封面 URL 来自其他 VCP 节点时, `WeWritePublish` 已内置超栈追踪 (Hyper-Stack-Trace) 支持, 主服务会自动拉取并重试, 调用方无需手动处理。

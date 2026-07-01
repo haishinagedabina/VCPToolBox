@@ -1,0 +1,31 @@
+[FlashDeepSearch] 2026-06-28T01:54:54.083Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-28T01:54:54.083Z: 研究主题: "Transformer 推理阶段 KV Cache 内存管理核心机制，包括 KV Cache 原理、内存占用计算公式、Multi-Query Attention、Grouped-Query Attention、Multi-head Latent Attention、滑窗注意力、Prefix Caching、RadixAttention、PagedAttention 等优化技术，以及 vLLM TensorRT-LLM SGLang TGI 等框架的 KV Cache 管理策略对比", 搜索广度: 12
+[FlashDeepSearch] 2026-06-28T01:54:54.083Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-28T01:54:54.092Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-28T01:55:07.453Z: DeepSearchModel 原始响应: [KeyWord1:KV Cache 内存占用计算公式] [KeyWord2:Multi-Query Attention mechanism] [KeyWord3:Grouped-Query Attention memory reduction] [KeyWord4:Multi-head Latent Attention DeepSeek] [KeyWord5:PagedAttention vLLM memory management] [KeyWord6:RadixAttention SGLang prefix caching] [KeyWord7:Sliding Window Attention infinite-length inference] [KeyWord8:TensorRT-LLM KV Cache optimization] [KeyWord9:大模型推理成本 内存瓶颈 能效] [KeyWord10:注意力机制中的记忆与遗忘 哲学] [KeyWord11:线性注意力替代KV Cache 高效推理] [KeyWord12:自注意力演化 从Transformer到状态空间模型]
+[FlashDeepSearch] 2026-06-28T01:55:07.454Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-28T01:55:07.454Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-28T01:55:07.455Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.456Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.456Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.457Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.457Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.462Z: 警告: 关键词 "Multi-Query Attention mechanism" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.463Z: 警告: 关键词 "Multi-head Latent Attention DeepSeek" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.464Z: 警告: 关键词 "Grouped-Query Attention memory reduction" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.465Z: 警告: 关键词 "PagedAttention vLLM memory management" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.465Z: 警告: 关键词 "KV Cache 内存占用计算公式" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.465Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.465Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.466Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.467Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.467Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.470Z: 警告: 关键词 "Sliding Window Attention infinite-length inference" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.470Z: 警告: 关键词 "TensorRT-LLM KV Cache optimization" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.471Z: 警告: 关键词 "RadixAttention SGLang prefix caching" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.471Z: 警告: 关键词 "大模型推理成本 内存瓶颈 能效" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.472Z: 警告: 关键词 "注意力机制中的记忆与遗忘 哲学" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.472Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.472Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-28T01:55:07.474Z: 警告: 关键词 "自注意力演化 从Transformer到状态空间模型" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-28T01:55:07.474Z: 警告: 关键词 "线性注意力替代KV Cache 高效推理" 的搜索失败: Request failed with status code 503

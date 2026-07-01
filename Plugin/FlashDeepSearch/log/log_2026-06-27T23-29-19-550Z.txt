@@ -1,0 +1,42 @@
+[FlashDeepSearch] 2026-06-27T23:29:19.554Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T23:29:19.554Z: 研究主题: "Agent 记忆系统的检索层, 从基础 RAG 到混合检索 Hybrid Search 重排序 Re-ranking 多跳推理 Multi-hop, 向量检索与 BM25 关键词检索互补, LlamaIndex LangChain Haystack 检索架构对比, Agent 场景下记忆检索的特殊需求 时效性过滤 权限感知 工具调用结果检索", 搜索广度: 12
+[FlashDeepSearch] 2026-06-27T23:29:19.555Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T23:29:19.564Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T23:29:24.125Z: DeepSearchModel 原始响应: [KeyWord1:] RAG 检索增强生成 混合检索 BM25 向量检索 互补
+[KeyWord2:] Hybrid Search re-ranking multi-hop reasoning agent memory
+[KeyWord3:] LlamaIndex LangChain Haystack 检索架构对比 性能评估
+[KeyWord4:] 多跳推理 知识图谱 图检索 记忆链
+[KeyWord5:] 时效性过滤 时间衰减 缓存策略 实时索引
+[KeyWord6:] 权限感知检索 RBAC 数据隔离 记忆安全
+[KeyWord7:] 工具调用结果检索 Toolformer function calling memory recall
+[KeyWord8:] 向量数据库 FAISS Milvus Weaviate 近似最近邻
+[KeyWord9:] 反方观点 RAG 局限性 幻觉 延迟 成本
+[KeyWord10:] 认知架构 记忆系统 情境记忆 语义记忆 人工智能伦理
+[KeyWord11:] 信息检索历史 PageRank TF-IDF 到神经检索 演进
+[KeyWord12:] 跨模态检索 图片 音频 记忆嵌入 多模态 Agent
+[FlashDeepSearch] 2026-06-27T23:29:24.125Z: 成功提取到 12 个关键词。
+[FlashDeepSearch] 2026-06-27T23:29:24.126Z: 步骤 2: 并发执行 12 个搜索任务...
+[FlashDeepSearch] 2026-06-27T23:29:24.126Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.128Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.129Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.129Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.130Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.137Z: 警告: 关键词 "RAG 检索增强生成 混合检索 BM25 向量检索 互补" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.138Z: 警告: 关键词 "Hybrid Search re-ranking multi-hop reasoning agent memory" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.139Z: 警告: 关键词 "LlamaIndex LangChain Haystack 检索架构对比 性能评估" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.140Z: 警告: 关键词 "时效性过滤 时间衰减 缓存策略 实时索引" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.141Z: 警告: 关键词 "多跳推理 知识图谱 图检索 记忆链" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.142Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.142Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.143Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.143Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.144Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.146Z: 警告: 关键词 "权限感知检索 RBAC 数据隔离 记忆安全" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.147Z: 警告: 关键词 "工具调用结果检索 Toolformer function calling memory recall" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.147Z: 警告: 关键词 "认知架构 记忆系统 情境记忆 语义记忆 人工智能伦理" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.148Z: 警告: 关键词 "反方观点 RAG 局限性 幻觉 延迟 成本" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.148Z: 警告: 关键词 "向量数据库 FAISS Milvus Weaviate 近似最近邻" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.148Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.148Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T23:29:24.150Z: 警告: 关键词 "信息检索历史 PageRank TF-IDF 到神经检索 演进" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T23:29:24.150Z: 警告: 关键词 "跨模态检索 图片 音频 记忆嵌入 多模态 Agent" 的搜索失败: Request failed with status code 503

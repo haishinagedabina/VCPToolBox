@@ -1,0 +1,33 @@
+[FlashDeepSearch] 2026-06-27T20:20:46.585Z: 插件启动，接收到请求。
+[FlashDeepSearch] 2026-06-27T20:20:46.586Z: 研究主题: "AI动态预演Pre-visualization工具对比：Runway Gen-3 Gen-4、Pika 2.0镜头控制、Sora DiT架构、Kling快手视频生成、Luma Dream Machine、Wonder Dynamics角色动画替代动作捕捉、口型同步技术HeyGen Synthesia Runway Lip Sync。各自定位、关键能力差异与2025年最新进展", 搜索广度: 13
+[FlashDeepSearch] 2026-06-27T20:20:46.586Z: 步骤 1: 生成研究关键词...
+[FlashDeepSearch] 2026-06-27T20:20:46.594Z: 调用模型: deepseek-v4-pro
+[FlashDeepSearch] 2026-06-27T20:20:51.019Z: DeepSearchModel 原始响应: [KeyWord1: AI视频生成 2025 Runway Gen-4 技术架构对比] [KeyWord2: Pika 2.0 镜头控制 动态分镜 多模态生成] [KeyWord3: Sora DiT 扩散Transformer 物理世界模拟 局限] [KeyWord4: 快手可灵 Kling 影视级视频生成 商业应用] [KeyWord5: Luma Dream Machine 3D一致性 快速预览 工作流] [KeyWord6: Wonder Dynamics 无标记动捕 角色动画 自动化] [KeyWord7: 口型同步 HeyGen vs Synthesia vs Runway Lip Sync 多语言数字人] [KeyWord8: 视频生成模型 幻觉 可控性 伦理风险 深度伪造] [KeyWord9: generative video pre-visualization filmmaking pipeline 2025] [KeyWord10: AI animation democratization cost efficiency artists displacement] [KeyWord11: 文生视频 算力消耗 碳排放 绿色AI 可持续性] [KeyWord12: 动态预演 虚拟制片 实时引擎 Unreal Engine 结合] [KeyWord13: 中国AI视频竞争 快手可灵 出海 全球市场 监管]
+[FlashDeepSearch] 2026-06-27T20:20:51.019Z: 成功提取到 13 个关键词。
+[FlashDeepSearch] 2026-06-27T20:20:51.020Z: 步骤 2: 并发执行 13 个搜索任务...
+[FlashDeepSearch] 2026-06-27T20:20:51.020Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.021Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.021Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.022Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.022Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.026Z: 警告: 关键词 "AI视频生成 2025 Runway Gen-4 技术架构对比" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.027Z: 警告: 关键词 "Sora DiT 扩散Transformer 物理世界模拟 局限" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.027Z: 警告: 关键词 "快手可灵 Kling 影视级视频生成 商业应用" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.028Z: 警告: 关键词 "Pika 2.0 镜头控制 动态分镜 多模态生成" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.028Z: 警告: 关键词 "Luma Dream Machine 3D一致性 快速预览 工作流" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.028Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.029Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.029Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.030Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.030Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.033Z: 警告: 关键词 "口型同步 HeyGen vs Synthesia vs Runway Lip Sync 多语言数字人" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.033Z: 警告: 关键词 "视频生成模型 幻觉 可控性 伦理风险 深度伪造" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.034Z: 警告: 关键词 "AI animation democratization cost efficiency artists displacement" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.034Z: 警告: 关键词 "generative video pre-visualization filmmaking pipeline 2025" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.035Z: 警告: 关键词 "Wonder Dynamics 无标记动捕 角色动画 自动化" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.035Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.035Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.036Z: 调用模型: gemini-2.5-flash-lite
+[FlashDeepSearch] 2026-06-27T20:20:51.037Z: 警告: 关键词 "中国AI视频竞争 快手可灵 出海 全球市场 监管" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.038Z: 警告: 关键词 "文生视频 算力消耗 碳排放 绿色AI 可持续性" 的搜索失败: Request failed with status code 503
+[FlashDeepSearch] 2026-06-27T20:20:51.038Z: 警告: 关键词 "动态预演 虚拟制片 实时引擎 Unreal Engine 结合" 的搜索失败: Request failed with status code 503
