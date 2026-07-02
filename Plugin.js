@@ -624,7 +624,11 @@ class PluginManager extends EventEmitter {
                             }
                         }
                     } catch (error) {
-                        if (error.code !== 'ENOENT' && !(error instanceof SyntaxError)) {
+                        if (error instanceof SyntaxError) {
+                            // 关键：plugin-manifest.json 存在 JSON 语法错误时，绝不能静默跳过——
+                            // 否则插件会无声无息地不加载，造成"提示词里有工具描述、实际调用却路由失败"的假象，极难排查。
+                            console.warn(`[PluginManager] ⚠️ 跳过插件 "${folder.name}"：plugin-manifest.json 存在 JSON 语法错误，无法解析，该插件不会被加载。请修复该文件。错误: ${error.message}`);
+                        } else if (error.code !== 'ENOENT') {
                             console.error(`[PluginManager] Error loading plugin from ${folder.name}:`, error);
                         }
                     }

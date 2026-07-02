@@ -482,26 +482,6 @@ function buildTemporaryToolsSystemPrompt(injectToolsRaw) {
 
             if (description) {
                 sections.push(`### ${plugin?.displayName || toolName} (${toolName})\n${description}`);
-            // ===== [主编修复] Quill 专项：若插件未在全局 register 也未在 AgentAssistant 目录下，则去 Plugin 根目录主动扫描 WeWritePublish =====
-            } else if (toolName === 'WeWritePublish') {
-                try {
-                    const wpDir = path.join(__dirname, '..', 'WeWritePublish');
-                    if (fs.existsSync(wpDir)) {
-                        const wpManifestPath = path.join(wpDir, 'plugin-manifest.json');
-                        if (fs.existsSync(wpManifestPath)) {
-                            const wpRaw = fs.readFileSync(wpManifestPath, 'utf8');
-                            const wpManifest = JSON.parse(wpRaw);
-                            if (wpManifest && wpManifest.tools && wpManifest.tools.length > 0) {
-                                wpManifest.tools.forEach(t => {
-                                    sections.push(`### ${t.displayName || t.name} (${t.name})\n${t.description || '来自 WeWritePublish 插件的工具'}`);
-                                });
-                                if (DEBUG_MODE) console.error(`[AgentAssistant][主编修复] 强制注入 WeWritePublish 成功，工具数: ${wpManifest.tools.length}`);
-                            }
-                        }
-                    }
-                } catch (e) {
-                    console.error('[AgentAssistant][主编修复] 强制注入 WeWritePublish 异常:', e.message);
-                }
             } else {
                 const fallbackDescription = plugin?.description
                     ? `${plugin.description}\n\n[警告] 该工具缺少 invocationCommands 级别的详细描述，当前仅注入 manifest 描述。`
