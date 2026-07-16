@@ -4,6 +4,7 @@ const { spawn } = require('child_process');
 
 let serviceProcess = null;
 let serviceReadyPromise = null;
+let serviceShuttingDown = false;
 let serviceConfig = {
     host: '127.0.0.1',
     port: 38765,
@@ -119,6 +120,8 @@ async function waitForServiceReady(deadlineMs = 8000) {
 }
 
 async function ensureServiceStarted() {
+    serviceShuttingDown = false;
+
     if (serviceProcess && !serviceProcess.killed) {
         return;
     }
@@ -154,9 +157,15 @@ async function ensureServiceStarted() {
         });
 
         serviceProcess.on('exit', (code, signal) => {
-            console.warn(`[DailyNoteSearcher Service] exited with code=${code}, signal=${signal}`);
+            const message = `[DailyNoteSearcher Service] exited with code=${code}, signal=${signal}`;
+            if (serviceShuttingDown || signal === 'SIGTERM') {
+                console.log(message);
+            } else {
+                console.warn(message);
+            }
             serviceProcess = null;
             serviceReadyPromise = null;
+            serviceShuttingDown = false;
         });
 
         serviceProcess.on('error', error => {
@@ -193,8 +202,11 @@ async function processToolCall(args) {
 }
 
 async function shutdown() {
+    serviceShuttingDown = true;
     if (serviceProcess && !serviceProcess.killed) {
         serviceProcess.kill();
+    } else {
+        serviceShuttingDown = false;
     }
     serviceProcess = null;
     serviceReadyPromise = null;
@@ -204,6 +216,15 @@ async function shutdown() {
 function getServiceEndpoint() {
     return `http://${serviceConfig.host}:${serviceConfig.port}/search`;
 }
+
+// When PM2 sends SIGTERM, server.js gracefulShutdown() may take longer than
+// PM2's kill_timeout (15s) to reach Phase 8 (plugin shutdown). Register an
+// early SIGTERM listener to kill the child process before Node.js is force-killed.
+process.on('SIGTERM', () => {
+    if (serviceProcess && !serviceProcess.killed) {
+        serviceProcess.kill();
+    }
+});
 
 module.exports = {
     initialize,

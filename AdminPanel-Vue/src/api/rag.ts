@@ -5,7 +5,8 @@ import {
 
 const DEFAULT_READ_UI_OPTIONS: RequestUiOptions = { showLoader: false };
 
-export type ParamValue = number | number[] | Record<string, number>;
+export type ParamPrimitive = string | number | boolean | null;
+export type ParamValue = ParamPrimitive | ParamValue[] | { [key: string]: ParamValue };
 export type ParamGroup = Record<string, ParamValue>;
 export type RagParams = Record<string, ParamGroup>;
 
@@ -27,6 +28,22 @@ export interface RagParamThemeApplyResponse {
 export interface RagParamThemeSaveResponse {
   message?: string;
   theme?: RagParamTheme;
+}
+
+export interface ActiveFullTrainingResult {
+  taskId?: string;
+  queued?: boolean;
+  reason?: string;
+  resetPendingNewTags?: number;
+  threshold?: number;
+  error?: string;
+}
+
+export interface ActiveFullTrainingResponse {
+  success?: boolean;
+  message?: string;
+  result?: ActiveFullTrainingResult;
+  error?: string;
 }
 
 export interface SemanticGroupData {
@@ -74,6 +91,18 @@ export const ragApi = {
         url: "/admin_api/rag-params",
         method: "POST",
         body: params,
+      },
+      uiOptions
+    );
+  },
+
+  async triggerActiveFullTraining(
+    uiOptions: RequestUiOptions = {}
+  ): Promise<ActiveFullTrainingResponse> {
+    return requestWithUi(
+      {
+        url: "/admin_api/rag-active-full-training",
+        method: "POST",
       },
       uiOptions
     );

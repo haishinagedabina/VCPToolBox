@@ -24,15 +24,15 @@
                 这类可直接放入 Agent 系统提示词的记忆占位符。
               </p>
             </div>
-            <button class="diary-close-btn" type="button" aria-label="关闭" @click="close">
+            <UiIconButton class="diary-close-btn" label="关闭" title="关闭" @click="close">
               <span class="material-symbols-outlined">close</span>
-            </button>
+            </UiIconButton>
           </header>
 
           <div class="diary-syntax-body">
             <label class="syntax-field syntax-field--full">
               <span>日记本名称</span>
-              <input
+              <UiInput
                 v-model="notebookName"
                 type="text"
                 placeholder="例如：小吉日记本 / 物理|政治日记本"
@@ -47,26 +47,26 @@
             </label>
 
             <div class="dsl-page-tabs" role="tablist" aria-label="日记本 DSL 类型">
-              <button
-                type="button"
+              <UiButton
                 role="tab"
+                variant="ghost"
                 :aria-selected="dslPage === 'advanced'"
                 :class="{ active: dslPage === 'advanced' }"
                 @click="dslPage = 'advanced'"
               >
                 <span class="material-symbols-outlined">auto_awesome</span>
                 [[]] / 《《》》 高级 RAG
-              </button>
-              <button
-                type="button"
+              </UiButton>
+              <UiButton
                 role="tab"
+                variant="ghost"
                 :aria-selected="dslPage === 'direct'"
                 :class="{ active: dslPage === 'direct' }"
                 @click="dslPage = 'direct'"
               >
                 <span class="material-symbols-outlined">subject</span>
                 {{}} / <<>> 轻量直读
-              </button>
+              </UiButton>
             </div>
 
             <div v-if="dslPage === 'advanced'" class="syntax-card syntax-card--mode">
@@ -75,20 +75,20 @@
                 注入模式
               </div>
               <div class="mode-toggle">
-                <button
-                  type="button"
+                <UiButton
+                  variant="ghost"
                   :class="{ active: syntaxMode === 'dynamic' }"
                   @click="syntaxMode = 'dynamic'"
                 >
                   《《》》 动态注入
-                </button>
-                <button
-                  type="button"
+                </UiButton>
+                <UiButton
+                  variant="ghost"
                   :class="{ active: syntaxMode === 'fixed' }"
                   @click="syntaxMode = 'fixed'"
                 >
                   [[]] 固定注入
-                </button>
+                </UiButton>
               </div>
               <p>
                 <strong>动态注入</strong>会先判断当前上下文与日记本是否相关，达标后才检索片段；
@@ -115,11 +115,28 @@
                 <div class="syntax-option-head">
                   <div>
                     <strong>Time 时间感知检索</strong>
-                    <code>::Time</code>
+                    <code>::Time0.2</code>
                   </div>
                   <AppSwitch v-model="enabledSuffixes.time" />
                 </div>
-                <p>解析“上周、最近、三个月前”等自然语言时间线索，并融合时间范围召回。该语法还支持新建聊天时自动传递上一个聊天的记忆，无视任意前端。</p>
+                <p>
+                  解析“上周、最近、三个月前”等自然语言时间线索，并融合时间范围召回。可选数字表示时间路占比，
+                  例如 <code>::Time0.3</code> 表示时间召回约 30%、语义召回约 70%；留空使用默认 0.2。
+                  该语法还支持新建聊天时自动传递上一个聊天的记忆，无视任意前端。
+                </p>
+                <label class="inline-number">
+                  <span>时间路占比</span>
+                  <UiInput
+                    v-model="timeRatio"
+                    :disabled="!enabledSuffixes.time"
+                    type="number"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    placeholder="默认 0.2"
+                    @keydown.stop
+                  />
+                </label>
               </div>
 
               <div class="syntax-card syntax-option-card">
@@ -137,22 +154,54 @@
                 <div class="syntax-option-head">
                   <div>
                     <strong>BM25+ 日记全文匹配</strong>
-                    <code>::BM25+</code>
+                    <code>::BM25+0.7</code>
                   </div>
                   <AppSwitch v-model="enabledSuffixes.bm25Plus" />
                 </div>
-                <p>启用日记全文 BM25 关键词匹配，适合通过原文措辞、专有名词或精确短语补充向量召回。</p>
+                <p>
+                  启用日记全文 BM25 关键词匹配，适合通过原文措辞、专有名词或精确短语补充向量召回。
+                  可选数字表示 BM25 稀疏分融合权重，例如 <code>::BM25+0.7</code>；留空使用默认 0.6。
+                </p>
+                <label class="inline-number">
+                  <span>BM25 权重</span>
+                  <UiInput
+                    v-model="bm25PlusWeight"
+                    :disabled="!enabledSuffixes.bm25Plus"
+                    type="number"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    placeholder="默认 0.6"
+                    @keydown.stop
+                  />
+                </label>
               </div>
 
               <div class="syntax-card syntax-option-card">
                 <div class="syntax-option-head">
                   <div>
                     <strong>BM25 Tag / Keyword 匹配</strong>
-                    <code>::BM25</code>
+                    <code>::BM250.4</code>
                   </div>
                   <AppSwitch v-model="enabledSuffixes.bm25" />
                 </div>
-                <p>启用日记 tag / keyword 字段的 BM25 匹配，适合用标签、关键词和主题词快速命中相关记忆。</p>
+                <p>
+                  启用日记 tag / keyword 字段的 BM25 匹配，适合用标签、关键词和主题词快速命中相关记忆。
+                  可选数字表示 BM25 稀疏分融合权重，例如 <code>::BM250.4</code>；留空使用默认 0.6。
+                </p>
+                <label class="inline-number">
+                  <span>BM25 权重</span>
+                  <UiInput
+                    v-model="bm25Weight"
+                    :disabled="!enabledSuffixes.bm25"
+                    type="number"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    placeholder="默认 0.6"
+                    @keydown.stop
+                  />
+                </label>
               </div>
 
               <div class="syntax-card syntax-option-card">
@@ -219,7 +268,7 @@
                 </p>
                 <label class="inline-number">
                   <span>可选权重</span>
-                  <input
+                  <UiInput
                     v-model="tagMemoWeight"
                     :disabled="!enabledSuffixes.tagMemo"
                     type="number"
@@ -249,7 +298,7 @@
                 </p>
                 <label class="inline-number">
                   <span>可选权重</span>
-                  <input
+                  <UiInput
                     v-model="tagMemoPlusWeight"
                     :disabled="!enabledSuffixes.tagMemoPlus"
                     type="number"
@@ -279,7 +328,7 @@
                 </p>
                 <label class="inline-number">
                   <span>α 权重</span>
-                  <input
+                  <UiInput
                     v-model="rerankPlusAlpha"
                     :disabled="!enabledSuffixes.rerankPlus"
                     type="number"
@@ -308,7 +357,7 @@
                 <div class="time-decay-grid" :class="{ disabled: !enabledSuffixes.timeDecay }">
                   <label class="inline-number">
                     <span>半衰期天数</span>
-                    <input
+                    <UiInput
                       v-model="timeDecayHalfLifeDays"
                       :disabled="!enabledSuffixes.timeDecay"
                       type="text"
@@ -319,7 +368,7 @@
                   </label>
                   <label class="inline-number">
                     <span>最低分</span>
-                    <input
+                    <UiInput
                       v-model="timeDecayMinScore"
                       :disabled="!enabledSuffixes.timeDecay"
                       type="text"
@@ -329,7 +378,7 @@
                   </label>
                   <label class="syntax-field">
                     <span>只衰减这些标签</span>
-                    <input
+                    <UiInput
                       v-model="timeDecayTargetTags"
                       :disabled="!enabledSuffixes.timeDecay"
                       type="text"
@@ -356,7 +405,7 @@
                 </p>
                 <label class="inline-number">
                   <span>阈值</span>
-                  <input
+                  <UiInput
                     v-model="truncateThreshold"
                     :disabled="!enabledSuffixes.truncate"
                     type="number"
@@ -384,18 +433,18 @@
 
                 <div class="role-valve-builder" :class="{ disabled: !enabledSuffixes.roleValve }">
                   <div class="role-valve-row">
-                    <select v-model="roleValveDraft.role" :disabled="!enabledSuffixes.roleValve">
+                    <UiSelect v-model="roleValveDraft.role" :disabled="!enabledSuffixes.roleValve">
                       <option value="@User">@User 用户发言</option>
                       <option value="@Assistant">@Assistant 助手发言</option>
                       <option value="@System">@System 系统消息</option>
-                    </select>
-                    <select v-model="roleValveDraft.operator" :disabled="!enabledSuffixes.roleValve">
+                    </UiSelect>
+                    <UiSelect v-model="roleValveDraft.operator" :disabled="!enabledSuffixes.roleValve">
                       <option value=">">></option>
                       <option value="<"><</option>
                       <option value=">=">>=</option>
                       <option value="<="><=</option>
-                    </select>
-                    <input
+                    </UiSelect>
+                    <UiInput
                       v-model.number="roleValveDraft.count"
                       :disabled="!enabledSuffixes.roleValve"
                       type="number"
@@ -403,34 +452,36 @@
                       step="1"
                       @keydown.stop
                     />
-                    <button
-                      type="button"
-                      class="btn-secondary btn-sm"
+                    <UiButton
+                      variant="outline"
+                      size="sm"
                       :disabled="!enabledSuffixes.roleValve"
                       @click="addRoleValveCondition"
                     >
                       添加条件
-                    </button>
+                    </UiButton>
                   </div>
 
                   <div class="logic-row">
                     <span>条件连接符</span>
-                    <button
-                      type="button"
+                    <UiButton
+                      variant="ghost"
+                      size="sm"
                       :class="{ active: roleValveJoiner === '&' }"
                       :disabled="!enabledSuffixes.roleValve"
                       @click="roleValveJoiner = '&'"
                     >
                       且 &
-                    </button>
-                    <button
-                      type="button"
+                    </UiButton>
+                    <UiButton
+                      variant="ghost"
+                      size="sm"
                       :class="{ active: roleValveJoiner === '|' }"
                       :disabled="!enabledSuffixes.roleValve"
                       @click="roleValveJoiner = '|'"
                     >
                       或 |
-                    </button>
+                    </UiButton>
                   </div>
 
                   <div class="condition-list">
@@ -440,7 +491,9 @@
                       class="condition-chip"
                     >
                       {{ condition }}
-                      <button type="button" @click="removeRoleValveCondition(index)">×</button>
+                      <UiIconButton size="sm" label="移除条件" @click="removeRoleValveCondition(index)">
+                        <span class="material-symbols-outlined">close</span>
+                      </UiIconButton>
                     </span>
                     <span v-if="roleValveConditions.length === 0" class="condition-empty">
                       暂无条件，将使用当前编辑行自动生成。
@@ -462,31 +515,31 @@
                   <strong>AIMemo+</strong> 会先复用完整后缀管线构建5倍K候选池，再交给 AI 总结，支持与任意语法兼容。
                 </p>
                 <div class="ai-mode-row">
-                  <button
-                    type="button"
+                  <UiButton
+                    variant="ghost"
                     :class="{ active: aiMode === 'none' }"
                     @click="aiMode = 'none'"
                   >
                     不使用
-                  </button>
-                  <button
-                    type="button"
+                  </UiButton>
+                  <UiButton
+                    variant="ghost"
                     :class="{ active: aiMode === 'aimemo' }"
                     @click="aiMode = 'aimemo'"
                   >
                     AIMemo
-                  </button>
-                  <button
-                    type="button"
+                  </UiButton>
+                  <UiButton
+                    variant="ghost"
                     :class="{ active: aiMode === 'aimemoPlus' }"
                     @click="aiMode = 'aimemoPlus'"
                   >
                     AIMemo+
-                  </button>
+                  </UiButton>
                 </div>
                 <label class="syntax-field">
                   <span>可选预设名</span>
-                  <input
+                  <UiInput
                     v-model="aiPreset"
                     :disabled="aiMode === 'none'"
                     type="text"
@@ -511,7 +564,7 @@
               </p>
               <label class="inline-number">
                 <span>K 倍率</span>
-                <input
+                <UiInput
                   v-model="kMultiplier"
                   :disabled="!useKMultiplier"
                   type="number"
@@ -531,20 +584,20 @@
                   轻量直读模式
                 </div>
                 <div class="mode-toggle">
-                  <button
-                    type="button"
+                  <UiButton
+                    variant="ghost"
                     :class="{ active: directSyntaxMode === 'static' }"
                     @click="directSyntaxMode = 'static'"
                   >
                     {{}} 直接文本注入
-                  </button>
-                  <button
-                    type="button"
+                  </UiButton>
+                  <UiButton
+                    variant="ghost"
                     :class="{ active: directSyntaxMode === 'dynamic' }"
                     @click="directSyntaxMode = 'dynamic'"
                   >
                     <<>> 相关时注入
-                  </button>
+                  </UiButton>
                 </div>
                 <p>
                   <strong>{{}}</strong> 直接读取日记文本；<strong><<>></strong>
@@ -572,8 +625,8 @@
                       <strong>默认读取</strong>
                       <code>无后缀</code>
                     </div>
-                    <input
-                      type="radio"
+                      <input
+                        type="radio"
                       name="direct-recall-mode"
                       value="none"
                       v-model="directRecallMode"
@@ -588,8 +641,8 @@
                       <strong>随机 1 篇</strong>
                       <code>::Random</code>
                     </div>
-                    <input
-                      type="radio"
+                      <input
+                        type="radio"
                       name="direct-recall-mode"
                       value="random"
                       v-model="directRecallMode"
@@ -604,8 +657,8 @@
                       <strong>随机 N 篇</strong>
                       <code>::RandomN</code>
                     </div>
-                    <input
-                      type="radio"
+                      <input
+                        type="radio"
                       name="direct-recall-mode"
                       value="randomN"
                       v-model="directRecallMode"
@@ -614,7 +667,7 @@
                   <p>随机抽取指定数量的日记。</p>
                   <label class="inline-number">
                     <span>数量 N</span>
-                    <input
+                    <UiInput
                       v-model="directRandomCount"
                       :disabled="directRecallMode !== 'randomN'"
                       type="number"
@@ -633,8 +686,8 @@
                       <strong>最近 N 篇</strong>
                       <code>::LastN</code>
                     </div>
-                    <input
-                      type="radio"
+                      <input
+                        type="radio"
                       name="direct-recall-mode"
                       value="lastN"
                       v-model="directRecallMode"
@@ -643,7 +696,7 @@
                   <p>读取最近 N 篇日记，适合近期状态、连续剧情和短期记忆。</p>
                   <label class="inline-number">
                     <span>数量 N</span>
-                    <input
+                    <UiInput
                       v-model="directLastCount"
                       :disabled="directRecallMode !== 'lastN'"
                       type="number"
@@ -662,8 +715,8 @@
                       <strong>BM25 Tag / Keyword 匹配</strong>
                       <code>::BM25</code>
                     </div>
-                    <input
-                      type="radio"
+                      <input
+                        type="radio"
                       name="direct-recall-mode"
                       value="bm25"
                       v-model="directRecallMode"
@@ -678,8 +731,8 @@
                       <strong>BM25+ 日记全文匹配</strong>
                       <code>::BM25+</code>
                     </div>
-                    <input
-                      type="radio"
+                      <input
+                        type="radio"
                       name="direct-recall-mode"
                       value="bm25Plus"
                       v-model="directRecallMode"
@@ -702,18 +755,18 @@
 
                   <div class="role-valve-builder" :class="{ disabled: !directRoleValveEnabled }">
                     <div class="role-valve-row">
-                      <select v-model="roleValveDraft.role" :disabled="!directRoleValveEnabled">
+                      <UiSelect v-model="roleValveDraft.role" :disabled="!directRoleValveEnabled">
                         <option value="@User">@User 用户发言</option>
                         <option value="@Assistant">@Assistant 助手发言</option>
                         <option value="@System">@System 系统消息</option>
-                      </select>
-                      <select v-model="roleValveDraft.operator" :disabled="!directRoleValveEnabled">
+                      </UiSelect>
+                      <UiSelect v-model="roleValveDraft.operator" :disabled="!directRoleValveEnabled">
                         <option value=">">></option>
                         <option value="<"><</option>
                         <option value=">=">>=</option>
                         <option value="<="><=</option>
-                      </select>
-                      <input
+                      </UiSelect>
+                      <UiInput
                         v-model.number="roleValveDraft.count"
                         :disabled="!directRoleValveEnabled"
                         type="number"
@@ -721,34 +774,36 @@
                         step="1"
                         @keydown.stop
                       />
-                      <button
-                        type="button"
-                        class="btn-secondary btn-sm"
+                      <UiButton
+                        variant="outline"
+                        size="sm"
                         :disabled="!directRoleValveEnabled"
                         @click="addRoleValveCondition"
                       >
                         添加条件
-                      </button>
+                      </UiButton>
                     </div>
 
                     <div class="logic-row">
                       <span>条件连接符</span>
-                      <button
-                        type="button"
+                      <UiButton
+                        variant="ghost"
+                        size="sm"
                         :class="{ active: roleValveJoiner === '&' }"
                         :disabled="!directRoleValveEnabled"
                         @click="roleValveJoiner = '&'"
                       >
                         且 &
-                      </button>
-                      <button
-                        type="button"
+                      </UiButton>
+                      <UiButton
+                        variant="ghost"
+                        size="sm"
                         :class="{ active: roleValveJoiner === '|' }"
                         :disabled="!directRoleValveEnabled"
                         @click="roleValveJoiner = '|'"
                       >
                         或 |
-                      </button>
+                      </UiButton>
                     </div>
 
                     <div class="condition-list">
@@ -758,7 +813,9 @@
                         class="condition-chip"
                       >
                         {{ condition }}
-                        <button type="button" @click="removeRoleValveCondition(index)">×</button>
+                        <UiIconButton size="sm" label="移除条件" @click="removeRoleValveCondition(index)">
+                          <span class="material-symbols-outlined">close</span>
+                        </UiIconButton>
                       </span>
                       <span v-if="roleValveConditions.length === 0" class="condition-empty">
                         暂无条件，将使用当前编辑行自动生成。
@@ -776,14 +833,18 @@
               <code>{{ generatedSyntax }}</code>
             </div>
             <div class="preview-actions">
-              <button type="button" class="btn-secondary" @click="copySyntax">
-                <span class="material-symbols-outlined">content_copy</span>
+              <UiButton variant="outline" @click="copySyntax">
+                <template #leading>
+                  <span class="material-symbols-outlined">content_copy</span>
+                </template>
                 复制文本
-              </button>
-              <button type="button" class="btn-primary" @click="insertSyntax">
-                <span class="material-symbols-outlined">keyboard_return</span>
-                插入到编辑器
-              </button>
+              </UiButton>
+              <UiButton variant="primary" @click="insertSyntax">
+                <template #leading>
+                  <span class="material-symbols-outlined">keyboard_return</span>
+                </template>
+                {{ mode === "replace" ? "替换原语法" : "插入到编辑器" }}
+              </UiButton>
             </div>
           </footer>
         </section>
@@ -793,30 +854,30 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, ref } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 import AppSwitch from "@/components/ui/AppSwitch.vue";
+import UiButton from "@/components/ui/UiButton.vue";
+import UiIconButton from "@/components/ui/UiIconButton.vue";
+import UiInput from "@/components/ui/UiInput.vue";
+import UiSelect from "@/components/ui/UiSelect.vue";
 import { showMessage } from "@/utils";
+import {
+  createDefaultDiarySyntaxState,
+  type DiaryAiMode,
+  type DiaryDirectRecallMode,
+  type DiaryDirectSyntaxMode,
+  type DiaryDslPage,
+  type DiarySuffixKey,
+  type DiarySyntaxEditorState,
+  type DiarySyntaxMode,
+} from "./diarySyntaxParser";
 
-type DslPage = "advanced" | "direct";
-type SyntaxMode = "dynamic" | "fixed";
-type DirectSyntaxMode = "static" | "dynamic";
-type DirectRecallMode = "none" | "random" | "randomN" | "lastN" | "bm25" | "bm25Plus";
-type AiMode = "none" | "aimemo" | "aimemoPlus";
-type SuffixKey =
-  | "time"
-  | "group"
-  | "bm25Plus"
-  | "bm25"
-  | "rerank"
-  | "timeDecay"
-  | "expand"
-  | "associate"
-  | "base64Memo"
-  | "tagMemo"
-  | "tagMemoPlus"
-  | "rerankPlus"
-  | "truncate"
-  | "roleValve";
+type DslPage = DiaryDslPage;
+type SyntaxMode = DiarySyntaxMode;
+type DirectSyntaxMode = DiaryDirectSyntaxMode;
+type DirectRecallMode = DiaryDirectRecallMode;
+type AiMode = DiaryAiMode;
+type SuffixKey = DiarySuffixKey;
 
 interface RoleValveDraft {
   role: "@User" | "@Assistant" | "@System";
@@ -824,58 +885,56 @@ interface RoleValveDraft {
   count: number;
 }
 
-defineProps<{
-  modelValue: boolean;
-}>();
+const props = withDefaults(
+  defineProps<{
+    modelValue: boolean;
+    initialState?: DiarySyntaxEditorState | null;
+    mode?: "insert" | "replace";
+  }>(),
+  {
+    initialState: null,
+    mode: "insert",
+  }
+);
 
 const emit = defineEmits<{
   (event: "update:modelValue", value: boolean): void;
   (event: "insert", value: string): void;
+  (event: "replace", value: string): void;
 }>();
 
-const notebookName = ref("小吉日记本");
-const dslPage = ref<DslPage>("advanced");
-const syntaxMode = ref<SyntaxMode>("dynamic");
-const directSyntaxMode = ref<DirectSyntaxMode>("static");
-const directRecallMode = ref<DirectRecallMode>("none");
-const directRandomCount = ref("5");
-const directLastCount = ref("10");
-const directRoleValveEnabled = ref(false);
-const useKMultiplier = ref(false);
-const kMultiplier = ref("1.5");
-const tagMemoWeight = ref("");
-const tagMemoPlusWeight = ref("");
-const rerankPlusAlpha = ref("");
-const timeDecayHalfLifeDays = ref("");
-const timeDecayMinScore = ref("");
-const timeDecayTargetTags = ref("");
-const truncateThreshold = ref("0.4");
-const aiMode = ref<AiMode>("none");
-const aiPreset = ref("");
-const roleValveJoiner = ref<"&" | "|">("&");
-const roleValveConditions = ref<string[]>([]);
+const defaultState = createDefaultDiarySyntaxState();
+const notebookName = ref(defaultState.notebookName);
+const dslPage = ref<DslPage>(defaultState.dslPage);
+const syntaxMode = ref<SyntaxMode>(defaultState.syntaxMode);
+const directSyntaxMode = ref<DirectSyntaxMode>(defaultState.directSyntaxMode);
+const directRecallMode = ref<DirectRecallMode>(defaultState.directRecallMode);
+const directRandomCount = ref(defaultState.directRandomCount);
+const directLastCount = ref(defaultState.directLastCount);
+const directRoleValveEnabled = ref(defaultState.directRoleValveEnabled);
+const useKMultiplier = ref(defaultState.useKMultiplier);
+const kMultiplier = ref(defaultState.kMultiplier);
+const timeRatio = ref(defaultState.timeRatio);
+const bm25Weight = ref(defaultState.bm25Weight);
+const bm25PlusWeight = ref(defaultState.bm25PlusWeight);
+const tagMemoWeight = ref(defaultState.tagMemoWeight);
+const tagMemoPlusWeight = ref(defaultState.tagMemoPlusWeight);
+const rerankPlusAlpha = ref(defaultState.rerankPlusAlpha);
+const timeDecayHalfLifeDays = ref(defaultState.timeDecayHalfLifeDays);
+const timeDecayMinScore = ref(defaultState.timeDecayMinScore);
+const timeDecayTargetTags = ref(defaultState.timeDecayTargetTags);
+const truncateThreshold = ref(defaultState.truncateThreshold);
+const aiMode = ref<AiMode>(defaultState.aiMode);
+const aiPreset = ref(defaultState.aiPreset);
+const roleValveJoiner = ref<"&" | "|">(defaultState.roleValveJoiner);
+const roleValveConditions = ref<string[]>([...defaultState.roleValveConditions]);
 const roleValveDraft = reactive<RoleValveDraft>({
   role: "@User",
   operator: ">",
   count: 3,
 });
 
-const enabledSuffixes = reactive<Record<SuffixKey, boolean>>({
-  time: false,
-  group: false,
-  bm25Plus: false,
-  bm25: false,
-  rerank: false,
-  timeDecay: false,
-  expand: false,
-  associate: false,
-  base64Memo: false,
-  tagMemo: false,
-  tagMemoPlus: false,
-  rerankPlus: false,
-  truncate: false,
-  roleValve: false,
-});
+const enabledSuffixes = reactive<Record<SuffixKey, boolean>>({ ...defaultState.enabledSuffixes });
 
 const generatedSyntax = computed(() => {
   const rawName = notebookName.value.trim() || "日记本";
@@ -886,10 +945,10 @@ const generatedSyntax = computed(() => {
 
   const suffixes: string[] = [];
 
-  if (enabledSuffixes.time) suffixes.push("::Time");
+  if (enabledSuffixes.time) suffixes.push(`::Time${sanitizeNumber(timeRatio.value)}`);
   if (enabledSuffixes.group) suffixes.push("::Group");
-  if (enabledSuffixes.bm25Plus) suffixes.push("::BM25+");
-  if (enabledSuffixes.bm25) suffixes.push("::BM25");
+  if (enabledSuffixes.bm25Plus) suffixes.push(`::BM25+${sanitizeNumber(bm25PlusWeight.value)}`);
+  if (enabledSuffixes.bm25) suffixes.push(`::BM25${sanitizeNumber(bm25Weight.value)}`);
   if (enabledSuffixes.tagMemo) suffixes.push(`::TagMemo${sanitizeNumber(tagMemoWeight.value)}`);
   if (enabledSuffixes.tagMemoPlus) suffixes.push(`::TagMemo+${sanitizeNumber(tagMemoPlusWeight.value)}`);
   if (enabledSuffixes.rerank) suffixes.push("::Rerank");
@@ -1054,9 +1113,56 @@ async function copySyntax(): Promise<void> {
 }
 
 function insertSyntax(): void {
+  if (props.mode === "replace") {
+    emit("replace", generatedSyntax.value);
+    showMessage("日记本语法已替换。", "success");
+    return;
+  }
+
   emit("insert", generatedSyntax.value);
   showMessage("日记本语法已插入到 Agent 文件编辑器。", "success");
 }
+
+function applyEditorState(state: DiarySyntaxEditorState): void {
+  notebookName.value = state.notebookName;
+  dslPage.value = state.dslPage;
+  syntaxMode.value = state.syntaxMode;
+  directSyntaxMode.value = state.directSyntaxMode;
+  directRecallMode.value = state.directRecallMode;
+  directRandomCount.value = state.directRandomCount;
+  directLastCount.value = state.directLastCount;
+  directRoleValveEnabled.value = state.directRoleValveEnabled;
+  useKMultiplier.value = state.useKMultiplier;
+  kMultiplier.value = state.kMultiplier;
+  timeRatio.value = state.timeRatio;
+  bm25Weight.value = state.bm25Weight;
+  bm25PlusWeight.value = state.bm25PlusWeight;
+  tagMemoWeight.value = state.tagMemoWeight;
+  tagMemoPlusWeight.value = state.tagMemoPlusWeight;
+  rerankPlusAlpha.value = state.rerankPlusAlpha;
+  timeDecayHalfLifeDays.value = state.timeDecayHalfLifeDays;
+  timeDecayMinScore.value = state.timeDecayMinScore;
+  timeDecayTargetTags.value = state.timeDecayTargetTags;
+  truncateThreshold.value = state.truncateThreshold;
+  aiMode.value = state.aiMode;
+  aiPreset.value = state.aiPreset;
+  roleValveJoiner.value = state.roleValveJoiner;
+  roleValveConditions.value = [...state.roleValveConditions];
+
+  Object.assign(enabledSuffixes, state.enabledSuffixes);
+}
+
+watch(
+  () => [props.modelValue, props.initialState] as const,
+  ([isOpen, initialState]) => {
+    if (!isOpen) {
+      return;
+    }
+
+    applyEditorState(initialState ?? createDefaultDiarySyntaxState());
+  },
+  { immediate: true }
+);
 
 function close(): void {
   emit("update:modelValue", false);
@@ -1113,15 +1219,7 @@ function close(): void {
 }
 
 .diary-close-btn {
-  display: inline-grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
-  background: var(--tertiary-bg);
   color: var(--primary-text);
-  cursor: pointer;
 }
 
 .diary-syntax-body {
@@ -1139,7 +1237,7 @@ function close(): void {
   min-width: 0;
 }
 
-.syntax-field--full input {
+.syntax-field--full :deep(.ui-input) {
   width: 100%;
 }
 
@@ -1231,22 +1329,17 @@ function close(): void {
   align-items: center;
 }
 
-.dsl-page-tabs button,
-.mode-toggle button,
-.ai-mode-row button,
-.logic-row button {
-  padding: 8px 12px;
-  border: 1px solid var(--border-color);
+.dsl-page-tabs :deep(.ui-button),
+.mode-toggle :deep(.ui-button),
+.ai-mode-row :deep(.ui-button),
+.logic-row :deep(.ui-button) {
   border-radius: var(--radius-full);
-  background: var(--surface-overlay-soft);
-  color: var(--secondary-text);
-  cursor: pointer;
 }
 
-.dsl-page-tabs button.active,
-.mode-toggle button.active,
-.ai-mode-row button.active,
-.logic-row button.active {
+.dsl-page-tabs :deep(.ui-button.active),
+.mode-toggle :deep(.ui-button.active),
+.ai-mode-row :deep(.ui-button.active),
+.logic-row :deep(.ui-button.active) {
   border-color: var(--highlight-text);
   background: var(--info-bg);
   color: var(--highlight-text);
@@ -1259,13 +1352,7 @@ function close(): void {
   background: var(--tertiary-bg);
 }
 
-.dsl-page-tabs button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.dsl-page-tabs button .material-symbols-outlined {
+.dsl-page-tabs :deep(.ui-button .material-symbols-outlined) {
   font-size: 18px !important;
 }
 
@@ -1283,7 +1370,7 @@ function close(): void {
   margin-top: var(--space-3);
 }
 
-.inline-number input {
+.inline-number :deep(.ui-input) {
   width: 100%;
 }
 
@@ -1325,11 +1412,8 @@ function close(): void {
   font-size: var(--font-size-caption);
 }
 
-.condition-chip button {
-  border: none;
-  background: transparent;
+.condition-chip :deep(.ui-icon-button) {
   color: inherit;
-  cursor: pointer;
 }
 
 .condition-empty {
@@ -1396,8 +1480,7 @@ function close(): void {
     max-width: 100%;
   }
 
-  .preview-actions .btn-primary,
-  .preview-actions .btn-secondary {
+  .preview-actions :deep(.ui-button) {
     flex: 1 1 180px;
     justify-content: center;
   }

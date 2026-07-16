@@ -254,6 +254,7 @@ const localModules = [
     'emojis',          // 表情包列表与 image 目录画廊
     'dailyNotes',      // 日记知识库文件管理
     'agentAssistant',  // Agent 助手配置（纯文件 I/O）
+    'aiChat',          // 后台 AI 代理（本地转发主服务 /v1/chat/completions，避免前端暴露 Key）
     'semanticRouter',  // 语义模型路由器配置（本地 JSON 读写 + 上游模型拉取）
 ];
 
@@ -310,6 +311,144 @@ for (const moduleName of localModules) {
         console.error(`[AdminServer] Failed to load local module "${moduleName}":`, error.message);
     }
 }
+
+// ============================================================
+// 🧠 关键覆盖：记忆库内存剖面必须代理到主服务
+// 独立 adminServer 本地 system 模块没有 KnowledgeBaseManager / TDBKnowledge 运行态，
+// 若由本地 routes/admin/system.js 处理会只能返回空 profile；必须在 localAdminRouter 前转发。
+// ============================================================
+app.get('/admin_api/system-monitor/memory/profile', async (req, res) => {
+    if (DEBUG_MODE) console.log('[AdminServer] Memory profile request received — forwarding to main process...');
+
+    const profileReq = http.request(
+        `http://127.0.0.1:${MAIN_PORT}/admin_api/system-monitor/memory/profile`,
+        {
+            method: 'GET',
+            headers: {
+                'Authorization': req.headers.authorization || '',
+                'Cookie': req.headers.cookie || ''
+            },
+            timeout: 10000
+        },
+        (profileRes) => {
+            let body = '';
+
+            profileRes.on('data', chunk => {
+                body += chunk;
+            });
+
+            profileRes.on('end', () => {
+                if (res.headersSent) return;
+
+                const contentType = profileRes.headers['content-type'] || 'application/json';
+                res.status(profileRes.statusCode || 200);
+                res.setHeader('Content-Type', contentType);
+
+                try {
+                    res.json(body ? JSON.parse(body) : {
+                        success: false,
+                        error: '主服务返回了空的记忆库内存剖面响应。'
+                    });
+                } catch (e) {
+                    res.send(body || '');
+                }
+            });
+        }
+    );
+
+    profileReq.on('error', (err) => {
+        console.error(`[AdminServer] Failed to forward memory profile request to main process: ${err.code || err.message}`);
+        if (!res.headersSent) {
+            res.status(502).json({
+                success: false,
+                error: '无法将记忆库内存剖面请求转发给主服务。',
+                details: err.message
+            });
+        }
+    });
+
+    profileReq.on('timeout', () => {
+        profileReq.destroy();
+        if (!res.headersSent) {
+            res.status(504).json({
+                success: false,
+                error: '主服务记忆库内存剖面接口响应超时。'
+            });
+        }
+    });
+
+    profileReq.end();
+});
+
+// ============================================================
+// 🧠 关键覆盖：主动浪潮全量训练必须代理到主服务
+// 独立 adminServer 不持有 KnowledgeBaseManager 实例；本地 rag 模块会以 vectorDBManager=null 挂载。
+// 因此该运行态端点必须在 localAdminRouter 之前转发到主进程。
+// ============================================================
+app.post('/admin_api/rag-active-full-training', async (req, res) => {
+    console.log('[AdminServer] Active full training request received — forwarding to main process...');
+
+    const trainingReq = http.request(
+        `http://127.0.0.1:${MAIN_PORT}/admin_api/rag-active-full-training`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': req.headers.authorization || '',
+                'Cookie': req.headers.cookie || ''
+            },
+            timeout: 10000
+        },
+        (trainingRes) => {
+            let body = '';
+
+            trainingRes.on('data', chunk => {
+                body += chunk;
+            });
+
+            trainingRes.on('end', () => {
+                if (res.headersSent) return;
+
+                const contentType = trainingRes.headers['content-type'] || 'application/json';
+                res.status(trainingRes.statusCode || 202);
+                res.setHeader('Content-Type', contentType);
+
+                try {
+                    res.json(body ? JSON.parse(body) : {
+                        success: true,
+                        message: '主服务已收到浪潮全量自学习请求。'
+                    });
+                } catch (e) {
+                    res.send(body || '主服务已收到浪潮全量自学习请求。');
+                }
+            });
+        }
+    );
+
+    trainingReq.on('error', (err) => {
+        console.error(`[AdminServer] Failed to forward active full training request to main process: ${err.code || err.message}`);
+        if (!res.headersSent) {
+            res.status(502).json({
+                success: false,
+                error: '无法将浪潮全量自学习请求转发给主服务。',
+                details: err.message
+            });
+        }
+    });
+
+    trainingReq.on('timeout', () => {
+        trainingReq.destroy();
+        if (!res.headersSent) {
+            res.status(504).json({
+                success: false,
+                error: '主服务浪潮全量自学习接口响应超时。'
+            });
+        }
+    });
+
+    trainingReq.write(JSON.stringify(req.body || {}));
+    trainingReq.end();
+});
 
 // ============================================================
 // 🔑 关键覆盖：重启主服务（必须在本地路由之前挂载）
