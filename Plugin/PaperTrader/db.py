@@ -190,6 +190,30 @@ def run_trade_date(run_id: str) -> Optional[str]:
     return row["trade_date"] if row else None
 
 
+def list_run_candidates(run_id: str, limit: int = 100) -> List[Dict[str, Any]]:
+    """按 run 批量列候选（code/name/rank + 命中策略），供买卖点质量批量评估。只读。"""
+    with connect_stock() as conn:
+        rows = conn.execute(
+            "SELECT code, name, rank, matched_strategies_json FROM screening_candidates "
+            "WHERE run_id = ? ORDER BY rank ASC LIMIT ?",
+            (run_id, int(limit)),
+        ).fetchall()
+    out: List[Dict[str, Any]] = []
+    for r in rows:
+        ms: List[str] = []
+        raw = r["matched_strategies_json"]
+        if raw:
+            try:
+                loaded = json.loads(raw)
+                if isinstance(loaded, list):
+                    ms = [str(x) for x in loaded]
+            except (ValueError, TypeError):
+                ms = []
+        out.append({"code": r["code"], "name": r["name"], "rank": r["rank"],
+                    "matched_strategies": ms})
+    return out
+
+
 # ---------------------------------------------------------------------------
 # 持仓 CRUD
 # ---------------------------------------------------------------------------

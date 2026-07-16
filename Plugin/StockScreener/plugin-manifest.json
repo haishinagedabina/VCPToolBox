@@ -3,7 +3,7 @@
   "name": "StockScreener",
   "displayName": "DSA选股数据读取器",
   "version": "1.0.0",
-  "description": "访问 daily_stock_analysis(DSA) 的数据与选股能力，为 VCP Agent 团队提供取数 + 板块锁定选股触发。前 8 个命令为只读取数（不做 AI 分析）；trigger_board_run 为写/触发命令（HTTP 调 DSA 选股接口）。通过 command 路由：list_screening_runs(选股批次列表)、get_screening_candidates(批次候选清单)、get_candidate_detail(单票完整选股决策详情)、get_strategy_evidence(单策略域裁剪复核证据包，供选股复核Agent)、query_stock_daily(个股日线行情，支持列裁剪与锚点窗口)、get_stock_info(股票主数据)、list_boards(板块列表+成员数)、get_board_constituents(板块成分股，板块→股票反向查询)、trigger_board_run(把题材板块成分股作为限定宇宙交给 DSA 选股，让题材真正驱动选谁，热点题材师主用)。",
+  "description": "访问 daily_stock_analysis(DSA) 的数据与选股能力，为 VCP Agent 团队提供取数 + 选股质量前瞻验证 + 板块锁定选股触发。多数命令为只读取数（不做 AI 分析）；trigger_board_run 为写/触发命令（HTTP 调 DSA 选股接口）。通过 command 路由：list_screening_runs(选股批次列表)、get_screening_candidates(批次候选清单)、get_candidate_detail(单票完整选股决策详情)、get_strategy_evidence(单策略域裁剪复核证据包，供选股复核Agent)、query_stock_daily(个股日线行情，支持列裁剪与锚点窗口)、get_stock_info(股票主数据)、evaluate_selection(选股前瞻验证：以选股日收盘为基准算后续N日前瞻收益/MFE/MAE，全票纳入含打板类，验证选股准不准/体系赚不赚钱)、list_boards(板块列表+成员数)、get_board_constituents(板块成分股，板块→股票反向查询)、trigger_board_run(把题材板块成分股作为限定宇宙交给 DSA 选股，让题材真正驱动选谁，热点题材师主用)。",
   "author": "VCP",
   "pluginType": "synchronous",
   "entryPoint": {
@@ -52,6 +52,11 @@
         "commandIdentifier": "get_stock_info",
         "description": "查询股票主数据：名称、市场、交易所、上市状态、是否ST、所属行业、上市日期。\\n参数:\\n- command (字符串, 必需): 固定填 get_stock_info\\n- code (字符串, 必需): 股票代码，如 600519\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_stock_info「末」,\\ncode:「始」600519「末」\\n<<<[END_TOOL_REQUEST]>>>",
         "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」get_stock_info「末」,\\ncode:「始」600519「末」\\n<<<[END_TOOL_REQUEST]>>>"
+      },
+      {
+        "commandIdentifier": "evaluate_selection",
+        "description": "选股前瞻验证（选股质量镜头，纯日线、确定性）：以【选股当日(或之前最近交易日)收盘价】为基准，统计每只候选后续 N 个交易日的前瞻收益(T+k 收盘相对基准涨跌幅%)、MFE(最大有利波动%)、MAE(最大不利波动%)，并给出整体与分策略汇总(均值/胜率)。定位=验证'选股准不准/体系赚不赚钱'，与能否成交/封板买入无关，全票纳入(含无结构化买点的强势/打板类)。'能实际吃到的钱'由 PaperTrader 成交模拟另计，两镜头分开。\\n参数:\\n- command (字符串, 必需): 固定填 evaluate_selection\\n- run_id (字符串, 必需): 选股批次ID\\n- codes (字符串, 可选): 逗号分隔的股票代码；缺省则评估该批次全部候选(按 rank，最多 limit 只)\\n- horizons (字符串, 可选): 逗号分隔的前瞻交易日数，如 1,3,5,10（缺省 1,3,5,10）\\n- limit (数字, 可选): codes 缺省时评估的候选上限，缺省 100\\n返回字段: run_trade_date / summary(整体均值+胜率) / by_strategy(分策略) / items[].forward_returns_pct / items[].mfe_pct / items[].mae_pct / items[].next_open_gap_pct\\n调用格式:\\n<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」evaluate_selection「末」,\\nrun_id:「始」<run_id>「末」,\\ncodes:「始」600519,000001「末」,\\nhorizons:「始」1,3,5,10「末」\\n<<<[END_TOOL_REQUEST]>>>",
+        "example": "<<<[TOOL_REQUEST]>>>\\ntool_name:「始」StockScreener「末」,\\ncommand:「始」evaluate_selection「末」,\\nrun_id:「始」cn_20260630_full「末」,\\nhorizons:「始」1,3,5,10「末」\\n<<<[END_TOOL_REQUEST]>>>"
       },
       {
         "commandIdentifier": "list_boards",

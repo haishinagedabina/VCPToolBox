@@ -57,7 +57,7 @@ def _dispatch(args: dict):
         raise ValueError(
             "缺少 command 参数。可用命令: list_screening_runs, get_screening_candidates, "
             "get_candidate_detail, get_strategy_evidence, query_stock_daily, get_stock_info, "
-            "list_boards, get_board_constituents, trigger_board_run"
+            "list_boards, get_board_constituents, trigger_board_run, evaluate_selection"
         )
 
     if command == "list_screening_runs":
@@ -95,6 +95,13 @@ def _dispatch(args: dict):
         )
     if command == "get_stock_info":
         return db_reader.get_stock_info(code=args.get("code", ""))
+    if command == "evaluate_selection":
+        return db_reader.evaluate_selection(
+            run_id=args.get("run_id", ""),
+            codes=args.get("codes"),
+            horizons=args.get("horizons"),
+            limit=args.get("limit", 100),
+        )
     if command == "list_boards":
         return db_reader.list_boards(
             market=args.get("market"),

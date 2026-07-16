@@ -554,6 +554,192 @@ def get_stock_info(code: str) -> Dict[str, Any]:
 
 
 # ----------------------------------------------------------------------------
+# 选股前瞻验证（evaluate_selection）
+# ----------------------------------------------------------------------------
+# 团队定位为"选股 + 买卖点验证器"而非交易执行模拟器：用后续日线走势回答
+# ①选股准不准 ②买卖点准不准 ③体系赚不赚钱。本命令负责【选股质量镜头】——
+# 以选股当日(或之前最近交易日)收盘价为基准，度量每只候选后续 N 个交易日的
+# 前瞻收益、最大有利/不利波动(MFE/MAE)。与"能否成交/封板买入"完全无关，
+# 全票纳入（含无结构化买点的强势/打板类，补齐 PaperTrader 成交模拟覆盖不到的盲区）。
+# "能实际吃到的钱"由 PaperTrader 的确定性成交模拟另行度量，两镜头分开、互不污染。
+
+_DEFAULT_EVAL_HORIZONS = (1, 3, 5, 10)
+
+
+def _parse_horizons(horizons: Any) -> List[int]:
+    if not horizons:
+        return list(_DEFAULT_EVAL_HORIZONS)
+    if isinstance(horizons, str):
+        raw = [h.strip() for h in re.split(r"[,\s]+", horizons) if h.strip()]
+    elif isinstance(horizons, (list, tuple)):
+        raw = [str(h).strip() for h in horizons]
+    else:
+        return list(_DEFAULT_EVAL_HORIZONS)
+    out: List[int] = []
+    for h in raw:
+        try:
+            v = int(h)
+        except (ValueError, TypeError):
+            continue
+        if 1 <= v <= 60 and v not in out:
+            out.append(v)
+    return sorted(out) or list(_DEFAULT_EVAL_HORIZONS)
+
+
+def _parse_code_list(codes: Any) -> List[str]:
+    if not codes:
+        return []
+    if isinstance(codes, str):
+        raw = [c.strip() for c in re.split(r"[,\s]+", codes) if c.strip()]
+    elif isinstance(codes, (list, tuple)):
+        raw = [str(c).strip() for c in codes if str(c).strip()]
+    else:
+        return []
+    seen: List[str] = []
+    for c in raw:
+        if c not in seen:
+            seen.append(c)
+    return seen
+
+
+def _agg_forward(rows: List[Dict[str, Any]], horizons: List[int]) -> Dict[str, Any]:
+    ev = [it for it in rows if it.get("evaluable")]
+    agg: Dict[str, Any] = {"count": len(rows), "evaluable": len(ev)}
+    for k in horizons:
+        key = f"T+{k}"
+        vals = [it["forward_returns_pct"][key] for it in ev
+                if it.get("forward_returns_pct", {}).get(key) is not None]
+        if vals:
+            agg[key] = {
+                "avg_ret_pct": round(sum(vals) / len(vals), 2),
+                "win_rate_pct": round(sum(1 for v in vals if v > 0) / len(vals) * 100, 1),
+                "n": len(vals),
+            }
+        else:
+            agg[key] = None
+    mfes = [it["mfe_pct"] for it in ev if it.get("mfe_pct") is not None]
+    maes = [it["mae_pct"] for it in ev if it.get("mae_pct") is not None]
+    if mfes:
+        agg["avg_mfe_pct"] = round(sum(mfes) / len(mfes), 2)
+    if maes:
+        agg["avg_mae_pct"] = round(sum(maes) / len(maes), 2)
+    return agg
+
+
+def evaluate_selection(
+    run_id: str,
+    codes: Any = None,
+    horizons: Any = None,
+    limit: Any = 100,
+) -> Dict[str, Any]:
+    """选股前瞻验证（选股质量镜头，纯日线、确定性）。
+
+    以选股当日(或之前最近交易日)收盘价为基准，统计每只候选后续 N 个交易日的
+    前瞻收益(T+k 收盘相对基准的涨跌幅)、MFE(最大有利波动)、MAE(最大不利波动)，
+    并给出整体与分策略汇总(均值/胜率)。与能否成交/封板买入无关，全票纳入。
+    """
+    if not run_id:
+        raise ValueError("run_id 为必需参数")
+    hs = _parse_horizons(horizons)
+    max_h = max(hs)
+    limit = _to_int(limit, 100, minimum=1, maximum=500)
+    want_codes = _parse_code_list(codes)
+
+    items: List[Dict[str, Any]] = []
+    with _connect() as conn:
+        run_row = conn.execute(
+            "SELECT run_id, trade_date, market, status FROM screening_runs WHERE run_id = ?",
+            (run_id,),
+        ).fetchone()
+        if run_row is None:
+            raise ValueError(f"选股批次不存在: {run_id}")
+        run_trade_date = run_row["trade_date"]
+
+        cand_where = ["run_id = ?"]
+        cand_params: List[Any] = [run_id]
+        if want_codes:
+            placeholders = ",".join(["?"] * len(want_codes))
+            cand_where.append(f"code IN ({placeholders})")
+            cand_params.extend(want_codes)
+        cand_sql = (
+            "SELECT code, name, rank, setup_type, matched_strategies_json "
+            "FROM screening_candidates WHERE " + " AND ".join(cand_where) +
+            " ORDER BY rank ASC LIMIT ?"
+        )
+        cand_params.append(limit)
+        cand_rows = conn.execute(cand_sql, cand_params).fetchall()
+
+        for r in cand_rows:
+            code = r["code"]
+            matched = _safe_json_load(r["matched_strategies_json"]) or []
+            ref_row = conn.execute(
+                "SELECT date, close FROM stock_daily WHERE code = ? AND date <= ? "
+                "ORDER BY date DESC LIMIT 1",
+                (code, run_trade_date),
+            ).fetchone()
+            if ref_row is None or _is_missing(ref_row["close"]) or not ref_row["close"]:
+                items.append({
+                    "code": code, "name": r["name"], "rank": r["rank"],
+                    "setup_type": r["setup_type"], "matched_strategies": matched,
+                    "evaluable": False, "note": "无选股日及之前的行情基准价，无法评估",
+                })
+                continue
+            ref_close = float(ref_row["close"])
+            fwd_rows = conn.execute(
+                "SELECT date, open, high, low, close FROM stock_daily "
+                "WHERE code = ? AND date > ? ORDER BY date ASC LIMIT ?",
+                (code, run_trade_date, max_h),
+            ).fetchall()
+            fwd: List[Dict[str, Any]] = []
+            for b in fwd_rows:
+                o, h, l, c = b["open"], b["high"], b["low"], b["close"]
+                if any(_is_missing(x) for x in (o, h, l, c)):
+                    continue  # 停牌/缺数据日跳过
+                fwd.append({"date": b["date"], "open": float(o), "high": float(h),
+                            "low": float(l), "close": float(c)})
+            n_fwd = len(fwd)
+            fwd_returns: Dict[str, Any] = {}
+            for k in hs:
+                fwd_returns[f"T+{k}"] = (
+                    round((fwd[k - 1]["close"] - ref_close) / ref_close * 100, 2)
+                    if n_fwd >= k else None
+                )
+            mfe = mae = next_open_gap = None
+            if n_fwd > 0:
+                mfe = round((max(b["high"] for b in fwd) - ref_close) / ref_close * 100, 2)
+                mae = round((min(b["low"] for b in fwd) - ref_close) / ref_close * 100, 2)
+                next_open_gap = round((fwd[0]["open"] - ref_close) / ref_close * 100, 2)
+            items.append({
+                "code": code, "name": r["name"], "rank": r["rank"],
+                "setup_type": r["setup_type"], "matched_strategies": matched,
+                "evaluable": n_fwd > 0,
+                "ref_date": ref_row["date"], "ref_close": round(ref_close, 4),
+                "forward_bars": n_fwd,
+                "next_open_gap_pct": next_open_gap,
+                "forward_returns_pct": fwd_returns,
+                "mfe_pct": mfe, "mae_pct": mae,
+                "last_forward_date": fwd[-1]["date"] if n_fwd else None,
+            })
+
+    by_strategy: Dict[str, List[Dict[str, Any]]] = {}
+    for it in items:
+        for s in (it.get("matched_strategies") or ["_unmatched"]):
+            by_strategy.setdefault(s, []).append(it)
+
+    return {
+        "run_id": run_id,
+        "run_trade_date": run_trade_date,
+        "horizons": hs,
+        "reference": "基准=选股当日(或之前最近交易日)收盘价；前瞻收益(T+k)=后续第k个交易日收盘相对基准涨跌幅%",
+        "note": "选股质量镜头：与能否成交/封板买入无关，全票纳入(含无结构化买点的强势/打板类)；"
+                "能实际吃到的盈利由 PaperTrader 成交模拟另计，两镜头分开。前瞻收益为概率线索非单票定论。",
+        "summary": _agg_forward(items, hs),
+        "by_strategy": {s: _agg_forward(rows, hs) for s, rows in by_strategy.items()},
+        "items": items,
+    }
+
+
+# ----------------------------------------------------------------------------
 # 板块查询（board_master / instrument_board_membership 只读）
 # ----------------------------------------------------------------------------
 # 与 DSA 的 DatabaseManager.list_active_boards_with_member_count /

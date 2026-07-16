@@ -23,6 +23,7 @@ except Exception:
 import db
 import engine
 import plan_extractor
+import timing_eval
 
 
 def _sanitize(obj):
@@ -147,7 +148,7 @@ def _dispatch(args: dict):
     if not command:
         raise ValueError(
             "缺少 command 参数。可用命令: get_portfolio, add_position, run_eod_update, "
-            "close_position, get_trade_history, get_stats")
+            "close_position, get_trade_history, get_stats, evaluate_timing")
 
     if command == "get_portfolio":
         with db.connect_paper() as conn:
@@ -166,6 +167,13 @@ def _dispatch(args: dict):
     if command == "get_stats":
         with db.connect_paper() as conn:
             return engine.compute_stats(conn)
+    if command == "evaluate_timing":
+        return timing_eval.evaluate_timing(
+            run_id=str(args.get("run_id", "")).strip(),
+            codes=args.get("codes"),
+            horizons=args.get("horizons"),
+            limit=args.get("limit", 100),
+        )
     raise ValueError(f"未知 command: {command}")
 
 
