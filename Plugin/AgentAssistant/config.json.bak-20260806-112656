@@ -1,0 +1,200 @@
+{
+    "maxHistoryRounds": 5,
+    "contextTtlHours": 12,
+    "globalSystemPrompt": "这里是莱恩家的通讯大厅，你将收到来自不同Agent的联络，如果含有[未来电话:]头，说明这是一个来自过去的定时联络。",
+    "delegationMaxRounds": 15,
+    "delegationTimeout": 1200000,
+    "delegationSystemPrompt": "[异步委托模式]\n你当前正在接受来自 {{SenderName}} 的一项异步委托任务。请专注于完成以下委托内容，按照任务要求认真执行。你可以自由使用你所拥有的的所有工具来完成任务。\n\n[工具调用纪律（必须严格遵守）]\n1. 真实结果优先：发出 `<<<[TOOL_REQUEST]>>>` 后，工具的真实执行结果会由系统在随后注入（通常以 `[[VCP调用结果信息汇总]]` 形式出现）。在拿到真实结果之前，严禁自行编造、假设或预写任何工具返回内容（例如伪造“操作成功”“文件已写入”“验证通过”等字样）；一切结论必须以系统注入的真实结果为唯一依据。\n2. 验证容错：关键操作（如文件落盘）若首次验证出现异常，先重试验证一次、必要时改用其它命令复核（如 WriteFile 后 FileInfo 异常，可改用 ReadFile 复核同一路径），不要因单次工具抖动就判定整个任务失败。\n3. 谨慎判定失败：只有确属【完全无法完成】时才输出 [[TaskFailed]]；若核心产物其实已交付（文件已写入、内容已产出），即使个别辅助步骤失败，也要如实汇报已完成部分，避免误报失败。\n4. 文件读写工具（重要）：读写本项目文件一律使用 `ServerFileOperator`（运行在本地主服务器，允许目录已含项目根）。严禁使用 `FileOperator`——它会被路由到桌面客户端分布式节点，文件系统与允许目录与主服务器不同，项目内的 `E:\\VCPChat\\VCPToolBox` 路径会被拒为 not in allowed directories；更严禁改用 PowerShell/命令行读写项目文件（会触发人工审批与关键字拦截）。路径统一用 Windows 绝对路径（如 `E:\\VCPChat\\VCPToolBox\\file\\document\\...`），不要用 `/VCPToolBox/...` 这类 Unix 风格路径。\n\n[长执行任务优化机制]\n如果当前步骤涉及需要长时间等待的任务（如：视频生成、大型文件处理等），你可以在输出中包含 `[[NextHeartbeat::秒数]]` 占位符。系统将推迟下一次心跳（心跳即：再次唤醒你）的到来，在这段时间内不会产生额外的轮次和Token消耗。例如：如果你预计渲染需要3分钟，可以输出 `[[NextHeartbeat::180]]`。\n\n委托任务内容:\n{{TaskPrompt}}\n\n当你确认任务已经彻底完成后，请输出委托完成报告，格式如下:\n[[TaskComplete]]\n（此处写上你的任务完成报告，详细描述你完成了什么、执行过程和最终结果）\n\n如果你认为任务由于缺少工具、信息或其他原因【完全无法完成】，请输出失败报告，格式如下:\n[[TaskFailed]]\n（此处写上失败原因）",
+    "delegationHeartbeatPrompt": "[系统提示:]当前委托任务仍在进行中。请继续执行你的委托任务。如果你在等待长执行任务，请根据需要输出 `[[NextHeartbeat::秒数]]` 进行推迟。如果任务已完成，请输出 [[TaskComplete]] 及完成报告。如果确认无法完成，请输出 [[TaskFailed]] 及失败原因。",
+    "agents": [
+        {
+            "baseName": "QUILL",
+            "chineseName": "Quill",
+            "modelId": "qwen3.6:latest",
+            "description": "公众号编辑 Agent",
+            "systemPrompt": "{{Quill}}",
+            "maxOutputTokens": 60000,
+            "temperature": 0.7
+        },
+        {
+            "baseName": "HELM",
+            "chineseName": "Helm",
+            "modelId": "qwen3.6:latest",
+            "description": "公众号撰写团队主编 / 编排中枢",
+            "systemPrompt": "{{Helm}}",
+            "maxOutputTokens": 60000,
+            "temperature": 0.5
+        },
+        {
+            "baseName": "HELM_CN",
+            "chineseName": "主编",
+            "modelId": "qwen3.6:latest",
+            "description": "公众号撰写团队主编别名，兼容旧回呼",
+            "systemPrompt": "{{Helm}}",
+            "maxOutputTokens": 60000,
+            "temperature": 0.5
+        },
+        {
+            "baseName": "SAGE",
+            "chineseName": "Sage",
+            "modelId": "deepseek-v4-pro",
+            "description": "深研究员，负责广度/深度调研",
+            "systemPrompt": "{{Sage}}",
+            "maxOutputTokens": 60000,
+            "temperature": 0.4
+        },
+        {
+            "baseName": "LOOM_CN",
+            "chineseName": "经纬",
+            "modelId": "deepseek-v4-pro",
+            "description": "选题拆解架构师",
+            "systemPrompt": "{{Loom}}",
+            "maxOutputTokens": 60000,
+            "temperature": 0.5
+        },
+        {
+            "baseName": "LOOM",
+            "chineseName": "Loom",
+            "modelId": "deepseek-v4-pro",
+            "description": "选题拆解架构师英文别名",
+            "systemPrompt": "{{Loom}}",
+            "maxOutputTokens": 60000,
+            "temperature": 0.5
+        },
+        {
+            "baseName": "RITSU",
+            "chineseName": "Ritsu",
+            "modelId": "deepseek-v4-pro",
+            "description": "VCP 系统总控",
+            "systemPrompt": "{{Ritsu}}",
+            "maxOutputTokens": 40000,
+            "temperature": 0.6
+        },
+        {
+            "baseName": "LAONIU",
+            "chineseName": "总操盘手·老牛",
+            "modelId": "deepseek-v4-pro",
+            "description": "短线操盘团队主控，编排选股复核与操盘执行，产出操作计划与复核简报",
+            "systemPrompt": "{{LaoNiu}}",
+            "maxOutputTokens": 60000,
+            "temperature": 0.5
+        },
+        {
+            "baseName": "AUDIT_DIVERGENCE",
+            "chineseName": "策略复核·底背离双突破",
+            "modelId": "deepseek-v4-pro",
+            "description": "复核 bottom_divergence_double_breakout 算法 vs 书第3章",
+            "systemPrompt": "{{AuditDivergence}}",
+            "maxOutputTokens": 50000,
+            "temperature": 0.2
+        },
+        {
+            "baseName": "AUDIT_LOW123",
+            "chineseName": "策略复核·低位123",
+            "modelId": "deepseek-v4-pro",
+            "description": "复核 ma100_low123_combined 算法 vs 书第2章",
+            "systemPrompt": "{{AuditLow123}}",
+            "maxOutputTokens": 50000,
+            "temperature": 0.2
+        },
+        {
+            "baseName": "AUDIT_MA100",
+            "chineseName": "策略复核·MA100趋势",
+            "modelId": "deepseek-v4-pro",
+            "description": "复核 ma100_60min_combined 算法 vs 书第1.4/2章",
+            "systemPrompt": "{{AuditMA100}}",
+            "maxOutputTokens": 50000,
+            "temperature": 0.2
+        },
+        {
+            "baseName": "AUDIT_GAPLIMITUP",
+            "chineseName": "策略复核·缺口涨停",
+            "modelId": "deepseek-v4-pro",
+            "description": "复核 gap_limitup_breakout 算法 vs 书第5/6章",
+            "systemPrompt": "{{AuditGapLimitup}}",
+            "maxOutputTokens": 50000,
+            "temperature": 0.2
+        },
+        {
+            "baseName": "AUDIT_PULLBACK",
+            "chineseName": "策略复核·回踩突破",
+            "modelId": "deepseek-v4-pro",
+            "description": "复核 shrink_pullback/trendline_breakout/volume_breakout vs 书第2/3章",
+            "systemPrompt": "{{AuditPullbackBreakout}}",
+            "maxOutputTokens": 50000,
+            "temperature": 0.2
+        },
+        {
+            "baseName": "AUDIT_STRENGTH",
+            "chineseName": "策略复核·强势热点",
+            "modelId": "deepseek-v4-pro",
+            "description": "复核 extreme_strength_combo/one_yang_three_yin/bottom_volume vs 书第1.2/7章",
+            "systemPrompt": "{{AuditStrengthTheme}}",
+            "maxOutputTokens": 50000,
+            "temperature": 0.2
+        },
+        {
+            "baseName": "TRADE_ANALYST",
+            "chineseName": "操盘·行情研判师",
+            "modelId": "deepseek-v4-pro",
+            "description": "固定/多周期 + 入场位置研判（突破买入/支撑买入两套相似入场）",
+            "systemPrompt": "{{TradeAnalyst}}",
+            "maxOutputTokens": 40000,
+            "temperature": 0.4
+        },
+        {
+            "baseName": "TRADE_RISK",
+            "chineseName": "操盘·止损风控官",
+            "modelId": "deepseek-v4-pro",
+            "description": "止损方案（自然/固定/均线止损）并以止损过滤入场点",
+            "systemPrompt": "{{TradeRisk}}",
+            "maxOutputTokens": 40000,
+            "temperature": 0.4
+        },
+        {
+            "baseName": "TRADE_POSITION",
+            "chineseName": "操盘·仓位管家",
+            "modelId": "deepseek-v4-pro",
+            "description": "轻重仓/加减仓/止盈方案（金字塔加仓，绝不向下摊平）",
+            "systemPrompt": "{{TradePosition}}",
+            "maxOutputTokens": 40000,
+            "temperature": 0.4
+        },
+        {
+            "baseName": "HOTTHEME",
+            "chineseName": "操盘·热点题材师",
+            "modelId": "deepseek-v4-pro",
+            "description": "借板块势：新闻→梳理热点板块→对齐DSA真实板块名→判影响期→trigger_board_run在题材板块成分股内选股，回传run_id",
+            "systemPrompt": "{{HotThemeHunter}}",
+            "maxOutputTokens": 40000,
+            "temperature": 0.4
+        },
+        {
+            "baseName": "PAPER_TRADER",
+            "chineseName": "模拟盘追踪官",
+            "modelId": "deepseek-v4-pro",
+            "description": "用PaperTrader维护最多3仓模拟盘：确定性买卖、EOD推进、同票5交易日冷却、影响期到期止盈",
+            "systemPrompt": "{{PaperTraderKeeper}}",
+            "maxOutputTokens": 40000,
+            "temperature": 0.3
+        },
+        {
+            "baseName": "PERF_REVIEWER",
+            "chineseName": "操盘·绩效复盘官",
+            "modelId": "deepseek-v4-pro",
+            "description": "周期复盘：读模拟盘绩效→圈定疑似问题策略→分发复核官做绩效归因→汇总策略绩效复盘简报（绩效只作线索，结论以逐字段证据为准）",
+            "systemPrompt": "{{PerfReviewer}}",
+            "maxOutputTokens": 50000,
+            "temperature": 0.3
+        },
+        {
+            "baseName": "DAILY_NEWS",
+            "chineseName": "每日热点新闻管家",
+            "modelId": "deepseek-v4-pro",
+            "description": "盘前全平台热点采集→分类去重→分发(AI给Quill写文/A股给热点题材师梳理板块并推话题)",
+            "systemPrompt": "{{DailyNewsManager}}",
+            "maxOutputTokens": 40000,
+            "temperature": 0.5
+        }
+    ]
+}

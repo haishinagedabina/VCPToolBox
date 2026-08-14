@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Optional
 
 import markdown
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 
 from theme import Theme, load_theme, get_inline_css_rules
 
@@ -118,12 +118,22 @@ class WeChatConverter:
 
     def _markdown_to_html(self, text: str) -> str:
         """Parse Markdown to HTML using python-markdown with extensions."""
+        # NOTE: extension_configs keys must match the extension identifiers
+        # used below exactly (python-markdown looks up config by that exact
+        # string). Using the short names here (instead of the fully-qualified
+        # "markdown.extensions.codehilite" module path) keeps them in sync
+        # with the "codehilite" key in extension_configs — previously the
+        # mismatch silently dropped `noclasses: True`, so codehilite fell
+        # back to CSS-class-based <span class="..."> highlighting with no
+        # matching stylesheet. WeChat strips those unrecognized `class`
+        # attributes on import and mangles the whitespace between the
+        # spans, which is why published code blocks lost all spaces/newlines.
         extensions = [
-            "markdown.extensions.fenced_code",
-            "markdown.extensions.tables",
-            "markdown.extensions.nl2br",
-            "markdown.extensions.sane_lists",
-            "markdown.extensions.codehilite",
+            "fenced_code",
+            "tables",
+            "nl2br",
+            "sane_lists",
+            "codehilite",
         ]
         extension_configs = {
             "codehilite": {
@@ -200,7 +210,7 @@ class WeChatConverter:
         """
         Apply WeChat-specific compatibility fixes:
         1. Force explicit color on every <p> tag
-        2. Ensure code blocks preserve whitespace
+        2. Render code blocks without relying on <pre> whitespace semantics
         """
         soup = BeautifulSoup(html, "html.parser")
         text_color = self._theme.colors.get("text", "#333333")
@@ -211,11 +221,44 @@ class WeChatConverter:
             if "color" not in style:
                 p["style"] = f"{style}; color: {text_color}" if style else f"color: {text_color}"
 
-        # Fix 2: Ensure <pre> has whitespace preservation
+        # Fix 2: WeChat re-parses drafts and collapses literal newlines/spaces
+        # inside <pre>, even when white-space: pre-wrap is present. Convert
+        # those characters to explicit HTML before replacing the unstable
+        # <pre> container.
         for pre in soup.find_all("pre"):
-            style = pre.get("style", "")
-            if "white-space" not in style:
-                pre["style"] = f"{style}; white-space: pre-wrap; word-wrap: break-word" if style else "white-space: pre-wrap; word-wrap: break-word"
+            code = pre.find("code")
+            if code is None:
+                continue
+
+            for text_node in list(code.find_all(string=True)):
+                safe_text = str(text_node).replace("\t", "    ")
+                parts = safe_text.split("\n")
+                replacements = []
+                for index, part in enumerate(parts):
+                    if part:
+                        replacements.append(NavigableString(part.replace(" ", "\u00a0")))
+                    if index < len(parts) - 1:
+                        replacements.append(soup.new_tag("br"))
+                text_node.replace_with(*replacements)
+
+            if code.contents and getattr(code.contents[-1], "name", None) == "br":
+                code.contents[-1].decompose()
+
+            section = soup.new_tag("section")
+            section["style"] = (
+                f"{pre.get('style', '')}; white-space: normal; text-align: left; "
+                "text-align-last: left; word-break: normal; overflow-wrap: normal"
+            )
+            if pre.get("data-lang"):
+                section["data-lang"] = pre["data-lang"]
+
+            code["style"] = (
+                f"{code.get('style', '')}; display: block; margin: 0; padding: 0; "
+                "background: transparent; white-space: nowrap; text-align: left; "
+                "text-align-last: left; word-break: normal; overflow-wrap: normal"
+            )
+            section.append(code.extract())
+            pre.replace_with(section)
 
         return str(soup)
 

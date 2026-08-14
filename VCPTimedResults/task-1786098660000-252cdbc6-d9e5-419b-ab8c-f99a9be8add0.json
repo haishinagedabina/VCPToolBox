@@ -1,0 +1,39 @@
+{
+  "taskId": "task-1786098660000-252cdbc6-d9e5-419b-ab8c-f99a9be8add0",
+  "toolName": "TimedTaskQuery",
+  "status": "success",
+  "createdAt": "2026-08-07T18:30:54+08:00",
+  "scheduledLocalTime": "2026-08-07T18:31:00+08:00",
+  "executedAt": "2026-08-07T10:31:00.112Z",
+  "requestor": "ToolExecutor: TimedTaskQuery",
+  "arguments": {
+    "maid": "总操盘手·老牛",
+    "action": "schedule",
+    "task_id": "review-file-check-0807-1831",
+    "task_payload": "总操盘手·老牛，现在是预定检查时间。请用 ServerFileOperator FileInfo 读取 E:\\VCPChat\\VCPToolBox\\file\\document\\ 下文件名含“策略绩效复盘简报_2026-08-07”的最新报告文件。如果存在则读入全文并汇总关键结论（各策略绩效归因摘要 + 三镜头核心发现 + 无样本策略标注），用 TopicSponsor 推送摘要话题后输出 [[TaskComplete]]。如果仍不存在则再等 120 秒后重试，最多重试 2 次；若 3 次检查后仍未落盘则输出 [[TaskFailed]] 并说明复盘官仍未完成。注意：这是复盘官交付物检查，不是重新委派复盘任务。",
+    "__vcp_timed_call": {
+      "taskId": "task-1786098660000-252cdbc6-d9e5-419b-ab8c-f99a9be8add0",
+      "requestedAt": "2026-08-07T18:30:54+08:00",
+      "scheduledFor": "2026-08-07T18:31:00+08:00",
+      "triggeredAt": "2026-08-07T18:31:00+08:00",
+      "originalTimelyContact": "2026-08-07-18:31",
+      "source": "ToolExecutor: TimedTaskQuery"
+    }
+  },
+  "timedCall": {
+    "taskId": "task-1786098660000-252cdbc6-d9e5-419b-ab8c-f99a9be8add0",
+    "requestedAt": "2026-08-07T18:30:54+08:00",
+    "scheduledFor": "2026-08-07T18:31:00+08:00",
+    "triggeredAt": "2026-08-07T18:31:00+08:00",
+    "originalTimelyContact": "2026-08-07-18:31",
+    "source": "ToolExecutor: TimedTaskQuery"
+  },
+  "result": {
+    "queryStatus": "not_found",
+    "taskId": "review-file-check-0807-1831",
+    "message": "未找到任务 review-file-check-0807-1831 的待执行记录或执行结果。可能 ID 错误，或任务结果目录被清理。",
+    "MaidName": "总操盘手·老牛",
+    "timestamp": "2026-08-07T18:31:00.111+08:00"
+  },
+  "resultSummary": "{\"queryStatus\":\"not_found\",\"taskId\":\"review-file-check-0807-1831\",\"message\":\"未找到任务 review-file-check-0807-1831 的待执行记录或执行结果。可能 ID 错误，或任务结果目录被清理。\",\"MaidName\":\"总操盘手·老牛\",\"timestamp\":\"2026-08-07T18:31:00.111+08:00\"}"
+}

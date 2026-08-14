@@ -237,6 +237,8 @@ image/zimageturbogen/
 image/comfycloud/
 image/comfyuigen/
 image/doubaogen/
+# 忽略豆包插件的 API 缓存（含 API Key，禁止入库）
+Plugin/DoubaoGen/.doubao_api_cache.json
 image/geminiimagegen/
 image/nanobananagen/
 image/novelaigen/

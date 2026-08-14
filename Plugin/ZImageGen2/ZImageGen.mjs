@@ -3,8 +3,12 @@
 import axios from 'axios';
 import fs from 'fs/promises';
 import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
-import { HttpsProxyAgent } from 'https-proxy-agent';
+import {
+    v4 as uuidv4
+} from 'uuid';
+import {
+    HttpsProxyAgent
+} from 'https-proxy-agent';
 
 // --- 1. 配置加载与初始化 ---
 
@@ -25,7 +29,7 @@ const {
 const API_BASE_URL = 'https://aisudo-z-image-base.hf.space/gradio_api';
 
 // 代理配置 (根据需要调整)
-const PROXY_URL = 'http://127.0.0.1:7890';
+const PROXY_URL = 'http://127.0.0.1:10808';
 const httpsAgent = new HttpsProxyAgent(PROXY_URL);
 // 如果不需要代理，可以将此设为 null
 const USE_PROXY = false;
@@ -48,31 +52,64 @@ const axiosConfig = {
  * @returns {{width: number, height: number}}
  */
 function parseResolution(resolution) {
-    if (!resolution) return { width: 1024, height: 1024 };
-    
+    if (!resolution) return {
+        width: 1024,
+        height: 1024
+    };
+
     const res = resolution.toLowerCase().trim();
-    
+
     // 预设比例
     const presets = {
-        'square': { width: 1024, height: 1024 },
-        'landscape': { width: 1280, height: 720 },
-        'portrait': { width: 720, height: 1280 },
-        '16:9': { width: 1280, height: 720 },
-        '9:16': { width: 720, height: 1280 },
-        '4:3': { width: 1152, height: 864 },
-        '3:4': { width: 864, height: 1152 },
-        '1:1': { width: 1024, height: 1024 }
+        'square': {
+            width: 1024,
+            height: 1024
+        },
+        'landscape': {
+            width: 1280,
+            height: 720
+        },
+        'portrait': {
+            width: 720,
+            height: 1280
+        },
+        '16:9': {
+            width: 1280,
+            height: 720
+        },
+        '9:16': {
+            width: 720,
+            height: 1280
+        },
+        '4:3': {
+            width: 1152,
+            height: 864
+        },
+        '3:4': {
+            width: 864,
+            height: 1152
+        },
+        '1:1': {
+            width: 1024,
+            height: 1024
+        }
     };
-    
+
     if (presets[res]) return presets[res];
-    
+
     // 解析 WxH 格式
     const match = res.match(/(\d+)\s*[x×]\s*(\d+)/i);
     if (match) {
-        return { width: parseInt(match[1]), height: parseInt(match[2]) };
+        return {
+            width: parseInt(match[1]),
+            height: parseInt(match[2])
+        };
     }
-    
-    return { width: 1024, height: 1024 };
+
+    return {
+        width: 1024,
+        height: 1024
+    };
 }
 
 /**
@@ -83,7 +120,10 @@ function parseResolution(resolution) {
 async function callGradioApi(args) {
     const prompt = args.prompt;
     const negativePrompt = args.negative_prompt || "";
-    const { width, height } = parseResolution(args.resolution);
+    const {
+        width,
+        height
+    } = parseResolution(args.resolution);
     const seed = parseInt(args.seed) || 42;
     const steps = parseInt(args.steps) || 28;
     const cfg = parseFloat(args.cfg) || 4;
@@ -97,16 +137,16 @@ async function callGradioApi(args) {
     // 使用网页版相同的 API 格式
     const payload = {
         data: [
-            prompt,           // 0: prompt: string
-            negativePrompt,   // 1: negative_prompt: string
-            width,            // 2: width: number
-            height,           // 3: height: number
-            seed,             // 4: seed: number
-            steps,            // 5: num_inference_steps: number
-            cfg,              // 6: guidance_scale: number
+            prompt, // 0: prompt: string
+            negativePrompt, // 1: negative_prompt: string
+            width, // 2: width: number
+            height, // 3: height: number
+            seed, // 4: seed: number
+            steps, // 5: num_inference_steps: number
+            cfg, // 6: guidance_scale: number
             cfgNormalization, // 7: cfg_normalization: boolean
-            randomSeed,       // 8: randomize_seed: boolean
-            []                // 9: unknown empty array
+            randomSeed, // 8: randomize_seed: boolean
+            [] // 9: unknown empty array
         ],
         fn_index: 1,
         trigger_id: 22,
@@ -119,7 +159,7 @@ async function callGradioApi(args) {
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
         try {
             console.error(`尝试调用 Gradio API (第 ${attempt} 次)`);
-            
+
             // 使用网页版相同的端点
             const response = await axios.post(`${API_BASE_URL}/queue/join`, payload, {
                 ...axiosConfig,
@@ -140,11 +180,11 @@ async function callGradioApi(args) {
 
             // 监听结果
             return await listenForResult(eventId, sessionHash);
-            
+
         } catch (error) {
             lastError = error;
             console.error(`第 ${attempt} 次尝试失败: ${error.message}`);
-            
+
             if (attempt < maxRetries) {
                 const delay = attempt * 2000;
                 console.error(`等待 ${delay}ms 后重试...`);
@@ -164,7 +204,7 @@ async function callGradioApi(args) {
  */
 async function listenForResult(eventId, sessionHash) {
     const eventSourceUrl = `${API_BASE_URL}/queue/data?session_hash=${sessionHash}`;
-    
+
     try {
         const response = await axios.get(eventSourceUrl, {
             ...axiosConfig,
@@ -188,40 +228,40 @@ async function listenForResult(eventId, sessionHash) {
 
             stream.on('data', (chunk) => {
                 buffer += chunk.toString();
-                
+
                 // SSE 消息以 \n\n 分隔
                 let boundary;
                 while ((boundary = buffer.indexOf('\n\n')) !== -1) {
                     const message = buffer.substring(0, boundary);
                     buffer = buffer.substring(boundary + 2);
-                    
+
                     // 处理每一行
                     const lines = message.split('\n');
                     for (const line of lines) {
                         if (!line.startsWith('data: ')) continue;
-                        
+
                         const dataStr = line.substring(6).trim();
                         if (!dataStr) continue;
 
                         try {
                             const data = JSON.parse(dataStr);
-                            
+
                             // 根据 msg 类型处理
                             switch (data.msg) {
                                 case 'heartbeat':
                                     // 心跳，忽略
                                     break;
-                                    
+
                                 case 'estimation':
                                     if (data.rank !== undefined) {
                                         console.error(`队列位置: ${data.rank}, 预计等待: ${data.queue_size} 个任务`);
                                     }
                                     break;
-                                    
+
                                 case 'process_starts':
                                     console.error('任务开始处理...');
                                     break;
-                                    
+
                                 case 'progress':
                                     // 进度更新
                                     if (data.progress_data && data.progress_data[0]) {
@@ -229,19 +269,19 @@ async function listenForResult(eventId, sessionHash) {
                                         console.error(`生成进度: ${progress.index || 0}/${progress.length || '?'}`);
                                     }
                                     break;
-                                    
+
                                 case 'process_completed':
                                     console.error('任务完成！');
                                     clearTimeout(timeoutId);
-                                    
+
                                     // 提取结果
                                     if (data.output && data.output.data && Array.isArray(data.output.data)) {
                                         const outputData = data.output.data;
                                         const imageResult = outputData[0];
                                         const seedUsed = outputData[1];
-                                        
+
                                         let downloadUrl = null;
-                                        
+
                                         // 处理不同的返回格式
                                         if (typeof imageResult === 'string') {
                                             if (imageResult.startsWith('/tmp/')) {
@@ -255,32 +295,35 @@ async function listenForResult(eventId, sessionHash) {
                                         } else if (imageResult && imageResult.path) {
                                             downloadUrl = `https://aisudo-z-image-base.hf.space/gradio_api/file=${imageResult.path}`;
                                         }
-                                        
+
                                         if (downloadUrl) {
                                             console.error(`图片URL: ${downloadUrl.substring(0, 80)}...`);
-                                            resolve({ imageUrl: downloadUrl, seed: seedUsed });
+                                            resolve({
+                                                imageUrl: downloadUrl,
+                                                seed: seedUsed
+                                            });
                                             return;
                                         }
                                     }
                                     reject(new Error('无法从响应中提取图片URL: ' + JSON.stringify(data.output).substring(0, 200)));
                                     return;
-                                    
+
                                 case 'error':
                                 case 'process_error':
                                     clearTimeout(timeoutId);
                                     reject(new Error(`API返回错误: ${JSON.stringify(data)}`));
                                     return;
-                                    
+
                                 case 'queue_full':
                                     clearTimeout(timeoutId);
                                     reject(new Error('服务器队列已满，请稍后重试'));
                                     return;
-                                    
+
                                 default:
                                     // 忽略其他未知事件
                                     break;
                             }
-                            
+
                         } catch (parseError) {
                             if (!(parseError instanceof SyntaxError)) {
                                 clearTimeout(timeoutId);
@@ -328,12 +371,14 @@ async function saveImage(imageUrl) {
     const buffer = response.data;
     const mimeType = response.headers['content-type'] || 'image/png';
     const extension = mimeType.split('/')[1] || 'png';
-    
+
     const generatedFileName = `${uuidv4()}.${extension}`;
     const imageDir = path.join(PROJECT_BASE_PATH, 'image', 'zimagegen');
     const localImagePath = path.join(imageDir, generatedFileName);
 
-    await fs.mkdir(imageDir, { recursive: true });
+    await fs.mkdir(imageDir, {
+        recursive: true
+    });
     await fs.writeFile(localImagePath, buffer);
 
     const relativePathForUrl = path.join('zimagegen', generatedFileName).replace(/\\/g, '/');
@@ -365,16 +410,17 @@ async function generateImage(args) {
     const savedImage = await saveImage(apiResult.imageUrl);
 
     // 3. 构造返回结果
-    const { width, height } = parseResolution(args.resolution);
+    const {
+        width,
+        height
+    } = parseResolution(args.resolution);
     const finalResponseText = `图片已成功生成！\n\n**图片详情:**\n- 提示词: ${args.prompt}\n- 分辨率: ${width}x${height}\n- Seed: ${apiResult.seed}\n- 可访问URL: ${savedImage.imageUrl}\n- ShowBase64: ${showBase64}\n\n请利用可访问url将图片转发给用户`;
 
     // 根据 showbase64 参数决定返回内容
-    const content = [
-        {
-            type: 'text',
-            text: finalResponseText
-        }
-    ];
+    const content = [{
+        type: 'text',
+        text: finalResponseText
+    }];
 
     // 只有当 showbase64 为 true 时才添加 base64 图片数据
     if (showBase64) {
@@ -399,10 +445,13 @@ async function generateImage(args) {
 
 async function main() {
     let inputData = '';
-    
+
     // 设置全局超时，防止进程无限挂起
     const timeout = setTimeout(() => {
-        console.log(JSON.stringify({ status: "error", error: "ZImageGen 插件执行超时 (5分钟)" }));
+        console.log(JSON.stringify({
+            status: "error",
+            error: "ZImageGen 插件执行超时 (5分钟)"
+        }));
         process.exit(1);
     }, 300000); // 5分钟超时
 
@@ -414,24 +463,30 @@ async function main() {
         if (!inputData.trim()) {
             throw new Error("未从 stdin 接收到任何输入数据。");
         }
-        
+
         const parsedArgs = JSON.parse(inputData);
         let resultObject;
 
         // 兼容多种命令格式：command='generate' 或直接传prompt
         const command = parsedArgs.command || (parsedArgs.prompt ? 'generate' : undefined);
-        
+
         if (command === 'generate' || command === 'ZImageGenerate') {
             resultObject = await generateImage(parsedArgs);
         } else {
             throw new Error(`未知的命令: '${command}'. 输入数据: ${JSON.stringify(parsedArgs).substring(0, 200)}`);
         }
 
-        console.log(JSON.stringify({ status: "success", result: resultObject }));
+        console.log(JSON.stringify({
+            status: "success",
+            result: resultObject
+        }));
         clearTimeout(timeout);
 
     } catch (e) {
-        console.log(JSON.stringify({ status: "error", error: `ZImageGen 插件错误: ${e.message}` }));
+        console.log(JSON.stringify({
+            status: "error",
+            error: `ZImageGen 插件错误: ${e.message}`
+        }));
         process.exit(1);
     }
 }
