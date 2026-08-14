@@ -9,6 +9,15 @@ class SqliteHealthManager {
         this.Database = options.Database || Database;
         this.onConnectionRebound = options.onConnectionRebound || (() => {});
         this.logPrefix = options.logPrefix || 'KnowledgeBase';
+        this.platform = options.platform || process.platform;
+        // Darwin 对“已映射文件被截断到零”会直接发出不可恢复的 SIGBUS。
+        // 核心知识库存在 better-sqlite3 与 rusqlite 多连接访问，因此 macOS
+        // 只做非截断 checkpoint；其他平台保持原有 TRUNCATE 行为。
+        this.checkpointMode = this.platform === 'darwin' ? 'PASSIVE' : 'TRUNCATE';
+        const configuredBusyTimeout = Number(options.busyTimeoutMs);
+        this.busyTimeoutMs = Number.isFinite(configuredBusyTimeout)
+            ? Math.max(0, Math.floor(configuredBusyTimeout))
+            : 10000;
         this.dbPath = null;
         this.db = null;
         this.state = 'healthy';
@@ -20,6 +29,16 @@ class SqliteHealthManager {
         db.pragma('journal_mode = WAL');
         db.pragma('synchronous = NORMAL');
         db.pragma('foreign_keys = ON');
+        if (this.platform === 'darwin') {
+            // 只关闭主数据库文件的可选 mmap。WAL-index/SHM 仍由 SQLite
+            // 按协议管理；避免主动截断 WAL 才是 Darwin SIGBUS 的主要防线。
+            db.pragma('mmap_size = 0');
+        }
+        // SQLite 同一时刻只有一个写者。Rust/rusqlite、管理维护脚本或其他
+        // better-sqlite3 连接短暂持锁时，在原生层等待锁释放，而不是立即把
+        // 瞬态写竞争上抛成文件摄取失败。该配置属于连接级 PRAGMA，因此每次
+        // 恢复/重开连接都必须重新设置。
+        db.pragma(`busy_timeout = ${this.busyTimeoutMs}`);
     }
 
     assertIntegrity(db) {
@@ -32,11 +51,25 @@ class SqliteHealthManager {
         }
     }
 
+    checkpoint(db) {
+        return db.pragma(`wal_checkpoint(${this.checkpointMode})`);
+    }
+
     isCorruptionError(error) {
         const message = String(error?.message || error || '');
         return error?.code === 'SQLITE_CORRUPT'
             || error?.code === 'SQLITE_NOTADB'
             || /database disk image is malformed|file is not a database|database corruption|quick_check failed/i.test(message);
+    }
+
+    isBusyError(error) {
+        const code = String(error?.code || '').toUpperCase();
+        const message = String(error?.message || error || '');
+        return code === 'SQLITE_BUSY'
+            || code.startsWith('SQLITE_BUSY_')
+            || code === 'SQLITE_LOCKED'
+            || code.startsWith('SQLITE_LOCKED_')
+            || /database (?:is )?locked|database table is locked/i.test(message);
     }
 
     openWithRecovery(dbPath) {
@@ -74,7 +107,7 @@ class SqliteHealthManager {
     checkpointAndAssertHealthy(reason = 'manual-checkpoint') {
         if (!this.db) return false;
         try {
-            this.db.pragma('wal_checkpoint(TRUNCATE)');
+            this.checkpoint(this.db);
             this.assertIntegrity(this.db);
             this.state = 'healthy';
             return true;
@@ -93,6 +126,58 @@ class SqliteHealthManager {
             );
             this.state = 'suspect';
             return this.recoverSuspectConnection(reason, error);
+        }
+    }
+
+    /**
+     * Rust 使用独立 SQLite 运行时提交派生写后，长期存活的 better-sqlite3
+     * 连接可能仍持有旧 pager/WAL/SHM read mark。先主动重开连接，再由新连接
+     * checkpoint + quick_check，避免在已可疑的旧视图上执行 TRUNCATE。
+     *
+     * 该路径只用于低频 Rust 派生写屏障；普通 JS 写和手工健康检查仍复用现有连接。
+     */
+    reopenAndAssertHealthy(reason = 'rust-write-barrier') {
+        if (!this.dbPath || this.recovering) return false;
+
+        this.recovering = true;
+        this.state = 'recovering';
+        const oldDb = this.db;
+        this.db = null;
+
+        try {
+            try {
+                oldDb?.close();
+            } catch (closeError) {
+                console.warn(
+                    `[${this.logPrefix}] ⚠️ Failed to close pre-Rust-write SQLite connection cleanly: ` +
+                    closeError.message
+                );
+            }
+
+            const reopened = new this.Database(this.dbPath);
+            try {
+                this.configureConnection(reopened);
+                this.checkpoint(reopened);
+                this.assertIntegrity(reopened);
+            } catch (error) {
+                try { reopened.close(); } catch (_) {}
+                throw error;
+            }
+
+            this._publishConnection(reopened);
+            this.state = 'healthy';
+            this.corruptionDetected = false;
+            return true;
+        } catch (error) {
+            console.warn(
+                `[${this.logPrefix}] 🩺 Fresh SQLite connection verification failed after ${reason}: ` +
+                `${error.message || error}. Retrying with second-stage reopen...`
+            );
+            this.state = 'suspect';
+            this.recovering = false;
+            return this.recoverSuspectConnection(reason, error);
+        } finally {
+            this.recovering = false;
         }
     }
 
@@ -120,7 +205,7 @@ class SqliteHealthManager {
 
             const reopened = new this.Database(this.dbPath);
             this.configureConnection(reopened);
-            reopened.pragma('wal_checkpoint(TRUNCATE)');
+            this.checkpoint(reopened);
             this.assertIntegrity(reopened);
             this._publishConnection(reopened);
             this.state = 'healthy';

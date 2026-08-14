@@ -495,6 +495,7 @@ let embeddingProviderTag = "default";
 let dbHandle = null;
 let dropLegacyDone = false;
 const agentQueues = new Map();
+const agentObservationGenerations = new Map();
 const messageVectorCache = new Map();
 const MESSAGE_VECTOR_CACHE_LIMIT = 80;
 
@@ -1050,21 +1051,62 @@ function createDefaultEmbeddingProvider() {
 function createContextBridgeEmbeddingProvider(bridge) {
   return async (texts) => {
     if (!Array.isArray(texts)) return null;
-    return Promise.all(
-      texts.map(async (text) => {
-        const normalized = String(text || "").trim();
-        if (!normalized) return null;
-        if (typeof bridge.getEmbeddingFromCache === "function") {
-          const exact = bridge.getEmbeddingFromCache(normalized);
-          if (exact) return exact;
+
+    const normalizedTexts = texts.map((text) => String(text || "").trim());
+    const results = new Array(normalizedTexts.length).fill(null);
+    const missingIndices = [];
+    const missingTexts = [];
+
+    normalizedTexts.forEach((normalized, index) => {
+      if (!normalized) return;
+      if (typeof bridge.getEmbeddingFromCache === "function") {
+        const exact = bridge.getEmbeddingFromCache(normalized);
+        if (exact) {
+          results[index] = exact;
+          return;
         }
-        if (typeof bridge.getFuzzyEmbeddingFromCache === "function") {
-          const fuzzy = bridge.getFuzzyEmbeddingFromCache(normalized);
-          if (fuzzy && fuzzy.vector) return fuzzy.vector;
+      }
+      if (typeof bridge.getFuzzyEmbeddingFromCache === "function") {
+        const fuzzy = bridge.getFuzzyEmbeddingFromCache(normalized);
+        if (fuzzy && fuzzy.vector) {
+          results[index] = fuzzy.vector;
+          return;
         }
-        return bridge.embedText(normalized);
-      })
-    );
+      }
+      missingIndices.push(index);
+      missingTexts.push(normalized);
+    });
+
+    if (missingTexts.length === 0) return results;
+
+    if (typeof bridge.embedBatch === "function") {
+      const embedded = await bridge.embedBatch(missingTexts);
+      if (!Array.isArray(embedded) || embedded.length !== missingTexts.length) {
+        return results;
+      }
+      embedded.forEach((vector, missingIndex) => {
+        if (Array.isArray(vector) || ArrayBuffer.isView(vector)) {
+          results[missingIndices[missingIndex]] = vector;
+        }
+      });
+      return results;
+    }
+
+    // Compatibility fallback for older ContextBridge implementations. Keep the
+    // single-text API bounded instead of recreating an unbounded Promise.all.
+    const concurrency = Math.min(5, missingTexts.length);
+    let cursor = 0;
+    const workers = Array.from({ length: concurrency }, async () => {
+      while (cursor < missingTexts.length) {
+        const missingIndex = cursor++;
+        const vector = await bridge.embedText(missingTexts[missingIndex]);
+        if (Array.isArray(vector) || ArrayBuffer.isView(vector)) {
+          results[missingIndices[missingIndex]] = vector;
+        }
+      }
+    });
+    await Promise.all(workers);
+    return results;
   };
 }
 
@@ -1164,7 +1206,7 @@ function getStoredAnchorVectors(agentKey, agentLabel) {
   return vectors;
 }
 
-async function ensureAnchorVectors(agentKey, agentLabel) {
+async function ensureAnchorVectors(agentKey, agentLabel, expectedGeneration = null) {
   const key = normalizeAgentKey(agentKey);
   const label = normalizeAgentLabel(agentLabel || key, key);
   const stored = getStoredAnchorVectors(key, label);
@@ -1187,6 +1229,12 @@ async function ensureAnchorVectors(agentKey, agentLabel) {
     activeConfig.OpenHerPersonaEmbeddingTimeoutMs * 4
   );
   if (!Array.isArray(embedded) || embedded.length !== flat.length || embedded.some((vector) => !Array.isArray(vector))) {
+    return null;
+  }
+  if (
+    expectedGeneration !== null &&
+    expectedGeneration !== (agentObservationGenerations.get(key) || 0)
+  ) {
     return null;
   }
 
@@ -1969,7 +2017,9 @@ function resolveAgentIdentityFromText(text) {
 }
 
 function resolveAgentIdentity(messages, requestConfig) {
-  const fromConfig = resolveAgentIdentityFromObject(requestConfig);
+  // 暂停方案 1：请求配置对象的递归字段匹配可能误命中无关 name/agent 字段。
+  // 观测入口当前仅信任 system 消息中的 OneRing 标记。
+  // const fromConfig = resolveAgentIdentityFromObject(requestConfig);
   let fromLatestSystem = null;
   if (Array.isArray(messages)) {
     for (let index = messages.length - 1; index >= 0; index -= 1) {
@@ -1982,15 +2032,16 @@ function resolveAgentIdentity(messages, requestConfig) {
       }
     }
   }
-  if (fromConfig && (fromConfig.source === "object" || !fromLatestSystem)) return fromConfig;
+  // if (fromConfig && (fromConfig.source === "object" || !fromLatestSystem)) return fromConfig;
   return fromLatestSystem;
 }
 
-function findLatestRealMessage(messages) {
+function findLatestRealMessage(messages, targetRole = null) {
   if (!Array.isArray(messages)) return null;
   for (let index = messages.length - 1; index >= 0; index -= 1) {
     const message = messages[index];
     if (!message || !["user", "assistant"].includes(message.role)) continue;
+    if (targetRole && message.role !== targetRole) continue;
     const text = messageContentToText(message.content);
     if (!text.trim()) continue;
     if (message.role === "user" && isVcpVirtualUserText(text)) continue;
@@ -1999,12 +2050,14 @@ function findLatestRealMessage(messages) {
   return null;
 }
 
-function buildObservationFingerprint(agentKey, latestMessage) {
-  return hashText(`${agentKey}:${latestMessage.role}:${latestMessage.index}:${latestMessage.text}`);
+function buildObservationFingerprint(agentKey, latestMessage, normalizedText = null) {
+  const semanticText = String(normalizedText || latestMessage.text || "").trim();
+  return hashText(`${agentKey}:${latestMessage.role}:${semanticText}`);
 }
 
 function enqueueObservation(agentKey, job) {
   const key = normalizeAgentKey(agentKey);
+  job.generation = agentObservationGenerations.get(key) || 0;
   const existing = agentQueues.get(key) || { running: false, jobs: [] };
   if (existing.jobs.length >= activeConfig.OpenHerPersonaQueueMaxSize) {
     existing.jobs.shift();
@@ -2042,38 +2095,65 @@ function summarizeJob(job) {
     agentKey: job.agentKey,
     agentLabel: job.agentLabel,
     role: job.role,
-    textHash: hashText(job.text || ""),
-    textLength: String(job.text || "").length,
+    observationType: job.observationType || (job.role === "assistant" ? "expression" : "stimulus"),
+    phase: job.phase || "message_preprocessor",
+    textHash: hashText(job.normalizedText || job.text || ""),
+    textLength: String(job.normalizedText || job.text || "").length,
   };
 }
 
+function isObservationJobCurrent(job) {
+  const key = normalizeAgentKey(job && job.agentKey);
+  const currentGeneration = agentObservationGenerations.get(key) || 0;
+  return Number(job && job.generation) === currentGeneration;
+}
+
 async function observeJob(job) {
-  if (!activeConfig.OpenHerPersonaEnabled) return;
+  if (!activeConfig.OpenHerPersonaEnabled || !isObservationJobCurrent(job)) return;
   const state = loadAgentState(job.agentKey, job.agentLabel);
   if (state.lastInputHash === job.inputHash) {
     debugLog("skip duplicate observation", job.inputHash);
     return;
   }
 
-  const anchorVectors = await ensureAnchorVectors(state.agentKey, state.agentLabel);
+  const anchorVectors = await ensureAnchorVectors(state.agentKey, state.agentLabel, job.generation);
   if (!anchorVectors) {
     saveAudit(state.agentKey, "observe_skipped", { reason: "anchors_unavailable", job: summarizeJob(job) });
     return;
   }
 
-  const messageVector = await embedText(job.text, job.role);
+  // RAGDiaryPlugin keeps the original message in the downstream chain while
+  // caching the sanitized text. Always reuse that same sanitizer before cache
+  // lookup; querying with the raw assistant text would miss an existing vector.
+  const messageVector = await embedText(job.normalizedText || job.text, job.role);
   if (!messageVector) {
     saveAudit(state.agentKey, "observe_skipped", { reason: "message_vector_unavailable", job: summarizeJob(job) });
     return;
   }
 
+  // 删除操作会递增 generation；丢弃删除期间仍在等待向量结果的旧任务，
+  // 防止它在 SQLite 记录被删除后重新写回误识别的 Agent。
+  if (!isObservationJobCurrent(job)) return;
+
   const scores = scoreAllAxes(messageVector, anchorVectors, state.agentLabel);
   applyObservationToState(state, scores, job.inputHash);
+  state.lastObservation = {
+    ...(state.lastObservation || {}),
+    role: job.role,
+    observationType: job.observationType || "expression",
+    phase: job.phase || "next_request_history",
+    semanticSubject: "assistant_expression",
+    stateSemantics: "internal_state_inferred_from_expression",
+  };
   saveAgentState(state);
   saveAudit(state.agentKey, "observe", {
     role: job.role,
-    textHash: hashText(job.text),
-    textLength: job.text.length,
+    observationType: job.observationType || "expression",
+    phase: job.phase || "next_request_history",
+    semanticSubject: "assistant_expression",
+    stateSemantics: "internal_state_inferred_from_expression",
+    textHash: hashText(job.normalizedText || job.text),
+    textLength: String(job.normalizedText || job.text).length,
     mood: computeMoodFromState(state),
     topAxes: getTopAxesFromScores(scores, 6),
   });
@@ -2103,18 +2183,32 @@ async function processMessages(messages, requestConfig = {}) {
   const identity = resolveAgentIdentity(messages, requestConfig);
   if (!identity) return messages;
 
-  const latestMessage = findLatestRealMessage(messages);
+  // This preprocessor runs before the current upstream completion. Therefore
+  // only an assistant already present in history is a real Agent expression.
+  // The latest user message is an external stimulus and must not be projected
+  // directly onto subject-anchored Agent axes.
+  const latestMessage = findLatestRealMessage(messages, "assistant");
   if (!latestMessage) return messages;
 
-  const inputHash = buildObservationFingerprint(identity.agentKey, latestMessage);
+  // RAGDiaryPlugin sanitizes for embedding but deliberately passes the original
+  // message downstream. Reapply the shared ContextBridge sanitizer so exact
+  // cache lookup uses the same key as the upstream RAG embedding pipeline.
+  const normalizedText = sanitizeForEmbedding(latestMessage.text, latestMessage.role).slice(0, 4000);
+  if (!normalizedText) return messages;
+
+  const inputHash = buildObservationFingerprint(identity.agentKey, latestMessage, normalizedText);
   const job = {
     agentKey: identity.agentKey,
     agentLabel: identity.agentLabel,
     source: identity.source,
     role: latestMessage.role,
+    observationType: "expression",
+    phase: "next_request_history",
     text: latestMessage.text,
+    normalizedText,
     inputHash,
     queuedAt: nowIso(),
+    generation: agentObservationGenerations.get(identity.agentKey) || 0,
   };
 
   if (effectiveConfig.OpenHerPersonaAsyncObservation) {
@@ -2141,6 +2235,42 @@ function resetAgentState(agentKey, agentLabel) {
   return state;
 }
 
+function deleteAgentState(agentKey) {
+  const key = normalizeAgentKey(agentKey);
+  if (key === DEFAULT_AGENT_KEY) {
+    return {
+      status: "error",
+      plugin: PLUGIN_NAME,
+      deleted: false,
+      message: "Refusing to delete the default agent bucket.",
+    };
+  }
+
+  agentObservationGenerations.set(key, (agentObservationGenerations.get(key) || 0) + 1);
+  const queue = agentQueues.get(key);
+  if (queue) queue.jobs.length = 0;
+  agentQueues.delete(key);
+
+  const deletedRows = { state: 0, anchors: 0, audit: 0 };
+  const db = openDb();
+  if (db) {
+    const transaction = db.transaction(() => {
+      deletedRows.state = db.prepare("DELETE FROM openher_axis_state WHERE agent_key = ?").run(key).changes;
+      deletedRows.anchors = db.prepare("DELETE FROM openher_axis_anchors WHERE agent_key = ?").run(key).changes;
+      deletedRows.audit = db.prepare("DELETE FROM openher_axis_audit WHERE agent_key = ?").run(key).changes;
+    });
+    transaction();
+  }
+
+  return {
+    status: "success",
+    plugin: PLUGIN_NAME,
+    deleted: deletedRows.state > 0 || deletedRows.anchors > 0 || deletedRows.audit > 0,
+    agentKey: key,
+    deletedRows,
+  };
+}
+
 function getAxisStatusForAgent(agentKey, agentLabel) {
   const state = loadAgentState(agentKey, agentLabel);
   return {
@@ -2163,7 +2293,7 @@ function getAxisStatusForAgent(agentKey, agentLabel) {
 }
 
 function getStatus(params = {}) {
-  const identity = resolveAgentIdentity([], params) || {
+  const identity = resolveAgentIdentityFromObject(params) || {
     agentKey: normalizeAgentKey(params.agentKey || params.agent || DEFAULT_AGENT_KEY),
     agentLabel: normalizeAgentLabel(params.agentLabel || params.agentName || params.agent || DEFAULT_AGENT_LABEL),
   };
@@ -2255,12 +2385,19 @@ async function processToolCall(params) {
   }
 
   if (command === "reset") {
-    const identity = resolveAgentIdentity([], params || {}) || {
+    const identity = resolveAgentIdentityFromObject(params || {}) || {
       agentKey: normalizeAgentKey(params && (params.agentKey || params.agent)),
       agentLabel: normalizeAgentLabel(params && (params.agentLabel || params.agentName || params.agent)),
     };
     const state = resetAgentState(identity.agentKey, identity.agentLabel);
     return { status: "success", reset: true, state: getAxisStatusForAgent(state.agentKey, state.agentLabel) };
+  }
+
+  if (command === "delete" || command === "delete_agent") {
+    const identity = resolveAgentIdentityFromObject(params || {}) || {
+      agentKey: normalizeAgentKey(params && (params.agentKey || params.agent)),
+    };
+    return deleteAgentState(identity.agentKey);
   }
 
   if (command === "config" || command === "get_config") {
@@ -2280,7 +2417,7 @@ async function processToolCall(params) {
     status: "error",
     plugin: PLUGIN_NAME,
     message: `Unsupported command: ${command}`,
-    supportedCommands: ["status", "snapshot", "reset", "config", "save_config", "explain"],
+    supportedCommands: ["status", "snapshot", "reset", "delete", "config", "save_config", "explain"],
   };
 }
 
